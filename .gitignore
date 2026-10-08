@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# 安卓构建产物与签名密钥（密钥绝不能上传）
+android/build/
+android/assets/
+android/kaoyan.jks
+*.jks
+*.keystore
+*.idsig
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,819 @@
+{
+  "rows": [
+    {
+      "school": "华东理工大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息科学与工程学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 355, "score25": null,
+      "plan26": "49", "exam4": "814信号与系统（含数字信号处理）",
+      "source": "媒体整理", "url": "https://yz.kaoyan365.cn/zhaosheng/161083.html",
+      "note": "2026年院线；单科50/50/90/90"
+    },
+    {
+      "school": "华东理工大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息科学与工程学院", "code": "085404", "direction": "计算机技术",
+      "score26": 369, "score25": 322,
+      "plan26": "72", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://yz.kaoyan365.cn/zhaosheng/161083.html",
+      "note": "2026年院线；单科50/50/80/80"
+    },
+    {
+      "school": "华东理工大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息科学与工程学院", "code": "085406", "direction": "控制工程（01不区分研究方向）",
+      "score26": 383, "score25": 324,
+      "plan26": "159", "exam4": "816控制原理",
+      "source": "媒体整理", "url": "https://yz.kaoyan365.cn/zhaosheng/161083.html",
+      "note": "2026年院线；单科50/50/90/90"
+    },
+    {
+      "school": "华东理工大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息科学与工程学院", "code": "085406", "direction": "控制工程（02工业软件）",
+      "score26": 264, "score25": 324,
+      "plan26": "10", "exam4": "801化工原理",
+      "source": "媒体整理", "url": "https://yz.kaoyan365.cn/zhaosheng/161083.html",
+      "note": "2026年该方向复试线264，等同国家A线；单科50/50/75/75"
+    },
+
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息与智能科学学院", "code": "085402", "direction": "通信工程（含宽带网络、移动通信等）",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "836信号与系统",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息与智能科学学院", "code": "085404", "direction": "计算机技术",
+      "score26": 353, "score25": 313,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息与智能科学学院", "code": "085405", "direction": "软件工程",
+      "score26": 353, "score25": 313,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息与智能科学学院", "code": "085406", "direction": "控制工程",
+      "score26": 327, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "信息与智能科学学院", "code": "085410", "direction": "人工智能",
+      "score26": 376, "score25": 265,
+      "plan26": "—", "exam4": "878数据结构",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "物理学院", "code": "085400", "direction": "电子信息",
+      "score26": 264, "score25": 273,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+    {
+      "school": "东华大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "卓越工程师学院", "code": "085400", "direction": "电子信息",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yjszs.dhu.edu.cn/2026/0320/c7128a372739/page.htm",
+      "note": "2026年校线；单科35/53"
+    },
+
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "通信与信息工程学院", "code": "085400", "direction": "电子信息",
+      "score26": 347, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科35/35/75/67"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "计算机工程与科学学院", "code": "085404", "direction": "计算机技术",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线，等同国家A线；单科35/35/53/53"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "计算机工程与科学学院", "code": "085405", "direction": "软件工程",
+      "score26": 358, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科45/40/75/75"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "计算机工程与科学学院", "code": "085410", "direction": "人工智能",
+      "score26": 305, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科45/40/75/60"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "计算机工程与科学学院", "code": "085412", "direction": "网络与信息安全",
+      "score26": 335, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科45/40/75/75"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "机电工程与自动化学院", "code": "085400", "direction": "电子信息",
+      "score26": 362, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科35/35/53/53"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "材料科学与工程学院", "code": "085400", "direction": "电子信息",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科35/35/53/53"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "上海电影学院", "code": "085400", "direction": "电子信息",
+      "score26": 328, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科35/35/53/53"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "中欧工程技术学院", "code": "085400", "direction": "电子信息",
+      "score26": 340, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科35/35/53/53"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "微电子学院", "code": "085400", "direction": "电子信息",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科35/35/53/53"
+    },
+    {
+      "school": "上海大学", "level": "211", "province": "上海", "city": "上海",
+      "college": "未来技术学院（人工智能研究院）", "code": "085410", "direction": "人工智能",
+      "score26": 334, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://gmis.shu.edu.cn/php/pub/ss_fengshuxian.php?year=2022",
+      "note": "2026年校线；单科50/40/80/70"
+    },
+
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "人工智能与计算机学院", "code": "085404", "direction": "计算机技术",
+      "score26": 341, "score25": 341,
+      "plan26": "32", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "人工智能与计算机学院", "code": "085405", "direction": "软件工程",
+      "score26": 349, "score25": 331,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "人工智能与计算机学院", "code": "085410", "direction": "人工智能",
+      "score26": 317, "score25": 343,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "人工智能与计算机学院", "code": "085411", "direction": "大数据技术与工程",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "非全日制为主；单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "自动化与智能科学学院（原物联网工程学院）", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 358, "score25": 330,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "自动化与智能科学学院（原物联网工程学院）", "code": "085406", "direction": "控制工程",
+      "score26": 399, "score25": 322,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "集成电路学院", "code": "085403", "direction": "集成电路工程",
+      "score26": 354, "score25": 333,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+    {
+      "school": "江南大学", "level": "211", "province": "江苏", "city": "无锡",
+      "college": "光电信息与物理科学学院（原理学院）", "code": "085408", "direction": "光电信息工程",
+      "score26": 382, "score25": 325,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "https://yz.jiangnan.edu.cn/info/1029/3750.htm",
+      "note": "单科35/53"
+    },
+
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "计算机与软件学院", "code": "085400", "direction": "电子信息（计算机方向）",
+      "score26": 377, "score25": 346,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://jixun.iqihang.com/index.php?a=show&catid=1723&id=804289",
+      "note": "2026年院线；进复试47人录取41人"
+    },
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "信息科学与工程学院", "code": "085400", "direction": "电子信息（01方向 新一代电子信息技术）",
+      "score26": 335, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://m.okaoyan.com/hehaidaxue/fenshuxian_981687.html",
+      "note": "2026年按方向单独划线"
+    },
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "信息科学与工程学院", "code": "085400", "direction": "电子信息（02方向 通信与集成电路工程）",
+      "score26": 371, "score25": null,
+      "plan26": "—", "exam4": "863信号与系统",
+      "source": "媒体整理", "url": "https://m.okaoyan.com/hehaidaxue/fenshuxian_981687.html",
+      "note": "2026年按方向单独划线"
+    },
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "人工智能与自动化学院", "code": "085400", "direction": "电子信息（01方向）",
+      "score26": 376, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://m.okaoyan.com/hehaidaxue/fenshuxian_981687.html",
+      "note": "2026年按方向单独划线"
+    },
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "人工智能与自动化学院", "code": "085400", "direction": "电子信息（02方向）",
+      "score26": 338, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://m.okaoyan.com/hehaidaxue/fenshuxian_981687.html",
+      "note": "2026年按方向单独划线"
+    },
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "人工智能与自动化学院", "code": "085400", "direction": "电子信息（03方向）",
+      "score26": 306, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://m.okaoyan.com/hehaidaxue/fenshuxian_981687.html",
+      "note": "2026年按方向单独划线"
+    },
+    {
+      "school": "河海大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "人工智能与自动化学院", "code": "085400", "direction": "电子信息（04方向）",
+      "score26": 306, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://m.okaoyan.com/hehaidaxue/fenshuxian_981687.html",
+      "note": "2026年按方向单独划线"
+    },
+
+    {
+      "school": "中国矿业大学", "level": "211", "province": "江苏", "city": "徐州",
+      "college": "信息与控制工程学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 280, "score25": null,
+      "plan26": "17", "exam4": "824专业基础综合（信号与系统、通信原理）",
+      "source": "媒体整理", "url": "https://kaoyan.koolearn.com/20260527/1947747.html",
+      "note": "校线（未查到分学院分专业线）；单科35/53"
+    },
+    {
+      "school": "中国矿业大学", "level": "211", "province": "江苏", "city": "徐州",
+      "college": "计算机科学与技术学院", "code": "085404", "direction": "计算机技术",
+      "score26": 280, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://kaoyan.koolearn.com/20260527/1947747.html",
+      "note": "校线（未查到分学院分专业线）；单科35/53"
+    },
+
+    {
+      "school": "南京师范大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "计算机与电子信息学院", "code": "085400", "direction": "电子信息（01电子与通信工程）",
+      "score26": 312, "score25": null,
+      "plan26": "37", "exam4": "—",
+      "source": "官网", "url": "https://yjszs.njnu.edu.cn/",
+      "note": "2026年复试基本要求（校复试线PDF）"
+    },
+    {
+      "school": "南京师范大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "计算机与电子信息学院", "code": "085404", "direction": "计算机技术",
+      "score26": 370, "score25": null,
+      "plan26": "25", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yjszs.njnu.edu.cn/",
+      "note": "2026年复试基本要求（校复试线PDF）"
+    },
+    {
+      "school": "南京师范大学", "level": "211", "province": "江苏", "city": "南京",
+      "college": "电气与自动化工程学院", "code": "085400", "direction": "电子信息（01控制工程）",
+      "score26": null, "score25": null,
+      "plan26": "46", "exam4": "860自动控制原理",
+      "source": "未查到", "url": "https://yjszs.njnu.edu.cn/",
+      "note": "该校该专业2026年复试线未查到"
+    },
+
+    {
+      "school": "福州大学", "level": "211", "province": "福建", "city": "福州",
+      "college": "物理与信息工程学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 382, "score25": null,
+      "plan26": "56", "exam4": "866信号与系统",
+      "source": "媒体整理", "url": "https://blog.csdn.net/mengmajiaoyu/article/details/163706715",
+      "note": "2026年院线；一志愿录取88人"
+    },
+    {
+      "school": "福州大学", "level": "211", "province": "福建", "city": "福州",
+      "college": "先进制造学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 333, "score25": null,
+      "plan26": "—", "exam4": "866信号与系统",
+      "source": "媒体整理", "url": "https://blog.csdn.net/mengmajiaoyu/article/details/163706715",
+      "note": "2026年院线（西海联培专硕）"
+    },
+    {
+      "school": "福州大学", "level": "211", "province": "福建", "city": "福州",
+      "college": "计算机与大数据学院", "code": "085404", "direction": "计算机技术",
+      "score26": 376, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/53",
+      "note": "2026年院线；拟录取最低分377"
+    },
+    {
+      "school": "福州大学", "level": "211", "province": "福建", "city": "福州",
+      "college": "计算机与大数据学院", "code": "085405", "direction": "软件工程",
+      "score26": null, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "未查到", "url": "https://noobdream.com/schoolinfo/53",
+      "note": "2026年复试线未查到，拟录取最低分359"
+    },
+    {
+      "school": "福州大学", "level": "211", "province": "福建", "city": "福州",
+      "college": "计算机与大数据学院", "code": "085410", "direction": "人工智能",
+      "score26": null, "score25": null,
+      "plan26": "25", "exam4": "408计算机学科专业基础",
+      "source": "未查到", "url": "https://www.ludengkaoyan.com/school83/qrz/zsml/202279.html",
+      "note": "2026年复试线未查到，拟录取最低分366"
+    },
+
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "数学与计算机学院", "code": "085404", "direction": "计算机技术",
+      "score26": 361, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/250",
+      "note": "2026年院线"
+    },
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "数学与计算机学院", "code": "085405", "direction": "软件工程",
+      "score26": 339, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/250",
+      "note": "2026年院线"
+    },
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "数学与计算机学院", "code": "085412", "direction": "网络与信息安全",
+      "score26": 325, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/250",
+      "note": "2026年院线"
+    },
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "信息工程学院", "code": "085410", "direction": "人工智能",
+      "score26": 342, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/250",
+      "note": "2026年院线"
+    },
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "软件学院", "code": "085405", "direction": "软件工程",
+      "score26": 347, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/250",
+      "note": "2026年院线"
+    },
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "软件学院", "code": "085412", "direction": "网络与信息安全",
+      "score26": 325, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/250",
+      "note": "2026年院线"
+    },
+    {
+      "school": "南昌大学", "level": "211", "province": "江西", "city": "南昌",
+      "college": "信息工程学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": null, "score25": null,
+      "plan26": "53", "exam4": "811信号与系统",
+      "source": "未查到", "url": "https://www.ludengkaoyan.com/school84/qrz/zsml/26688.html",
+      "note": "2026年分学院复试线未查到"
+    },
+
+    {
+      "school": "郑州大学", "level": "211", "province": "河南", "city": "郑州",
+      "college": "计算机与人工智能学院", "code": "085404", "direction": "计算机技术",
+      "score26": 353, "score25": 344,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.zzu.edu.cn/info/1070/2376.htm",
+      "note": "2026年一志愿复试线；单科35/35/53/53"
+    },
+    {
+      "school": "郑州大学", "level": "211", "province": "河南", "city": "郑州",
+      "college": "计算机与人工智能学院", "code": "085410", "direction": "人工智能",
+      "score26": 335, "score25": 336,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.zzu.edu.cn/info/1070/2376.htm",
+      "note": "2026年一志愿复试线；单科35/35/53/53"
+    },
+    {
+      "school": "郑州大学", "level": "211", "province": "河南", "city": "郑州",
+      "college": "网络空间安全学院", "code": "085404", "direction": "计算机技术",
+      "score26": 282, "score25": 336,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.zzu.edu.cn/info/1070/2376.htm",
+      "note": "2026年一志愿复试线；单科35/35/53/53"
+    },
+    {
+      "school": "郑州大学", "level": "211", "province": "河南", "city": "郑州",
+      "college": "网络空间安全学院", "code": "085412", "direction": "网络与信息安全",
+      "score26": 306, "score25": 336,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.zzu.edu.cn/info/1070/2376.htm",
+      "note": "2026年一志愿复试线；单科35/35/53/53"
+    },
+    {
+      "school": "郑州大学", "level": "211", "province": "河南", "city": "郑州",
+      "college": "河南先进技术研究院", "code": "085404", "direction": "计算机技术",
+      "score26": 335, "score25": 310,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "https://yz.zzu.edu.cn/info/1070/2376.htm",
+      "note": "2026年一志愿复试线；单科45/45/60/60"
+    },
+
+    {
+      "school": "暨南大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "信息科学技术学院", "code": "085404", "direction": "计算机技术",
+      "score26": 331, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/45",
+      "note": "2026年院线"
+    },
+    {
+      "school": "暨南大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "信息科学技术学院", "code": "085410", "direction": "人工智能",
+      "score26": 318, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/45",
+      "note": "2026年院线"
+    },
+    {
+      "school": "暨南大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "网络空间安全学院", "code": "085412", "direction": "网络与信息安全",
+      "score26": 348, "score25": null,
+      "plan26": "51", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://m-jixun.iqihang.com/fuwu/zyjx/2023749833.html",
+      "note": "2026年复试资格线；统招计划51（不含推免）"
+    },
+    {
+      "school": "暨南大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "珠海研究院", "code": "085410", "direction": "人工智能（非全日制）",
+      "score26": 264, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/45",
+      "note": "2026年院线"
+    },
+
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "计算机学院", "code": "085404", "direction": "计算机技术",
+      "score26": 348, "score25": 328,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/133",
+      "note": "2026年院线；单科35/53"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "计算机学院", "code": "085405", "direction": "软件工程",
+      "score26": 335, "score25": 326,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/133",
+      "note": "2026年院线；单科35/53"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "数据科学与工程学院", "code": "085404", "direction": "计算机技术",
+      "score26": 340, "score25": 293,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/133",
+      "note": "2026年院线；单科35/53"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "人工智能学院", "code": "085405", "direction": "软件工程",
+      "score26": 326, "score25": 309,
+      "plan26": "54", "exam4": "408计算机学科专业基础",
+      "source": "官网复试方案", "url": "http://ai.scnu.edu.cn/a/20260320/488.html",
+      "note": "2026年学院初试合格最低分数线；拟招生54人（含推免5）"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "人工智能学院", "code": "085410", "direction": "人工智能",
+      "score26": 324, "score25": 263,
+      "plan26": "72", "exam4": "408计算机学科专业基础",
+      "source": "官网复试方案", "url": "http://ai.scnu.edu.cn/a/20260320/488.html",
+      "note": "2026年学院初试合格最低分数线；拟招生72人（含推免5）"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "电子科学与工程学院（微电子学院）", "code": "085402", "direction": "通信工程（含宽带网络、移动通信等）",
+      "score26": 280, "score25": null,
+      "plan26": "38", "exam4": "857电子技术基础（含数字与模拟电路）",
+      "source": "官网复试方案", "url": "http://gxb.scnu.edu.cn/a/20260320/1780.html",
+      "note": "2026年学院初试合格最低分数线；拟招生38人"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "电子科学与工程学院（微电子学院）", "code": "085403", "direction": "集成电路工程",
+      "score26": 264, "score25": null,
+      "plan26": "34", "exam4": "—",
+      "source": "官网复试方案", "url": "http://gxb.scnu.edu.cn/a/20260320/1780.html",
+      "note": "2026年学院初试合格最低分数线；拟招生34人"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "电子科学与工程学院（微电子学院）", "code": "085406", "direction": "控制工程",
+      "score26": 264, "score25": null,
+      "plan26": "14", "exam4": "—",
+      "source": "官网复试方案", "url": "http://gxb.scnu.edu.cn/a/20260320/1780.html",
+      "note": "2026年学院初试合格最低分数线；拟招生14人"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "电子科学与工程学院（微电子学院）", "code": "085407", "direction": "仪器仪表工程",
+      "score26": 264, "score25": null,
+      "plan26": "18", "exam4": "—",
+      "source": "官网复试方案", "url": "http://gxb.scnu.edu.cn/a/20260320/1780.html",
+      "note": "2026年学院初试合格最低分数线；拟招生18人"
+    },
+    {
+      "school": "华南师范大学", "level": "211", "province": "广东", "city": "广州",
+      "college": "电子科学与工程学院（微电子学院）", "code": "085408", "direction": "光电信息工程",
+      "score26": 264, "score25": null,
+      "plan26": "23", "exam4": "—",
+      "source": "官网复试方案", "url": "http://gxb.scnu.edu.cn/a/20260320/1780.html",
+      "note": "2026年学院初试合格最低分数线；拟招生23人"
+    },
+
+    {
+      "school": "广西大学", "level": "211", "province": "广西", "city": "南宁",
+      "college": "计算机与电子信息学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 254, "score25": null,
+      "plan26": "29（含推免1）", "exam4": "816数字电路及信号与系统",
+      "source": "院系官网", "url": "https://yz.chsi.com.cn/zsgs/fslq/detail.action?schCode=10593&zsgsId=3541430745",
+      "note": "复试资格线，等同B区国家线；单科32/48"
+    },
+    {
+      "school": "广西大学", "level": "211", "province": "广西", "city": "南宁",
+      "college": "计算机与电子信息学院", "code": "085402", "direction": "通信工程（含宽带网络、移动通信等）",
+      "score26": 254, "score25": null,
+      "plan26": "39（含推免3）", "exam4": "—",
+      "source": "院系官网", "url": "https://yz.chsi.com.cn/zsgs/fslq/detail.action?schCode=10593&zsgsId=3541430745",
+      "note": "复试资格线，等同B区国家线；单科32/48"
+    },
+    {
+      "school": "广西大学", "level": "211", "province": "广西", "city": "南宁",
+      "college": "计算机与电子信息学院", "code": "085404", "direction": "计算机技术",
+      "score26": 254, "score25": null,
+      "plan26": "87（含推免3）", "exam4": "—",
+      "source": "院系官网", "url": "https://yz.chsi.com.cn/zsgs/fslq/detail.action?schCode=10593&zsgsId=3541430745",
+      "note": "复试资格线，等同B区国家线；单科32/48"
+    },
+    {
+      "school": "广西大学", "level": "211", "province": "广西", "city": "南宁",
+      "college": "计算机与电子信息学院", "code": "085410", "direction": "人工智能（全日制）",
+      "score26": 254, "score25": null,
+      "plan26": "67（含推免3）", "exam4": "—",
+      "source": "院系官网", "url": "https://yz.chsi.com.cn/zsgs/fslq/detail.action?schCode=10593&zsgsId=3541430745",
+      "note": "复试资格线，等同B区国家线；单科32/48"
+    },
+    {
+      "school": "广西大学", "level": "211", "province": "广西", "city": "南宁",
+      "college": "计算机与电子信息学院", "code": "085410", "direction": "人工智能（非全日制）",
+      "score26": 254, "score25": null,
+      "plan26": "30", "exam4": "—",
+      "source": "院系官网", "url": "https://yz.chsi.com.cn/zsgs/fslq/detail.action?schCode=10593&zsgsId=3541430745",
+      "note": "复试资格线，等同B区国家线；单科32/48"
+    },
+
+    {
+      "school": "海南大学", "level": "211", "province": "海南", "city": "海口",
+      "college": "计算机科学与技术学院", "code": "085404", "direction": "计算机技术",
+      "score26": 330, "score25": 271,
+      "plan26": "30（含推免1、少干专项2）", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/272",
+      "note": "2026年院线"
+    },
+    {
+      "school": "海南大学", "level": "211", "province": "海南", "city": "海口",
+      "college": "计算机科学与技术学院", "code": "085405", "direction": "软件工程",
+      "score26": 342, "score25": 311,
+      "plan26": "48（含推免2、士兵专项1）", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/272",
+      "note": "2026年院线"
+    },
+    {
+      "school": "海南大学", "level": "211", "province": "海南", "city": "海口",
+      "college": "信息与通信工程学院", "code": "085402", "direction": "通信工程（含宽带网络、移动通信等）",
+      "score26": 369, "score25": null,
+      "plan26": "28", "exam4": "838信号与系统",
+      "source": "媒体整理", "url": "https://sa.kaoyan365.cn/yanzhaoxinxi/sakyfsx/68324.html",
+      "note": "2026年复试线"
+    },
+    {
+      "school": "海南大学", "level": "211", "province": "海南", "city": "海口",
+      "college": "信息与通信工程学院", "code": "085410", "direction": "人工智能",
+      "score26": 345, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://sa.kaoyan365.cn/yanzhaoxinxi/sakyfsx/68324.html",
+      "note": "2026年复试线"
+    },
+    {
+      "school": "海南大学", "level": "211", "province": "海南", "city": "海口",
+      "college": "网络空间安全学院（密码学院）", "code": "085411", "direction": "大数据技术与工程",
+      "score26": 308, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/272",
+      "note": "2026年院线"
+    },
+    {
+      "school": "海南大学", "level": "211", "province": "海南", "city": "海口",
+      "college": "网络空间安全学院（密码学院）", "code": "085412", "direction": "网络与信息安全",
+      "score26": 287, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://www.noobdream.com/schoolinfo/272",
+      "note": "2026年院线"
+    },
+
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "大数据与信息工程学院", "code": "085400", "direction": "电子信息（新一代电子信息技术）",
+      "score26": 322, "score25": null,
+      "plan26": "61", "exam4": "834电子技术基础",
+      "source": "官网复试方案", "url": "https://eie.gzu.edu.cn/2026/0320/c19137a266325/page.htm",
+      "note": "2026年学院复试专业分数线；单科执行B类国家线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "大数据与信息工程学院", "code": "085400", "direction": "电子信息（通信工程）",
+      "score26": 280, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网复试方案", "url": "https://eie.gzu.edu.cn/2026/0320/c19137a266325/page.htm",
+      "note": "2026年学院复试专业分数线；单科执行B类国家线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "大数据与信息工程学院", "code": "085400", "direction": "电子信息（集成电路工程）",
+      "score26": 297, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "官网复试方案", "url": "https://eie.gzu.edu.cn/2026/0320/c19137a266325/page.htm",
+      "note": "2026年学院复试专业分数线；单科执行B类国家线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "大数据与信息工程学院", "code": "085400", "direction": "电子信息（大数据技术与工程）",
+      "score26": 300, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网复试方案", "url": "https://eie.gzu.edu.cn/2026/0320/c19137a266325/page.htm",
+      "note": "2026年学院复试专业分数线；单科执行B类国家线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "计算机科学与技术学院", "code": "085404", "direction": "计算机技术",
+      "score26": 285, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/3",
+      "note": "2026年院线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "计算机科学与技术学院", "code": "085410", "direction": "人工智能",
+      "score26": 303, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/3",
+      "note": "2026年院线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "计算机科学与技术学院", "code": "085412", "direction": "网络与信息安全",
+      "score26": 254, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/3",
+      "note": "2026年院线，等同B区国家线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "公共大数据国家重点实验室", "code": "085411", "direction": "大数据技术与工程",
+      "score26": 268, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/3",
+      "note": "2026年院线"
+    },
+    {
+      "school": "贵州大学", "level": "211", "province": "贵州", "city": "贵阳",
+      "college": "电气工程学院", "code": "085400", "direction": "电子信息",
+      "score26": 277, "score25": null,
+      "plan26": "—", "exam4": "—",
+      "source": "媒体整理", "url": "https://sa.kaoyan365.cn/yanzhaoxinxi/sakyfsx/68314.html",
+      "note": "2026年复试线"
+    },
+
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "信息学院", "code": "085401", "direction": "新一代电子信息技术（含量子技术等）",
+      "score26": 259, "score25": 250,
+      "plan26": "—", "exam4": "—",
+      "source": "官网", "url": "http://www.grs.ynu.edu.cn/",
+      "note": "2026年一志愿进入复试初试成绩要求；单科32/48"
+    },
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "信息学院", "code": "085402", "direction": "通信工程（含宽带网络、移动通信等）",
+      "score26": 288, "score25": 250,
+      "plan26": "25", "exam4": "847专业基础综合",
+      "source": "官网", "url": "http://www.grs.ynu.edu.cn/",
+      "note": "2026年一志愿进入复试初试成绩要求；单科32/48"
+    },
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "信息学院", "code": "085404", "direction": "计算机技术",
+      "score26": 343, "score25": 316,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "http://www.grs.ynu.edu.cn/",
+      "note": "2026年一志愿进入复试初试成绩要求；单科32/48"
+    },
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "信息学院", "code": "085410", "direction": "人工智能",
+      "score26": 339, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "官网", "url": "http://www.grs.ynu.edu.cn/",
+      "note": "2026年一志愿进入复试初试成绩要求；单科32/48"
+    },
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "软件学院（人工智能学院）", "code": "085405", "direction": "软件工程",
+      "score26": 319, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/8",
+      "note": "2026年院线"
+    },
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "软件学院（人工智能学院）", "code": "085410", "direction": "人工智能",
+      "score26": 329, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/8",
+      "note": "2026年院线"
+    },
+    {
+      "school": "云南大学", "level": "211", "province": "云南", "city": "昆明",
+      "college": "软件学院（人工智能学院）", "code": "085412", "direction": "网络与信息安全",
+      "score26": 304, "score25": null,
+      "plan26": "—", "exam4": "408计算机学科专业基础",
+      "source": "媒体整理", "url": "https://noobdream.com/schoolinfo/8",
+      "note": "2026年院线"
+    }
+  ]
+}

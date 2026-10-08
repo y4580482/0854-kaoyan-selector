@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>0854 电子信息 · 27考研择校速查表</title>
+<style>
+:root{
+  --bg:#f4f6fa; --card:#ffffff; --line:#e6eaf2; --line2:#f0f3f8;
+  --txt:#1a2233; --txt2:#5b6880; --txt3:#94a0b8;
+  --brand:#3b6ef5; --brand-soft:#eaf0ff;
+  --l985:#b45309; --l985bg:#fef3c7;
+  --l211:#1d4ed8; --l211bg:#dbeafe;
+  --lfl:#0369a1;  --lflbg:#e0f2fe;
+  --lff:#475569;  --lffbg:#f1f5f9;
+  --r1:#0f9d58; --r2:#65a30d; --r3:#eab308; --r4:#f59e0b; --r5:#ef4444; --r6:#b91c1c;
+  --shadow:0 1px 2px rgba(20,30,60,.05),0 6px 20px rgba(20,30,60,.06);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:14px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1440px;margin:0 auto;padding:0 14px 60px}
+
+/* ---------- 顶部 ---------- */
+.hero{
+  background:linear-gradient(135deg,#2f5fe0 0%,#4f7cf7 45%,#6b8ffb 100%);
+  color:#fff;border-radius:0 0 22px 22px;padding:26px 0 22px;margin-bottom:16px;
+  box-shadow:0 8px 24px rgba(47,95,224,.22);
+}
+.hero-in{max-width:1440px;margin:0 auto;padding:0 20px}
+.hero h1{margin:0 0 6px;font-size:23px;font-weight:800;letter-spacing:.5px}
+.hero .sub{opacity:.92;font-size:13px;margin-bottom:16px}
+.hero .sub b{background:rgba(255,255,255,.2);padding:1px 7px;border-radius:5px;font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));gap:10px}
+.kpi{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:10px 12px}
+.kpi .n{font-size:21px;font-weight:800;line-height:1.15}
+.kpi .n small{font-size:12px;font-weight:600;opacity:.85;margin-left:1px}
+.kpi .t{font-size:11.5px;opacity:.88;margin-top:2px}
+
+/* ---------- 控制面板 ---------- */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+.score-box{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:linear-gradient(90deg,#fff7ed,#fffbeb);border:1px solid #fde68a;
+  border-radius:12px;padding:11px 14px;margin-bottom:12px;
+}
+.score-box .lb{font-weight:700;color:#92400e;font-size:13.5px;white-space:nowrap}
+.score-box input{
+  width:104px;padding:8px 10px;font-size:17px;font-weight:800;color:#b45309;text-align:center;
+  border:1.5px solid #fbbf24;border-radius:9px;background:#fff;outline:none;font-family:inherit;
+}
+.score-box input:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(251,191,36,.22)}
+.score-box .hint{font-size:12px;color:#a16207}
+.leg{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.leg span{font-size:11.5px;padding:3px 9px;border-radius:20px;font-weight:700}
+
+.frow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:9px}
+.frow:last-child{margin-bottom:0}
+.fttl{font-size:12px;color:var(--txt3);font-weight:700;min-width:44px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);background:#fff;color:var(--txt2);
+  padding:5px 12px;border-radius:20px;font-size:12.5px;cursor:pointer;
+  transition:.15s;font-weight:600;user-select:none;font-family:inherit;
+}
+.chip:hover{border-color:#c3cfe6;background:#fafbfe}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 2px 8px rgba(59,110,245,.3)}
+.chip.on.g{background:var(--r1);border-color:var(--r1);box-shadow:0 2px 8px rgba(15,157,88,.28)}
+.chip.on.o{background:var(--r4);border-color:var(--r4);box-shadow:0 2px 8px rgba(245,158,11,.28)}
+.chip.on.r{background:var(--r5);border-color:var(--r5);box-shadow:0 2px 8px rgba(239,68,68,.28)}
+.chip.on.b{background:var(--l211);border-color:var(--l211);box-shadow:0 2px 8px rgba(29,78,216,.28)}
+
+.search{
+  flex:1;min-width:170px;position:relative;
+}
+.search input{
+  width:100%;padding:8px 12px 8px 32px;border:1px solid var(--line);border-radius:10px;
+  font-size:13px;outline:none;font-family:inherit;background:#fff;color:var(--txt);
+}
+.search input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(59,110,245,.13)}
+.search::before{content:"🔍";position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.5}
+select,input.num{
+  padding:7px 9px;border:1px solid var(--line);border-radius:9px;font-size:12.5px;
+  background:#fff;color:var(--txt2);outline:none;font-family:inherit;cursor:pointer;
+}
+input.num{width:62px;text-align:center;cursor:text;color:var(--txt);font-weight:600}
+select:focus,input.num:focus{border-color:var(--brand)}
+.btn{
+  padding:7px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;
+  color:var(--txt2);font-size:12.5px;cursor:pointer;font-family:inherit;font-weight:600;transition:.15s;
+}
+.btn:hover{background:#f7f9fc;border-color:#c3cfe6}
+.btn.p{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn.p:hover{background:#3160e0}
+.sw{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--txt2);cursor:pointer;user-select:none}
+.sw input{width:15px;height:15px;accent-color:var(--brand);cursor:pointer}
+
+/* ---------- 结果统计 ---------- */
+.bar{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:9px 15px;margin-bottom:10px;
+}
+.bar .hit{font-weight:800;font-size:14px}
+.bar .hit b{color:var(--brand);font-size:17px}
+.bar .m{font-size:12.5px;color:var(--txt2)}
+.bar .m i{font-style:normal;font-weight:800;color:var(--txt)}
+
+/* ---------- 表格 ---------- */
+.tablebox{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:1080px;font-size:13px}
+thead th{
+  position:sticky;top:0;z-index:5;background:#f8fafd;color:var(--txt2);
+  font-size:12px;font-weight:700;text-align:left;padding:11px 10px;
+  border-bottom:1.5px solid var(--line);white-space:nowrap;cursor:pointer;user-select:none;
+}
+thead th:hover{background:#eef3fb;color:var(--brand)}
+thead th .ar{opacity:.35;font-size:9px;margin-left:2px}
+thead th.act{color:var(--brand)} thead th.act .ar{opacity:1}
+tbody td{padding:10px;border-bottom:1px solid var(--line2);vertical-align:middle}
+tbody tr{cursor:pointer;transition:background .1s}
+tbody tr:nth-child(even){background:#fcfdff}
+tbody tr:hover{background:var(--brand-soft)}
+tbody tr.open{background:#eef4ff}
+tbody tr.dim{opacity:.5}
+
+.sch{display:flex;flex-direction:column;gap:2px;min-width:118px}
+.sch .nm{font-weight:700;font-size:13.5px;line-height:1.25}
+.sch .ct{font-size:11px;color:var(--txt3)}
+.tag{
+  display:inline-block;padding:1px 6px;border-radius:5px;font-size:10.5px;font-weight:800;
+  vertical-align:middle;margin-left:4px;letter-spacing:.2px;
+}
+.t985{background:var(--l985bg);color:var(--l985)}
+.t211{background:var(--l211bg);color:var(--l211)}
+.tfl{background:var(--lflbg);color:var(--lfl)}
+.tff{background:var(--lffbg);color:var(--lff)}
+.col{font-size:12.5px;color:var(--txt2);max-width:190px;line-height:1.35}
+.dir{font-size:12.5px;line-height:1.35}
+.dir .code{font-size:10.5px;color:var(--txt3);font-weight:700;display:block;font-family:ui-monospace,Menlo,Consolas,monospace}
+.dir .dn{font-weight:600}
+
+.scell{text-align:center}
+.sv{
+  display:inline-block;min-width:56px;padding:4px 8px;border-radius:9px;
+  font-size:17px;font-weight:800;color:#fff;letter-spacing:.3px;
+  font-family:ui-monospace,Menlo,Consolas,monospace;
+}
+.sv.na{background:#eef1f6;color:var(--txt3);font-size:12px;font-weight:600;padding:6px 8px}
+.dlt{font-size:11.5px;font-weight:700;text-align:center;white-space:nowrap}
+.up{color:var(--r5)} .dn2{color:var(--r1)} .flat{color:var(--txt3)}
+.plan{text-align:center;font-weight:700;font-size:13px;color:var(--txt)}
+.plan.n{color:var(--txt3);font-weight:400}
+.exam{font-size:11.5px;color:var(--txt2);max-width:150px;line-height:1.3}
+.exam .hot{background:#fef2f2;color:#b91c1c;padding:1px 5px;border-radius:4px;font-weight:800;margin-right:3px}
+.tier{text-align:center}
+.tier span{padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:800;white-space:nowrap}
+.pos span{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:800;white-space:nowrap;display:inline-block}
+.p-bao{background:#dcfce7;color:#15803d}
+.p-wen{background:var(--l211bg);color:var(--l211)}
+.p-chong{background:#fef3c7;color:#b45309}
+.p-xian{background:#fee2e2;color:#b91c1c}
+.p-none{background:#f1f5f9;color:#94a3b8}
+
+/* 展开详情 */
+.det{background:#f8fafd}
+.det td{padding:12px 16px;border-bottom:1px solid var(--line)}
+.detgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 20px;font-size:12.5px}
+.detgrid div{line-height:1.6}
+.detgrid b{color:var(--txt3);font-weight:700;margin-right:6px}
+.detgrid a{color:var(--brand);text-decoration:none;word-break:break-all}
+.detgrid a:hover{text-decoration:underline}
+.srcdot{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10.5px;font-weight:800;background:#eef1f6;color:#64748b}
+.srcdot.g{background:#dcfce7;color:#15803d}
+.srcdot.y{background:#fef3c7;color:#b45309}
+
+.empty{padding:50px 20px;text-align:center;color:var(--txt3);font-size:14px}
+.more{padding:14px;text-align:center;border-top:1px solid var(--line)}
+.foot{
+  margin-top:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:15px 18px;font-size:12.5px;color:var(--txt2);line-height:1.75;
+}
+.foot h3{margin:0 0 8px;font-size:13.5px;color:var(--txt)}
+.foot ul{margin:0;padding-left:18px}
+.foot li{margin-bottom:3px}
+.foot .warn{background:#fff7ed;border:1px solid #fde68a;border-radius:9px;padding:9px 12px;margin-bottom:11px;color:#92400e}
+
+@media(max-width:760px){
+  .hero{padding:20px 0 18px;border-radius:0 0 16px 16px}
+  .hero h1{font-size:18px}
+  .kpi .n{font-size:17px}
+  .leg{margin-left:0;width:100%}
+  .score-box{gap:8px}
+  .wrap{padding:0 10px 40px}
+  .fttl{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-in">
+    <h1>0854 电子信息 · 27考研择校速查表</h1>
+    <div class="sub">
+      数据口径：<b>2026 届（26考研）</b>各校官方复试分数线 · 粒度到 <b>学校 × 学院 × 方向</b> · 覆盖 <b id="hSc">–</b> 所院校 <b id="hRow">–</b> 个招生方向
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="n" id="k1">–<small>所</small></div><div class="t">覆盖院校</div></div>
+      <div class="kpi"><div class="n" id="k2">–<small>个</small></div><div class="t">招生方向</div></div>
+      <div class="kpi"><div class="n" id="k3">–</div><div class="t">全国平均分</div></div>
+      <div class="kpi"><div class="n" id="k4">–</div><div class="t">最高复试线</div></div>
+      <div class="kpi"><div class="n" id="k5">–</div><div class="t">最低复试线</div></div>
+      <div class="kpi"><div class="n" id="k6">–<small>%</small></div><div class="t">官网直采占比</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="panel">
+    <div class="score-box">
+      <span class="lb">🎯 我的预估分</span>
+      <input type="number" id="myScore" placeholder="如 340" min="200" max="500">
+      <span class="hint">填上后自动给每个方向打「冲 / 稳 / 保」标签</span>
+      <div class="leg">
+        <span style="background:#dcfce7;color:#15803d">保 超线≥20</span>
+        <span style="background:#dbeafe;color:#1d4ed8">稳 超线5~20</span>
+        <span style="background:#fef3c7;color:#b45309">冲 差线≤15</span>
+        <span style="background:#fee2e2;color:#b91c1c">险 差线&gt;15</span>
+      </div>
+    </div>
+
+    <div class="frow">
+      <div class="search"><input id="q" placeholder="搜学校 / 学院 / 方向 / 专业课，如「重邮 计算机」"></div>
+      <button class="btn p" id="reset">重置全部</button>
+    </div>
+
+    <div class="frow">
+      <span class="fttl">快捷场景</span>
+      <div class="chips" id="fScene">
+        <button class="chip" data-sc="lou">🎁 捡漏榜 · 985/211 低分点</button>
+        <button class="chip" data-sc="war">🔥 神仙打架 · 380+</button>
+        <button class="chip" data-sc="safe">🛡️ 求稳 · 320 以下</button>
+        <button class="chip" data-sc="cs">💻 计算机/软件/人工智能</button>
+        <button class="chip" data-sc="ic">🔬 集成电路/芯片</button>
+        <button class="chip" data-sc="com">📡 通信工程</button>
+        <button class="chip" data-sc="big">🏫 招生大户 · 名额100+</button>
+        <button class="chip" data-sc="408">📘 考 408 统考</button>
+      </div>
+    </div>
+
+    <div class="frow"><span class="fttl">院校层次</span><div class="chips" id="fLevel"></div></div>
+    <div class="frow"><span class="fttl">专业方向</span><div class="chips" id="fDir"></div></div>
+    <div class="frow"><span class="fttl">难度档</span><div class="chips" id="fTier"></div></div>
+    <div class="frow">
+      <span class="fttl">地区</span><div class="chips" id="fRegion"></div>
+      <select id="fProv" style="margin-left:4px"></select>
+      <select id="fExam"></select>
+    </div>
+    <div class="frow">
+      <span class="fttl">分数线</span>
+      <input class="num" id="sMin" placeholder="最低"> — <input class="num" id="sMax" placeholder="最高">
+      <label class="sw"><input type="checkbox" id="showNull"> 含未公布分数线的方向</label>
+      <label class="sw"><input type="checkbox" id="onlyPlan"> 仅看有名额的方向</label>
+      <span style="font-size:12px;color:var(--txt3)" id="cnt"></span>
+    </div>
+  </div>
+
+  <div class="panel bar">
+    <div class="hit">命中 <b id="nHit">0</b> 个方向</div>
+    <div class="m">平均分 <i id="mAvg">–</i></div>
+    <div class="m">中位数 <i id="mMed">–</i></div>
+    <div class="m">最高 <i id="mMax">–</i></div>
+    <div class="m">最低 <i id="mMin">–</i></div>
+    <div class="m">985 <i id="mA">–</i> · 211 <i id="mB">–</i> · 双非 <i id="mC">–</i></div>
+  </div>
+
+  <div class="tablebox">
+    <div class="scroll">
+      <table>
+        <thead><tr>
+          <th data-k="school">院校 / 层次<span class="ar">▾</span></th>
+          <th data-k="college">招生学院<span class="ar">▾</span></th>
+          <th data-k="direction">研究方向<span class="ar">▾</span></th>
+          <th data-k="score26" class="act">26 复试线<span class="ar">▾</span></th>
+          <th data-k="delta">对比 25 届<span class="ar">▾</span></th>
+          <th data-k="plan26">统考名额<span class="ar">▾</span></th>
+          <th data-k="exam4">专业课（业务课二）<span class="ar">▾</span></th>
+          <th data-k="tier">难度<span class="ar">▾</span></th>
+          <th data-k="pos">我的定位<span class="ar">▾</span></th>
+        </tr></thead>
+        <tbody id="tb"></tbody>
+      </table>
+    </div>
+    <div class="more" id="more" style="display:none"><button class="btn p" id="moreBtn">加载更多</button></div>
+    <div class="empty" id="empty" style="display:none">没有匹配的方向，试试放宽筛选条件</div>
+  </div>
+
+  <div class="foot">
+    <div class="warn">
+      <b>⚠️ 使用提醒：</b>复试线 ≠ 录取线，也不等于"考到这个分就稳"。多数院校执行差额复试（常见 1:1.2~1:1.5），实际录取最低分通常高于复试线 5~30 分。本表用于<b>横向比较和圈定范围</b>，最终请以目标院校 2027 招生简章与当年官方公告为准。
+    </div>
+    <h3>数据说明</h3>
+    <ul>
+      <li><b>年份：</b>2026 届（2025 年 12 月初试、2026 年 3 月复试）各校公布的复试基本分数线；2027 考研（26 年 12 月初试）请以此为参考。</li>
+      <li><b>来源分级：</b><span class="srcdot g">绿色</span>=学校/学院官网直采（含研招网、复试录取工作细则）；<span class="srcdot y">黄色</span>=第三方整理（掌上考研、考研资讯站等）；灰色=未查到。点开每行可查看原始链接自行核验。</li>
+      <li><b>校线 vs 院线：</b>部分院校只公布校级基本线，未单独划院线，这类行的分数等于校线，备注栏已注明"校线"，实际院线往往更高。</li>
+      <li><b>执行国家线：</b>备注"执行国家线A区/B区"的院校，复试线即当年国家线（26 届 A 区 264、B 区 254），说明该方向上线压力小、可能还有调剂名额。</li>
+      <li><b>统考名额：</b>为不含推免的统考招生计划，部分院校在复试阶段会扩招，实际录取数可能大于表中数值。</li>
+      <li><b>专业代码：</b>085400 为大类招生；085401~085412 为细分方向。27 考研起部分院校会调整代码（如人工智能独立为 085410），请以当年招生目录为准。</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const DATA = __DATA__;
+
+/* HTML 转义，防止采集数据里的特殊字符破坏页面 */
+(function(){
+  const M={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+  const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>M[c]);
+  DATA.forEach(r=>{
+    for(const k in r){ if(typeof r[k]==='string') r[k]=esc(r[k]); }
+    if(!/^https?:\/\//i.test(r.url||'')) r.url='';
+  });
+})();
+
+/* ========== 工具 ========== */
+const TIER = [
+  {k:'极难', c:'#b91c1c', bg:'#fee2e2'},
+  {k:'很难', c:'#ef4444', bg:'#fee2e2'},
+  {k:'较难', c:'#d97706', bg:'#fef3c7'},
+  {k:'中等', c:'#a16207', bg:'#fef9c3'},
+  {k:'一般', c:'#4d7c0f', bg:'#ecfccb'},
+  {k:'较易', c:'#15803d', bg:'#dcfce7'},
+  {k:'未知', c:'#64748b', bg:'#f1f5f9'}
+];
+const TIERMAP = Object.fromEntries(TIER.map(t=>[t.k,t]));
+function scoreColor(s){
+  if(s===null||s===undefined) return null;
+  if(s>=380) return '#b91c1c';
+  if(s>=360) return '#ef4444';
+  if(s>=340) return '#f59e0b';
+  if(s>=320) return '#eab308';
+  if(s>=300) return '#65a30d';
+  return '#0f9d58';
+}
+function lvlTag(l){
+  if(l==='985') return '<span class="tag t985">985</span>';
+  if(l==='211') return '<span class="tag t211">211</span>';
+  if(l==='双一流') return '<span class="tag tfl">双一流</span>';
+  return '<span class="tag tff">双非</span>';
+}
+function posOf(row, my){
+  if(!my || row.score26===null) return {t:'—', cls:'p-none'};
+  const d = my - row.score26;
+  if(d>=20) return {t:'保', cls:'p-bao'};
+  if(d>=5)  return {t:'稳', cls:'p-wen'};
+  if(d>=-15)return {t:'冲', cls:'p-chong'};
+  return {t:'险', cls:'p-xian'};
+}
+const POSRANK = {'保':0,'稳':1,'冲':2,'险':3,'—':4};
+
+/* ========== 状态 ========== */
+const S = {
+  levels:new Set(), dirs:new Set(), tiers:new Set(), regions:new Set(),
+  prov:'', exam:'', q:'', sMin:'', sMax:'', showNull:false, onlyPlan:false,
+  my:null, sort:'score26', desc:true, limit:150
+};
+
+const uniq = k => [...new Set(DATA.map(r=>r[k]))].filter(Boolean).sort();
+const LEVELS = ['985','211','双一流','双非'];
+const DIRS   = [...new Set(DATA.map(r=>r.code))].sort()
+                 .map(c=>({c, n:DATA.find(r=>r.code===c).dirName}));
+const REGIONS= ['华北','东北','华东','华中','华南','西南','西北'];
+
+/* 初始化筛选项 */
+function mkChips(el, items, set, cls){
+  el.innerHTML = items.map(i=>{
+    const val = i.v!==undefined? i.v : i;
+    const lab = i.l!==undefined? i.l : i;
+    return `<button class="chip ${cls||''}" data-v="${val}">${lab}</button>`;
+  }).join('');
+  el.querySelectorAll('.chip').forEach(b=>{
+    b.onclick=()=>{
+      const v=b.dataset.v;
+      if(set.has(v)){set.delete(v);b.classList.remove('on')}else{set.add(v);b.classList.add('on')}
+      S.limit=150; render();
+    };
+  });
+}
+mkChips(document.getElementById('fLevel'), LEVELS, S.levels);
+mkChips(document.getElementById('fDir'), DIRS.map(d=>({v:d.c,l:d.c+' '+d.n})), S.dirs);
+mkChips(document.getElementById('fTier'), TIER.map(t=>({v:t.k,l:t.k})), S.tiers);
+mkChips(document.getElementById('fRegion'), REGIONS, S.regions);
+
+const pv = document.getElementById('fProv');
+pv.innerHTML = '<option value="">全部省份</option>'+uniq('province').map(p=>`<option>${p}</option>`).join('');
+pv.onchange=()=>{S.prov=pv.value;S.limit=150;render()};
+
+const EXAMS = ['408 统考（计算机学科专业基础）','自命题'];
+const ex = document.getElementById('fExam');
+ex.innerHTML = '<option value="">全部专业课</option>'+EXAMS.map(e=>`<option value="${e}">${e}</option>`).join('');
+ex.onchange=()=>{S.exam=ex.value;S.limit=150;render()};
+
+/* 快捷场景 */
+let SCENE = '', SCENE_SORT = true;
+document.getElementById('fScene').querySelectorAll('.chip').forEach(b=>{
+  b.onclick=()=>{
+    const v=b.dataset.sc;
+    document.getElementById('fScene').querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+    if(SCENE===v){ SCENE=''; S.limit=150; render(); return; }
+    SCENE=v; SCENE_SORT=true; b.classList.add('on');
+    /* 场景会覆盖层次/方向/分数筛选，先清掉以免冲突 */
+    S.levels.clear(); S.dirs.clear(); S.tiers.clear();
+    document.getElementById('fLevel').querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    document.getElementById('fDir').querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    document.getElementById('fTier').querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    S.sMin=''; S.sMax='';
+    document.getElementById('sMin').value=''; document.getElementById('sMax').value='';
+    if(v==='cs') ['085404','085405','085410','085411','085412'].forEach(c=>S.dirs.add(c));
+    if(v==='ic') ['085403'].forEach(c=>S.dirs.add(c));
+    if(v==='com')['085402','085401'].forEach(c=>S.dirs.add(c));
+    if(v==='cs'||v==='ic'||v==='com'){
+      document.getElementById('fDir').querySelectorAll('.chip').forEach(c=>{
+        if(S.dirs.has(c.dataset.v)) c.classList.add('on');
+      });
+    }
+    S.limit=150; render();
+  };
+});
+
+let qt;
+document.getElementById('q').oninput=e=>{
+  clearTimeout(qt); qt=setTimeout(()=>{S.q=e.target.value.trim();S.limit=150;render()},180);
+};
+document.getElementById('sMin').oninput=e=>{S.sMin=e.target.value;S.limit=150;render()};
+document.getElementById('sMax').oninput=e=>{S.sMax=e.target.value;S.limit=150;render()};
+document.getElementById('showNull').onchange=e=>{S.showNull=e.target.checked;S.limit=150;render()};
+document.getElementById('onlyPlan').onchange=e=>{S.onlyPlan=e.target.checked;S.limit=150;render()};
+document.getElementById('myScore').oninput=e=>{
+  const v=parseInt(e.target.value);
+  S.my = (v&&v>200&&v<500)? v : null;
+  S.limit=150; render();
+};
+document.getElementById('moreBtn').onclick=()=>{S.limit+=200;render()};
+document.getElementById('reset').onclick=()=>{
+  S.levels.clear();S.dirs.clear();S.tiers.clear();S.regions.clear();
+  S.prov='';S.exam='';S.q='';S.sMin='';S.sMax='';S.showNull=false;S.onlyPlan=false;S.limit=150;
+  document.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on'));
+  document.getElementById('q').value='';document.getElementById('sMin').value='';
+  document.getElementById('sMax').value='';document.getElementById('myScore').value='';
+  pv.value='';ex.value='';document.getElementById('showNull').checked=false;
+  document.getElementById('onlyPlan').checked=false;S.my=null;
+  SCENE=''; document.getElementById('fScene').querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  render();
+};
+document.querySelectorAll('thead th').forEach(th=>{
+  th.onclick=()=>{
+    SCENE_SORT=false;
+    const k=th.dataset.k;
+    if(S.sort===k) S.desc=!S.desc; else {S.sort=k;S.desc=(k==='score26'||k==='plan26'||k==='delta')}
+    document.querySelectorAll('thead th').forEach(t=>{t.classList.remove('act');t.querySelector('.ar').textContent='▾'});
+    th.classList.add('act');
+    th.querySelector('.ar').textContent = S.desc?'▾':'▴';
+    S.limit=150; render();
+  };
+});
+
+/* ========== 过滤 + 排序 ========== */
+function filtered(){
+  const q=S.q.toLowerCase();
+  let a = DATA.filter(r=>{
+    if(!S.showNull && r.score26===null) return false;
+    if(S.levels.size && !S.levels.has(r.level)) return false;
+    if(S.dirs.size && !S.dirs.has(r.code)) return false;
+    if(S.tiers.size && !S.tiers.has(r.tier)) return false;
+    if(S.regions.size && !S.regions.has(r.region)) return false;
+    if(S.prov && r.province!==S.prov) return false;
+    if(S.exam){
+      const e=r.exam4||'';
+      if(S.exam.startsWith('408')){ if(!/408/.test(e)) return false; }
+      else { if(/408/.test(e) || !e) return false; }
+    }
+    if(S.onlyPlan && !r.plan26) return false;
+    if(S.sMin && (r.score26===null || r.score26 < +S.sMin)) return false;
+    if(S.sMax && (r.score26===null || r.score26 > +S.sMax)) return false;
+    if(q){
+      const hay=(r.school+r.college+r.direction+r.dirName+r.exam4+r.province+r.city+r.note).toLowerCase();
+      if(!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  /* 快捷场景过滤 */
+  if(SCENE==='lou')
+    a=a.filter(r=>r.score26!==null && r.score26<=310 && (r.level==='985'||r.level==='211'||r.level==='双一流'));
+  if(SCENE==='war')  a=a.filter(r=>r.score26!==null && r.score26>=380);
+  if(SCENE==='safe') a=a.filter(r=>r.score26!==null && r.score26<=320);
+  if(SCENE==='big')  a=a.filter(r=>parseInt(r.plan26||'')>=100);
+  if(SCENE==='408')  a=a.filter(r=>/408/.test(r.exam4||''));
+
+  /* 场景强制排序（此时表头排序让位） */
+  if(SCENE_SORT&&SCENE==='lou')  return a.sort((x,y)=>(x.score26||0)-(y.score26||0));
+  if(SCENE_SORT&&SCENE==='big')  return a.sort((x,y)=>(parseInt(y.plan26)||0)-(parseInt(x.plan26)||0));
+  if(SCENE_SORT&&SCENE==='safe') return a.sort((x,y)=>(y.score26||0)-(x.score26||0));
+
+  const k=S.sort, d=S.desc?1:-1;
+  a.sort((x,y)=>{
+    let vx, vy;
+    if(k==='score26'||k==='delta'||k==='plan26'){
+      vx = (k==='plan26')? (parseInt(x[k])||-1) : (x[k]===null?-9999:x[k]);
+      vy = (k==='plan26')? (parseInt(y[k])||-1) : (y[k]===null?-9999:y[k]);
+      if(vx!==vy) return (vy-vx)*d;
+      return (y.score26||0)-(x.score26||0);
+    }
+    if(k==='pos'){
+      const px=POSRANK[posOf(x,S.my).t], py=POSRANK[posOf(y,S.my).t];
+      if(px!==py) return (px-py)*d;
+      return (y.score26||0)-(x.score26||0);
+    }
+    if(k==='tier'){
+      const ox=['极难','很难','较难','中等','一般','较易','未知'].indexOf(x.tier);
+      const oy=['极难','很难','较难','中等','一般','较易','未知'].indexOf(y.tier);
+      if(ox!==oy) return (ox-oy)*d;
+      return (y.score26||0)-(x.score26||0);
+    }
+    vx=x[k]||''; vy=y[k]||'';
+    return String(vx).localeCompare(String(vy),'zh')*d;
+  });
+  return a;
+}
+
+/* ========== 渲染 ========== */
+let CUR=[];
+function render(){
+  const a = filtered();
+  CUR = a;
+  const tb=document.getElementById('tb');
+  const show=a.slice(0,S.limit);
+
+  tb.innerHTML = show.map((r,i)=>{
+    const sc=r.score26;
+    const col=scoreColor(sc);
+    let dlt='<span class="flat">—</span>';
+    if(r.delta!==null&&r.delta!==undefined){
+      if(r.delta>0) dlt=`<span class="up">▲ +${r.delta}</span>`;
+      else if(r.delta<0) dlt=`<span class="dn2">▼ ${r.delta}</span>`;
+      else dlt=`<span class="flat">持平</span>`;
+    }
+    const t=TIERMAP[r.tier]||TIERMAP['未知'];
+    const p=posOf(r,S.my);
+    const ex4=r.exam4? (r.exam4.replace(/408/g,'<span class="hot">408</span>')) : '<span style="color:#c3ccdb">—</span>';
+    const plan=r.plan26? `${r.plan26}` : '<span class="plan n">—</span>';
+    return `<tr data-i="${i}" class="${sc===null?'dim':''}">
+      <td><div class="sch"><div><span class="nm">${r.school}</span>${lvlTag(r.level)}</div><div class="ct">${r.province} · ${r.city||''}</div></div></td>
+      <td class="col">${r.college}</td>
+      <td class="dir"><span class="code">${r.code}</span><span class="dn">${r.direction}</span></td>
+      <td class="scell">${sc!==null?`<span class="sv" style="background:${col}">${sc}</span>`:'<span class="sv na">未公布</span>'}</td>
+      <td class="dlt">${dlt}</td>
+      <td class="plan">${plan}</td>
+      <td class="exam">${ex4}</td>
+      <td class="tier"><span style="background:${t.bg};color:${t.c}">${r.tier}</span></td>
+      <td class="pos"><span class="${p.cls}">${p.t}</span></td>
+    </tr>`;
+  }).join('');
+
+  tb.querySelectorAll('tr').forEach(tr=>{
+    tr.onclick=()=>{
+      const r=a[+tr.dataset.i];
+      const nx=tr.nextElementSibling;
+      if(nx&&nx.classList.contains('det')){nx.remove();tr.classList.remove('open');return}
+      tb.querySelectorAll('.det').forEach(d=>d.remove());
+      tb.querySelectorAll('tr.open').forEach(t=>t.classList.remove('open'));
+      tr.classList.add('open');
+      const src=r.source||'';
+      const cls = /官网/.test(src)?'g' : /媒体|估算/.test(src)?'y' : '';
+      const d=document.createElement('tr');
+      d.className='det';
+      d.innerHTML=`<td colspan="9"><div class="detgrid">
+        <div><b>完整方向</b>${r.code} ${r.dirName}${r.direction&&r.direction!==r.dirName?' · '+r.direction:''}</div>
+        <div><b>25 届复试线</b>${r.score25!==null?r.score25+' 分':'未采集'}</div>
+        <div><b>统考名额</b>${r.plan26?r.plan26+' 人（不含推免）':'—'}</div>
+        <div><b>专业课</b>${r.exam4||'—'}</div>
+        <div><b>数据来源</b><span class="srcdot ${cls}">${src||'—'}</span></div>
+        <div><b>备注</b>${r.note||'—'}</div>
+        <div style="grid-column:1/-1"><b>原始链接</b>${r.url?`<a href="${r.url}" target="_blank" rel="noopener">${r.url}</a>`:'—'}</div>
+      </div></td>`;
+      tr.after(d);
+    };
+  });
+
+  /* 统计 */
+  const sc=a.map(r=>r.score26).filter(v=>v!==null).sort((x,y)=>x-y);
+  const avg=sc.length?Math.round(sc.reduce((s,v)=>s+v,0)/sc.length):null;
+  const med=sc.length?sc[Math.floor(sc.length/2)]:null;
+  document.getElementById('nHit').textContent=a.length;
+  document.getElementById('mAvg').textContent=avg??'–';
+  document.getElementById('mMed').textContent=med??'–';
+  document.getElementById('mMax').textContent=sc.length?sc[sc.length-1]:'–';
+  document.getElementById('mMin').textContent=sc.length?sc[0]:'–';
+  const lv=l=>a.filter(r=>r.level===l).length;
+  document.getElementById('mA').textContent=lv('985');
+  document.getElementById('mB').textContent=lv('211')+lv('双一流');
+  document.getElementById('mC').textContent=lv('双非');
+  document.getElementById('cnt').textContent=`共 ${DATA.length} 个方向`;
+  document.getElementById('more').style.display = a.length>S.limit?'block':'none';
+  document.getElementById('empty').style.display = a.length?'none':'block';
+}
+
+/* 头部 KPI */
+(function(){
+  const sc=DATA.map(r=>r.score26).filter(v=>v!==null).sort((a,b)=>a-b);
+  const schools=new Set(DATA.map(r=>r.school));
+  document.getElementById('hSc').textContent=schools.size;
+  document.getElementById('hRow').textContent=DATA.length;
+  document.getElementById('k1').innerHTML=schools.size+'<small>所</small>';
+  document.getElementById('k2').innerHTML=DATA.length+'<small>个</small>';
+  document.getElementById('k3').textContent=Math.round(sc.reduce((s,v)=>s+v,0)/sc.length);
+  document.getElementById('k4').textContent=sc[sc.length-1];
+  document.getElementById('k5').textContent=sc[0];
+  const off=DATA.filter(r=>/官网/.test(r.source||'')).length;
+  document.getElementById('k6').innerHTML=Math.round(off/DATA.length*100)+'<small>%</small>';
+})();
+
+render();
+</script>
+</body>
+</html>
