@@ -98,7 +98,7 @@ def main():
             if not k[0]:
                 continue
             cur = overlay.setdefault(k, {})
-            for fld in ("score26", "score25", "admitMin", "math", "transfer",
+            for fld in ("score26", "score25", "admitMin", "admitMin25", "math", "transfer",
                         "transferNote", "url25", "transferUrl", "admitUrl", "mathNote"):
                 v = r.get(fld)
                 if v not in (None, "", "—", "-", "null"):
@@ -110,7 +110,7 @@ def main():
             continue
         n_overlay += 1
         for fld, v in o.items():
-            if fld in ("score26", "score25", "admitMin"):
+            if fld in ("score26", "score25", "admitMin", "admitMin25"):
                 r[fld] = num(v)
             else:
                 r[fld] = v
@@ -139,43 +139,24 @@ def main():
         r.setdefault("url25", "")
         r.setdefault("transferUrl", "")
 
-        # 各科分数线（参考估算）
+        # 各科分数线（参考估算，基于总分拆分，非官方单科线）
         subj = split_subjects(r.get("score26"), key(r))
         r["subjects"] = subj  # {政治,英语,数学,专业课}
         r["subjEst"] = True   # 标注：基于总分估算，非官方单科线
 
-        # 录取名单（示例）：围绕 录取最低分 / 复试线 生成若干考生
-        base = r.get("admitMin") or r.get("score26")
-        if base:
-            try:
-                n = 6 + (hj(key(r), "n") % 5)  # 6..10 人
-            except Exception:
-                n = 8
-            people = []
-            for i in range(n):
-                t = base + (hj(key(r), "p", i) % (35 + 1))  # base..base+35
-                sp = split_subjects(t, (key(r), i))
-                people.append({
-                    "rk": i + 1,
-                    "name": "考生%02d" % (i + 1),
-                    "政治": sp["政治"], "英语": sp["英语"],
-                    "数学": sp["数学"], "专业课": sp["专业课"],
-                    "total": t,
-                })
-            people.sort(key=lambda x: -x["total"])
-            for i, p in enumerate(people):
-                p["rk"] = i + 1
-            r["admitList"] = people          # 示例名单
-            r["admitDemo"] = True
-            # 各科均分（示例名单）
-            avg = {}
-            for k in ("政治", "英语", "数学", "专业课"):
-                avg[k] = round(sum(p[k] for p in people) / len(people))
-            r["subjectAvg"] = avg
-        else:
-            r["admitList"] = []
-            r["admitDemo"] = False
-            r["subjectAvg"] = None
+        # 考试科目（初试四科）：政治 / 英语 / 数学 / 专业课(业务课二)
+        mathv = r.get("math") if (r.get("math") and r.get("math") != "未知") else ""
+        r["exams"] = {
+            "政治": "101 思想政治理论",
+            "英语": "204 英语二",
+            "数学": mathv or "",
+            "专业课": r.get("exam4") or "",
+        }
+        # 不生成示例录取名单 / 示例均分：用户要求真实数据；
+        # 拟录取名单公示后下架，缺则留空，由 UI 说明并支持后续补录。
+        r["admitList"] = []
+        r["admitDemo"] = False
+        r["subjectAvg"] = None
 
     json.dump(rows, open(ALL, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
