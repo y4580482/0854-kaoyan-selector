@@ -18,6 +18,7 @@ HTML_P = os.path.join(BASE, "index.html")
 # CSV 列顺序：前 8 列是"身份列"（尽量不要改），后面是可维护的数据列
 COLS = ["school", "level", "province", "city", "college", "code", "direction",
         "score26", "score25", "plan26", "exam4", "source", "url", "note",
+        "admitMin", "admitAvg", "admitCount", "admitUrl",
         "region", "dirName", "delta", "tier"]   # 后 4 列只读，自动生成
 
 DIR_MAP = {

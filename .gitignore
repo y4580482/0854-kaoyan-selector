@@ -20,3 +20,6 @@ Thumbs.db
 # 含访问令牌的本地脚本，绝不上传
 push_github.bat
 *.idsig
+
+# 采集过程中抓下来的临时网页/PDF
+data2/*/
