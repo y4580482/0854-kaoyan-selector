@@ -118,8 +118,8 @@ def main():
          "--java", gen,
          "--min-sdk-version", "24",
          "--target-sdk-version", "34",
-         "--version-code", "1",
-         "--version-name", "1.0",
+         "--version-code", "2",
+         "--version-name", "2.0",
          "-o", apk_u,
          res_zip])
     print("✅ 资源链接完成 ->", os.path.getsize(apk_u) // 1024, "KB")
@@ -170,7 +170,7 @@ def main():
              "-dname", "CN=EE0854, OU=Kaoyan, O=EE0854, C=CN"], env=env)
         print("✅ 签名密钥已生成（30 年有效期）")
 
-    apk_s = os.path.join(BASE, "0854择校速查表.apk")
+    apk_s = os.path.join(BASE, "考研择校通.apk")
     run([java, "-jar", APKSIGNER_JAR, "sign", "--ks", KS,
          "--ks-pass", f"pass:{STORE_PASS}", "--key-pass", f"pass:{KEY_PASS}",
          "--ks-key-alias", ALIAS, "--out", apk_s, apk_a], env=env)

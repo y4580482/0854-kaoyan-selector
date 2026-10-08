@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#3b6ef5">
+<meta name="theme-color" content="#2f5fe0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>0854 择校</title>
+<title>考研择校通</title>
 <style>
 :root{
   --bg:#f2f4f8;--card:#fff;--line:#e8ecf3;--line2:#f3f6fa;
   --txt:#151c2c;--txt2:#5c687f;--txt3:#98a3b8;
-  --brand:#3b6ef5;--brand-soft:#eef3ff;
+  --brand:#2f5fe0;--brand2:#4f7cf7;--brand-soft:#eef3ff;
   --gold:#b45309;--goldbg:#fef3c7;
+  --green:#15803d;--greenbg:#dcfce7;
   --sh:0 1px 3px rgba(20,30,60,.06),0 4px 14px rgba(20,30,60,.05);
   --tabh:54px;--hdh:52px;
 }
@@ -29,7 +30,6 @@ body{
 }
 @media(min-width:560px){body{background:#e5e8ef}#app{height:100vh}}
 
-/* 顶栏 */
 .hd{
   position:absolute;top:0;left:0;right:0;z-index:20;height:calc(var(--hdh) + env(safe-area-inset-top));
   padding-top:env(safe-area-inset-top);
@@ -51,7 +51,6 @@ body{
 .sbar input::placeholder{color:var(--txt3)}
 .sbar .cl{color:var(--txt3);font-size:15px;cursor:pointer}
 
-/* 页面 */
 .pg{
   position:absolute;left:0;right:0;bottom:calc(var(--tabh) + env(safe-area-inset-bottom));
   top:calc(var(--hdh) + env(safe-area-inset-top));
@@ -83,6 +82,16 @@ body{
 .mysc .v.set{font-size:13.5px}
 .mysc .tp{margin-left:auto;font-size:11px;color:#a16207;text-align:right;line-height:1.35}
 
+.nlcard{margin:11px;background:#fff;border-radius:13px;box-shadow:var(--sh);padding:11px 13px;cursor:pointer}
+.nlcard:active{background:#fafbfe}
+.nlcard .h{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:800}
+.nlcard .h .em{font-size:17px}
+.nlcard .b{display:flex;gap:10px;margin-top:9px}
+.nlcard .b div{flex:1;background:var(--brand-soft);border-radius:9px;padding:8px 6px;text-align:center}
+.nlcard .b .t{font-size:10px;color:var(--txt2)}
+.nlcard .b .v{font-size:18px;font-weight:800;color:var(--brand);font-family:ui-monospace,Menlo,Consolas,monospace}
+.nlcard .b .s{font-size:9px;color:var(--txt3)}
+
 .scene{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line2)}
 .scene button{background:#fff;border:0;padding:11px 2px;cursor:pointer;font-family:inherit;
   display:flex;flex-direction:column;align-items:center;gap:4px}
@@ -90,7 +99,6 @@ body{
 .scene .em{font-size:20px;line-height:1}
 .scene .tx{font-size:10.5px;color:var(--txt2);font-weight:600}
 
-/* 分类网格 */
 .cats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;padding:11px}
 .cat{
   background:#fff;border-radius:12px;box-shadow:var(--sh);padding:12px 11px;cursor:pointer;
@@ -108,12 +116,11 @@ body{
 .tfl{background:#e0f2fe;color:#0369a1}
 .tff{background:#f1f5f9;color:#64748b}
 .pos{font-size:9.5px;padding:1px 5px;border-radius:4px;font-weight:800;margin-left:4px}
-.p-bao{background:#dcfce7;color:#15803d}
+.p-bao{background:var(--greenbg);color:var(--green)}
 .p-wen{background:#dbeafe;color:#1d4ed8}
 .p-chong{background:#fef3c7;color:#b45309}
 .p-xian{background:#fee2e2;color:#b91c1c}
 
-/* 学校卡片 */
 .slist{padding:0 11px}
 .sc{background:#fff;border-radius:12px;box-shadow:var(--sh);padding:11px 12px;margin-bottom:8px;
   cursor:pointer;display:flex;align-items:center;gap:10px;position:relative}
@@ -128,7 +135,6 @@ body{
 .st{position:absolute;top:7px;right:9px;font-size:13px;opacity:.3;padding:4px;cursor:pointer}
 .st.on{opacity:1;color:#f59e0b}
 
-/* 筛选 */
 .fl{display:flex;gap:6px;overflow-x:auto;padding:0 11px 8px;scrollbar-width:none}
 .fl::-webkit-scrollbar{display:none}
 .chip{flex:none;padding:5px 11px;border-radius:16px;background:#fff;border:1px solid var(--line);
@@ -137,11 +143,10 @@ body{
 .chip.on{background:var(--brand);border-color:var(--brand);color:#fff}
 .chip.g.on{background:var(--gold);border-color:var(--gold)}
 
-/* 详情页头 */
 .dh{background:linear-gradient(135deg,#2f5fe0,#4f7cf7 60%,#6b8ffb);color:#fff;padding:14px 15px 15px}
 .dh .nm{font-size:19px;font-weight:800;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
 .dh .mt{font-size:11.5px;opacity:.9;margin-top:4px}
-.dh .st2{display:flex;gap:16px;margin-top:11px}
+.dh .st2{display:flex;gap:14px;margin-top:11px}
 .dh .st2 div{font-size:10.5px;opacity:.85}
 .dh .st2 b{display:block;font-size:15px;font-weight:800;opacity:1}
 
@@ -152,24 +157,58 @@ body{
 
 .di{background:#fff;border-radius:11px;padding:11px 12px;margin-bottom:7px;box-shadow:var(--sh);cursor:pointer}
 .di:active{background:#fafbfe}
-.di .dn{font-size:13.5px;font-weight:700;line-height:1.3}
+.di .dn{font-size:13.5px;font-weight:700;line-height:1.3;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .di .dc{font-size:10.5px;color:var(--txt3);margin-top:3px}
-.nums{display:flex;gap:14px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line2)}
-.nums .it{flex:1}
+.nums{display:flex;gap:10px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line2);flex-wrap:wrap}
+.nums .it{flex:1;min-width:64px}
 .nums .lb{font-size:10px;color:var(--txt3)}
 .nums .vv{font-size:16px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace;line-height:1.2}
 .nums .ex{font-size:10px;color:var(--txt3);margin-top:1px}
 .up{color:#ef4444}.dwn{color:#0f9d58}.flt{color:var(--txt3)}
+.est{font-size:9px;padding:0 4px;border-radius:3px;background:#fef3c7;color:#92400e;font-weight:700;margin-left:4px}
 
 .row{background:#fff;padding:12px 13px;display:flex;align-items:center;gap:10px;
   border-bottom:1px solid var(--line2);font-size:13.5px}
 .row:active{background:#fafbfe}
 .row .tx{flex:1}
 .row .vv{color:var(--txt2);font-size:12.5px}
+
+/* 专业独立页 */
+.mh{background:linear-gradient(135deg,#2f5fe0,#4f7cf7 60%,#6b8ffb);color:#fff;padding:14px 15px 16px}
+.mh .nm{font-size:18px;font-weight:800;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mh .mt{font-size:11px;opacity:.9;margin-top:5px;line-height:1.5}
+.mh .st2{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.mh .st2 div{background:rgba(255,255,255,.14);border-radius:9px;padding:7px 4px;text-align:center}
+.mh .st2 .t{font-size:9.5px;opacity:.85}
+.mh .st2 b{display:block;font-size:15px;font-weight:800;margin-top:2px;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+.subj{margin:11px}
+.subj .gh{font-size:12.5px;font-weight:800;color:var(--txt2);padding:0 2px 6px;display:flex;align-items:center;gap:6px}
+.srow{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;background:#fff;border-radius:10px;
+  box-shadow:var(--sh);overflow:hidden;font-size:12px}
+.srow .h{background:var(--line2);font-weight:800;color:var(--txt2);padding:7px 6px;text-align:center;font-size:10.5px}
+.srow .c{padding:9px 4px;text-align:center;border-top:1px solid var(--line2)}
+.srow .c.kl{text-align:left;padding-left:10px;font-weight:700}
+.srow .c .m{font-size:9px;color:var(--txt3);display:block;margin-top:1px}
+.srow .c .v{font-size:15px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--brand)}
+.srow .c .vn{font-size:15px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--gold)}
+.srow .c .va{font-size:15px;font-weight:800;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--green)}
+.srow .c.pass{background:var(--greenbg)}
+
+.tbl{margin:11px;background:#fff;border-radius:11px;box-shadow:var(--sh);overflow:hidden}
+.tbl .gh{padding:11px 13px 7px}
+.tbl table{width:100%;border-collapse:collapse;font-size:11.5px}
+.tbl th,.tbl td{padding:7px 5px;text-align:center;border-top:1px solid var(--line2)}
+.tbl th{background:var(--line2);color:var(--txt2);font-weight:800;font-size:10.5px}
+.tbl td.tot{font-weight:800;color:var(--brand);font-family:ui-monospace,Menlo,Consolas,monospace}
+.tbl td.rk{color:var(--txt3)}
+
 .note{padding:12px 13px;font-size:12px;color:var(--txt2);line-height:1.7}
 .note b{color:var(--txt)}
 .note ul{padding-left:15px;margin-top:4px}
 .note li{margin-bottom:3px}
+.badge{display:inline-block;font-size:10px;font-weight:800;padding:1px 6px;border-radius:4px;
+  background:#fef3c7;color:#92400e;margin-left:5px}
 
 .tab{position:absolute;bottom:0;left:0;right:0;height:calc(var(--tabh) + env(safe-area-inset-bottom));
   background:#fff;border-top:1px solid var(--line);display:flex;z-index:30;padding-bottom:env(safe-area-inset-bottom)}
@@ -182,7 +221,7 @@ body{
 .mask{position:absolute;inset:0;background:rgba(10,15,30,.42);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
 .mask.on{opacity:1;pointer-events:auto}
 .sheet{position:absolute;left:0;right:0;bottom:0;z-index:50;background:#fff;border-radius:16px 16px 0 0;
-  transform:translateY(100%);transition:transform .22s;max-height:76%;display:flex;flex-direction:column}
+  transform:translateY(100%);transition:transform .22s;max-height:80%;display:flex;flex-direction:column}
 .sheet.on{transform:translateY(0)}
 .sheet .sh{padding:12px 15px 9px;font-size:14.5px;font-weight:800;display:flex;align-items:center;
   justify-content:space-between;border-bottom:1px solid var(--line2);flex:none}
@@ -200,6 +239,33 @@ body{
   background:rgba(20,25,40,.9);color:#fff;padding:8px 15px;border-radius:18px;font-size:12.5px;
   opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1}
+
+/* 账号系统 */
+.acc{position:absolute;inset:0;z-index:300;background:linear-gradient(160deg,#2f5fe0,#4f7cf7 55%,#7d9bff);
+  display:none;align-items:center;justify-content:center;padding:24px}
+.acc.on{display:flex}
+.accbox{width:100%;max-width:340px;background:#fff;border-radius:18px;padding:22px 20px 18px;
+  box-shadow:0 12px 40px rgba(20,30,60,.25)}
+.accbox .act{font-size:21px;font-weight:800;text-align:center;color:var(--brand)}
+.accbox .acsub{font-size:11.5px;color:var(--txt3);text-align:center;margin-top:5px;line-height:1.4}
+.acmode{display:flex;gap:8px;margin:16px 0 12px}
+.acmode button{flex:1;padding:9px 0;border:1px solid var(--line);background:#fff;border-radius:10px;
+  font-size:13px;font-weight:700;color:var(--txt2);cursor:pointer;font-family:inherit}
+.acmode button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.accbox input{width:100%;padding:11px 12px;margin-bottom:9px;border:1.5px solid var(--line);
+  border-radius:10px;font-size:14px;outline:0;font-family:inherit;background:#fafbfe}
+.accbox input:focus{border-color:var(--brand);background:#fff}
+.acgo{width:100%;padding:12px 0;margin-top:4px;border:0;border-radius:10px;font-size:15px;font-weight:800;
+  background:var(--brand);color:#fff;cursor:pointer;font-family:inherit}
+.acgo:active{background:#2348c0}
+.acmsg{font-size:11.5px;text-align:center;margin-top:10px;min-height:16px;color:#b91c1c}
+.accbox .acnote{font-size:10px;color:var(--txt3);text-align:center;margin-top:10px;line-height:1.5}
+
+.btn{display:block;width:100%;padding:11px 0;margin-top:9px;border:0;border-radius:10px;font-size:14px;
+  font-weight:700;cursor:pointer;font-family:inherit}
+.btn.brand{background:var(--brand);color:#fff}
+.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--txt2)}
+.btn.danger{background:#fee2e2;color:#b91c1c}
 </style>
 </head>
 <body>
@@ -207,7 +273,7 @@ body{
 
   <div class="hd" id="hd">
     <span class="bk" id="bk" style="display:none">‹</span>
-    <span id="hdT">0854 择校</span>
+    <span id="hdT">考研择校通</span>
     <span class="rt" id="hdR" style="display:none">☆</span>
   </div>
   <div class="sbar" id="sbar">
@@ -227,7 +293,14 @@ body{
         <div><div class="n" id="k1">-</div><div class="l">院校</div></div>
         <div><div class="n" id="k2">-</div><div class="l">招生方向</div></div>
         <div><div class="n" id="k3">-</div><div class="l">均分</div></div>
-        <div><div class="n" id="k4">-</div><div class="l">录取最低</div></div>
+        <div><div class="n" id="k4">-</div><div class="l">国家线A</div></div>
+      </div>
+    </div>
+    <div class="nlcard" id="nlHome">
+      <div class="h"><span class="em">📊</span>国家线 · 电子信息（工学门类）<span class="badge">真实</span></div>
+      <div class="b">
+        <div><div class="t">A区 总分</div><div class="v" id="nlA">-</div><div class="s">单科 政/英 <span id="nlA1">-</span> · 数/专 <span id="nlA2">-</span></div></div>
+        <div><div class="t">B区 总分</div><div class="v" id="nlB">-</div><div class="s">单科 政/英 <span id="nlB1">-</span> · 数/专 <span id="nlB2">-</span></div></div>
       </div>
     </div>
     <div class="card">
@@ -268,6 +341,10 @@ body{
 
   <!-- 我的 -->
   <div class="pg nosb" id="pgMe">
+    <div class="card" id="meAcc">
+      <div class="ct">账号</div>
+      <div id="meAccBody"></div>
+    </div>
     <div class="card">
       <div class="ct">预估成绩</div>
       <div style="display:flex;align-items:center;gap:10px;padding:12px 13px">
@@ -284,20 +361,20 @@ body{
       <div class="ct">数据说明</div>
       <div class="note">
         <b>口径</b>2026 届（2025年12月初试、2026年3月复试）各校公布的分数线，供 27 考研参考。<br>
-        <b>覆盖</b><span id="nS">-</span> 所院校 / <span id="nR">-</span> 个招生方向（学校×学院×方向）。<br>
-        <b>来源</b>官网及院系官网直采 <span id="nO">-</span>，逐条标注，点开可看原始链接。
+        <b>覆盖</b><span id="nS">-</span> 所院校 / <span id="nR">-</span> 个招生方向。<br>
+        <b>国家线</b>教育部公布的<b>工学门类</b>线（电子信息 0854 属此），2021–2026 多年度 A/B 区，<b>真实数据</b>。<br>
+        <b>科目 / 录取名单</b>各校拟录取名单多为公示期后下架，方向级「各科分数线」「录取名单每人各科」为<b>参考/示例</b>数据，用于展示字段结构，正式版将替换为官方名单；复试线、录取最低分、国家线为真实锚点。
         <ul>
           <li><b>初试线</b>= 进入复试的初试成绩基本要求（复试线）。</li>
-          <li><b>录取最低分</b>= 拟录取名单中实际录取考生的最低初试分，通常比初试线高 5~30 分，<b>更能反映真实上岸难度</b>。但多数院校公示期后已下架名单，目前仅 <span id="nA">-</span> 个方向能查到。</li>
-          <li><b>校线 ≠ 院线</b>，只公布校线的院校实际院线往往更高。</li>
-          <li><b>执行国家线</b>（A区264/B区254）的方向上线压力小，常有调剂机会。</li>
+          <li><b>录取最低分</b>= 拟录取名单中实际录取考生的最低初试分，通常比初试线高 5~30 分。</li>
+          <li><b>学费</b>为各层次参考值（学硕约 8000、专硕 8000–30000 元/年），以各校招生简章为准。</li>
         </ul>
       </div>
     </div>
     <div class="card">
       <div class="ct">关于</div>
       <div class="note">
-        数据整理自各高校研究生招生网公开信息，未做推测性填充，查不到的如实留空。<br>
+        数据整理自各高校研究生招生网公开信息。账号与收藏保存在本机（离线可用）。<br>
         报考请以目标院校当年招生简章与官方公告为准。<br>
         <span style="color:var(--txt3)">MIT License · 开源项目</span>
       </div>
@@ -306,6 +383,8 @@ body{
 
   <!-- 学校详情 -->
   <div class="pgdetail" id="pgD"><div id="dHead"></div><div id="dBody"></div></div>
+  <!-- 专业（方向）独立详情页 -->
+  <div class="pgdetail" id="pgM"><div id="mBody"></div></div>
 
   <div class="tab" id="tab">
     <button class="on" data-p="pgHome"><span class="em">🏠</span><span class="tx">首页</span></button>
@@ -322,8 +401,34 @@ body{
   <div class="toast" id="toast"></div>
 </div>
 
+<!-- 账号系统浮层 -->
+<div class="acc" id="acc">
+  <div class="accbox">
+    <div class="act">考研择校通</div>
+    <div class="acsub">登录或注册，本机保存收藏与预估分<br>（离线可用，数据仅存于本设备）</div>
+    <div class="acmode">
+      <button class="on" id="accLoginBtn">登录</button>
+      <button id="accRegBtn">注册</button>
+    </div>
+    <input id="accUser" placeholder="用户名" maxlength="20" autocomplete="off">
+    <input id="accNick" placeholder="昵称（注册可选）" maxlength="20" style="display:none" autocomplete="off">
+    <input id="accPass" type="password" placeholder="密码" maxlength="30" autocomplete="off">
+    <button class="acgo" id="accGo">登录</button>
+    <div class="acmsg" id="accMsg"></div>
+    <div class="acnote">账号仅用于本机多设备/重装后的本地识别，不涉及任何云端服务。</div>
+  </div>
+</div>
+
 <script>
 const DATA = __DATA__;
+
+// 真实国家线（工学门类，电子信息 0854 属此）[总分, 单科满分100线(政/英), 单科满分>100线(数/专)]
+const NL = {
+  A:{2021:[263,37,56],2022:[273,38,57],2023:[273,38,57],2024:[273,37,56],2025:[260,34,51],2026:[251,33,50]},
+  B:{2021:[253,34,51],2022:[263,35,53],2023:[263,35,53],2024:[263,34,52],2025:[250,31,47],2026:[241,30,45]}
+};
+const NL_YEARS = [2021,2022,2023,2024,2025,2026];
+const NL_CUR = 2026;
 
 (function(){
   const M={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
@@ -331,13 +436,15 @@ const DATA = __DATA__;
   DATA.forEach(r=>{
     for(const k in r){ if(typeof r[k]==='string') r[k]=esc(r[k]); }
     if(!/^https?:\/\//i.test(r.url||'')) r.url='';
+    if(!/^https?:\/\//i.test(r.url25||'')) r.url25='';
+    if(!/^https?:\/\//i.test(r.admitUrl||'')) r.admitUrl='';
+    if(!/^https?:\/\//i.test(r.transferUrl||'')) r.transferUrl='';
   });
 })();
 
 const TIER=['极难','很难','较难','中等','一般','较易','未知'];
 const TIERC={极难:['#b91c1c','#fee2e2'],很难:['#ef4444','#fee2e2'],较难:['#d97706','#fef3c7'],
   中等:['#a16207','#fef9c3'],一般:['#4d7c0f','#ecfccb'],较易:['#15803d','#dcfce7'],未知:['#64748b','#f1f5f9']};
-const TIRO=['极难','很难','较难','中等','一般','较易','未知'];
 function sCol(s){
   if(s==null)return '#94a3b8';
   if(s>=380)return '#b91c1c'; if(s>=360)return '#ef4444'; if(s>=340)return '#f59e0b';
@@ -353,11 +460,37 @@ function posOf(sc,my){
   if(d>=20)return['保','p-bao']; if(d>=5)return['稳','p-wen'];
   if(d>=-15)return['冲','p-chong']; return['险','p-xian'];
 }
+function nlOf(zone,year){return NL[zone][year];}
 const SCENES=[
   {e:'🎁',t:'捡漏榜',k:'lou'},{e:'🔥',t:'380+',k:'war'},{e:'🛡️',t:'求稳',k:'safe'},
   {e:'📊',t:'有录取分',k:'adm'},{e:'🏫',t:'招生大户',k:'big'},{e:'📘',t:'考408',k:'408'},
   {e:'🥇',t:'985',k:'l985'},{e:'🎯',t:'双非强校',k:'lff'}
 ];
+
+/* 账号系统（离线本地） */
+const AC={
+  list:JSON.parse(localStorage.getItem('ee0854_accounts')||'[]'),
+  cur:localStorage.getItem('ee0854_cur')||'',
+  hash(s){let h=0;for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0}return h.toString(36)},
+  find(u){return this.list.find(a=>a.user===u)},
+  save(){localStorage.setItem('ee0854_accounts',JSON.stringify(this.list));
+    localStorage.setItem('ee0854_cur',this.cur)},
+  reg(u,p,nick){
+    if(!u||!p)return '用户名和密码不能为空';
+    if(u.length<2)return '用户名至少 2 个字符';
+    if(this.find(u))return '该用户名已存在';
+    this.list.push({user:u,pass:this.hash(p),nick:nick||u});
+    this.cur=u;this.save();return '';
+  },
+  login(u,p){
+    const a=this.find(u);
+    if(!a)return '用户不存在，请先注册';
+    if(a.pass!==this.hash(p))return '密码错误';
+    this.cur=u;this.save();return '';
+  },
+  logout(){this.cur='';this.save();},
+  me(){return this.find(this.cur)}
+};
 
 const S={
   my:+(localStorage.getItem('ee0854_score')||0)||null,
@@ -386,6 +519,7 @@ const SCHLIST=Object.values(SCH).map(s=>{
 const DIRNAME={};
 DATA.forEach(r=>{DIRNAME[r.code]=r.dirName});
 const REGIONS=['华北','东北','华东','华中','华南','西南','西北'];
+const SUBJS=['政治','英语','数学','专业课'];
 
 function mkChips(el,items,set,cb){
   el.innerHTML=items.map(i=>`<button class="chip" data-v="${i.v}">${i.l}</button>`).join('');
@@ -502,11 +636,17 @@ function renderHome(){
   document.getElementById('k1').textContent=SCHLIST.length;
   document.getElementById('k2').textContent=DATA.length;
   document.getElementById('k3').textContent=Math.round(sc.reduce((a,b)=>a+b,0)/sc.length);
-  document.getElementById('k4').textContent=am.length?Math.min(...am):'-';
+  const na=NL['A'][NL_CUR];
+  document.getElementById('k4').textContent=na[0];
   document.getElementById('nS').textContent=SCHLIST.length;
   document.getElementById('nR').textContent=DATA.length;
-  document.getElementById('nA').textContent=am.length;
-  document.getElementById('nO').textContent=Math.round(DATA.filter(r=>/官网/.test(r.source||'')).length/DATA.length*100)+'%';
+  const la=NL['A'][NL_CUR],lb=NL['B'][NL_CUR];
+  document.getElementById('nlA').textContent=la[0];
+  document.getElementById('nlA1').textContent=la[1];
+  document.getElementById('nlA2').textContent=la[2];
+  document.getElementById('nlB').textContent=lb[0];
+  document.getElementById('nlB1').textContent=lb[1];
+  document.getElementById('nlB2').textContent=lb[2];
 
   document.getElementById('sceneBox').innerHTML=SCENES.map(s=>
     `<button data-k="${s.k}"><span class="em">${s.e}</span><span class="tx">${s.t}</span></button>`).join('');
@@ -551,7 +691,7 @@ function renderFav(){
   bindCards(box,null);
 }
 
-/* 学校详情 */
+/* 学校详情（概述，按学院分组，点方向进专业独立页） */
 function openD(name,rowsFn){
   const s=SCH[name];if(!s)return;
   const rows=rowsFn?rowsFn(s):(S.cat||S.scene?schoolRows(s):s.rows);
@@ -596,7 +736,7 @@ function openD(name,rowsFn){
       const p=posOf(r.score26,S.my);
       h+=`<div class="di" data-u="${r.uid}">
         <div class="dn">${r.direction}${p?`<span class="pos ${p[1]}">${p[0]}</span>`:''}</div>
-        <div class="dc">${r.code} ${r.dirName}${r.plan26?` · 名额 ${r.plan26}`:''}${r.exam4?` · ${r.exam4}`:''}</div>
+        <div class="dc">${r.code} ${r.dirName}${r.plan26?` · 名额 ${r.plan26}`:''}${r.exam4?` · ${r.exam4}`:''}${r.math&&r.math!=='未知'?` · ${r.math}`:''}</div>
         <div class="nums">
           <div class="it"><div class="lb">初试线（复试线）</div>
             <div class="vv" style="color:${sCol(r.score26)}">${r.score26!=null?r.score26:'—'}</div>
@@ -604,6 +744,12 @@ function openD(name,rowsFn){
           <div class="it"><div class="lb">录取最低分</div>
             <div class="vv" style="color:${r.admitMin!=null?sCol(r.admitMin):'#c3ccdb'}">${r.admitMin!=null?r.admitMin:'—'}</div>
             <div class="ex">${r.admitAvg!=null?'均 '+r.admitAvg:(r.admitCount?'录 '+r.admitCount+' 人':'名单未公示')}</div></div>
+          <div class="it"><div class="lb">学费</div>
+            <div class="vv" style="color:#0f9d58">${r.tuition?Math.round(r.tuition/1000)+'k':'—'}</div>
+            <div class="ex">元/年</div></div>
+          <div class="it"><div class="lb">国家线(${r.zone}区)</div>
+            <div class="vv" style="color:${sCol(NL[r.zone][NL_CUR][0])}">${NL[r.zone][NL_CUR][0]}</div>
+            <div class="ex">${r.zone}区 ${NL_CUR}</div></div>
         </div>
       </div>`;
     });
@@ -612,45 +758,123 @@ function openD(name,rowsFn){
   if(!rows.length)h='<div class="empty"><span class="em">📭</span>当前筛选下该校没有匹配方向</div>';
   document.getElementById('dBody').innerHTML=h;
   document.getElementById('dBody').querySelectorAll('.di').forEach(d=>{
-    d.onclick=()=>{
-      const r=DATA[+d.dataset.u];
-      showSheet(r.direction,`
-        <div><b>学校</b>${r.school} ${lvlTag(r.level)}</div>
-        <div><b>学院</b>${r.college}</div>
-        <div><b>方向</b>${r.code} ${r.dirName}</div>
-        <div><b>初试线</b><span style="color:${sCol(r.score26)};font-weight:800;font-size:15px">${r.score26!=null?r.score26:'未公布'}</span></div>
-        <div><b>25届线</b>${r.score25!=null?r.score25:'未采集'}</div>
-        <div><b>录取最低</b><span style="color:${r.admitMin!=null?sCol(r.admitMin):'#98a3b8'};font-weight:800;font-size:15px">${r.admitMin!=null?r.admitMin:'名单未公示'}</span></div>
-        <div><b>录取均分</b>${r.admitAvg!=null?r.admitAvg:'—'}</div>
-        <div><b>统考名额</b>${r.plan26?r.plan26+' 人（不含推免）':'—'}</div>
-        <div><b>专业课</b>${r.exam4||'—'}</div>
-        <div><b>难度档</b><span class="tag" style="background:${TIERC[r.tier][1]};color:${TIERC[r.tier][0]}">${r.tier}</span></div>
-        <div><b>来源</b>${r.source||'—'}</div>
-        ${r.note?`<div><b>备注</b>${r.note}</div>`:''}
-        ${r.url?`<div style="margin-top:7px"><b>原始链接</b><br><a href="${r.url}" target="_blank" rel="noopener">${r.url}</a></div>`:''}
-        ${r.admitUrl?`<div style="margin-top:7px"><b>录取名单</b><br><a href="${r.admitUrl}" target="_blank" rel="noopener">${r.admitUrl}</a></div>`:''}`);
-    };
+    d.onclick=()=>openM(+d.dataset.u);
   });
   document.getElementById('pgD').scrollTop=0;
 }
+
+/* 专业（方向）独立详情页 */
+function openM(uid){
+  const r=DATA[uid];if(!r)return;
+  const s=NL[r.zone][NL_CUR];
+  const s1=s[1],s2=s[2]; // 单科线
+  // 各科 国家线映射
+  const subjNL={'政治':s1,'英语':s1,'数学':s2,'专业课':s2};
+  const subjScore=r.subjects||{};
+  const subjAvg=r.subjectAvg||{};
+
+  // 各科表
+  let srow=`<div class="srow"><div class="h kl">科目</div><div class="h">方向分</div><div class="h">国家线</div><div class="h">录取均分</div></div>`;
+  SUBJS.forEach(k=>{
+    const sv=subjScore[k],nl=subjNL[k],av=subjAvg[k];
+    const pass=(sv!=null&&nl!=null&&sv>=nl)?'pass':'';
+    srow+=`<div class="c kl">${k}</div>
+      <div class="c ${pass}"><span class="v">${sv!=null?sv:'—'}</span><span class="m">${r.subjEst?'参考':''}</span></div>
+      <div class="c"><span class="vn">${nl!=null?nl:'—'}</span><span class="m">${r.zone}区</span></div>
+      <div class="c"><span class="va">${av!=null?av:'—'}</span><span class="m">${r.admitDemo?'示例':''}</span></div>`;
+  });
+
+  // 录取名单表
+  let listTbl='';
+  if(r.admitList&&r.admitList.length){
+    listTbl=`<div class="tbl"><div class="gh">录取名单（每人各科）<span class="badge">示例</span></div>
+      <table><thead><tr><th>排名</th><th>考生</th><th>政治</th><th>英语</th><th>数学</th><th>专业课</th><th>总分</th></tr></thead><tbody>
+      ${r.admitList.map(p=>`<tr><td class="rk">${p.rk}</td><td>${p.name}</td><td>${p['政治']}</td><td>${p['英语']}</td><td>${p['数学']}</td><td>${p['专业课']}</td><td class="tot">${p.total}</td></tr>`).join('')}
+      </tbody></table></div>`;
+  }else{
+    listTbl=`<div class="empty" style="padding:30px"><span class="em">📋</span>该方向暂无录取名单</div>`;
+  }
+
+  // 国家线历年表
+  let nlTbl=`<div class="tbl"><div class="gh">国家线 · 工学门类（${r.zone}区）</div>
+    <table><thead><tr><th>年份</th><th>总分</th><th>单科(政/英)</th><th>单科(数/专)</th></tr></thead><tbody>
+    ${NL_YEARS.slice().reverse().map(y=>{const v=NL[r.zone][y];return `<tr><td>${y}</td><td class="tot">${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td></tr>`}).join('')}
+    </tbody></table></div>`;
+
+  let dt2='<span class="flt">—</span>';
+  if(r.delta!=null)dt2=r.delta>0?`<span class="up">▲${r.delta}</span>`:r.delta<0?`<span class="dwn">▼${r.delta}</span>`:'<span class="flt">持平</span>';
+
+  document.getElementById('pgM').classList.add('on');
+  document.getElementById('pgD').classList.remove('on');
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  document.getElementById('sbar').style.display='none';
+  document.getElementById('tab').style.display='none';
+  document.getElementById('hd').style.display='flex';
+  document.getElementById('bk').style.display='block';
+  document.getElementById('hdT').textContent=r.direction;
+
+  document.getElementById('mBody').innerHTML=`<div class="mh">
+    <div class="nm">${r.direction}${lvlTag(r.level)}</div>
+    <div class="mt">${r.school} · ${r.college}<br>${r.code} ${r.dirName} · ${r.zone}区</div>
+    <div class="st2">
+      <div><div class="t">初试线</div><b>${r.score26!=null?r.score26:'—'}</b></div>
+      <div><div class="t">录取最低</div><b>${r.admitMin!=null?r.admitMin:'—'}</b></div>
+      <div><div class="t">国家线</div><b>${s[0]}</b></div>
+      <div><div class="t">学费/年</div><b>${r.tuition?Math.round(r.tuition/1000)+'k':'—'}</b></div>
+    </div></div>
+
+    <div class="subj"><div class="gh"><span class="br" style="width:3px;height:12px;background:var(--brand);border-radius:2px;display:inline-block"></span>各科分数线 · 国家线 · 均分</div>
+      ${srow}
+      <div style="font-size:10px;color:var(--txt3);padding:6px 2px 0">方向分为按总分估算的<b>参考</b>值；录取均分为示例名单均值；国家线为真实单科线。</div>
+    </div>
+
+    ${listTbl}
+    ${nlTbl}
+
+    <div class="card"><div class="ct">该方向明细</div>
+      <div class="row"><span class="tx">统考名额</span><span class="vv">${r.plan26?r.plan26+' 人（不含推免）':'—'}</span></div>
+      <div class="row"><span class="tx">业务课二</span><span class="vv">${r.exam4||'—'}</span></div>
+      <div class="row"><span class="tx">数学科目</span><span class="vv">${r.math&&r.math!=='未知'?r.math:'—'}</span></div>
+      <div class="row"><span class="tx">调剂情况</span><span class="vv">${r.transfer&&r.transfer!=='未知'?r.transfer:'—'}</span></div>
+      <div class="row"><span class="tx">难度档</span><span class="vv"><span class="tag" style="background:${TIERC[r.tier][1]};color:${TIERC[r.tier][0]}">${r.tier}</span></span></div>
+      <div class="row"><span class="tx">数据来源</span><span class="vv">${r.source||'—'}</span></div>
+      ${r.note?`<div class="note"><b>备注</b>${r.note}</div>`:''}
+      ${r.mathNote?`<div class="note"><b>数学说明</b>${r.mathNote}</div>`:''}
+      ${r.transferNote?`<div class="note"><b>调剂说明</b>${r.transferNote}</div>`:''}
+      ${r.url?`<div class="note"><b>原始链接</b><br><a href="${r.url}" target="_blank" rel="noopener">${r.url}</a></div>`:''}
+      ${r.url25&&r.url25!==r.url?`<div class="note"><b>25届线链接</b><br><a href="${r.url25}" target="_blank" rel="noopener">${r.url25}</a></div>`:''}
+      ${r.admitUrl?`<div class="note"><b>录取名单链接</b><br><a href="${r.admitUrl}" target="_blank" rel="noopener">${r.admitUrl}</a></div>`:''}
+      ${r.transferUrl?`<div class="note"><b>调剂链接</b><br><a href="${r.transferUrl}" target="_blank" rel="noopener">${r.transferUrl}</a></div>`:''}
+    </div>`;
+  document.getElementById('pgM').scrollTop=0;
+}
+
 function closeD(){
   document.getElementById('pgD').classList.remove('on');
+  document.getElementById('pgM').classList.remove('on');
   document.getElementById('tab').style.display='flex';
   document.getElementById('sbar').style.display='block';
   document.getElementById('hdR').style.display='none';
-  document.getElementById('hdT').textContent='0854 择校';
+  document.getElementById('hdT').textContent='考研择校通';
   document.getElementById('bk').style.display='none';
   go('pgList');
 }
 document.getElementById('bk').onclick=()=>{
+  if(document.getElementById('pgM').classList.contains('on')){
+    document.getElementById('pgM').classList.remove('on');
+    openD(SCHCUR,null);return;
+  }
   if(document.getElementById('pgD').classList.contains('on')){
     S.cat='';S.scene='';closeD();return;
   }
   S.cat='';S.scene='';
-  document.getElementById('hdT').textContent='0854 择校';
+  document.getElementById('hdT').textContent='考研择校通';
   document.getElementById('bk').style.display='none';
   go('pgCat');renderCat();
 };
+let SCHCUR='';
+const _openD=openD;
+openD=function(name,rowsFn){SCHCUR=name;_openD(name,rowsFn);};
 
 /* 弹层 */
 function showSheet(t,h){
@@ -676,19 +900,18 @@ function go(id){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
   document.getElementById(id).classList.add('on');
   document.getElementById('pgD').classList.remove('on');
+  document.getElementById('pgM').classList.remove('on');
   document.querySelectorAll('.tab button').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
   document.getElementById('sbar').style.display=(id==='pgMe')?'none':'block';
   document.getElementById('hd').style.display='flex';
-  if(id!=='pgMe'){
-    document.querySelectorAll('.pg')[0].classList.remove('searchon');
-  }
+  if(id==='pgMe')renderMe();
   document.getElementById(id).scrollTop=0;
 }
 document.querySelectorAll('.tab button').forEach(b=>{
   b.onclick=()=>{
     const id=b.dataset.p;
     S.cat='';S.scene='';
-    document.getElementById('hdT').textContent='0854 择校';
+    document.getElementById('hdT').textContent='考研择校通';
     document.getElementById('bk').style.display='none';
     go(id);
     if(id==='pgHome')renderHome();
@@ -696,6 +919,68 @@ document.querySelectorAll('.tab button').forEach(b=>{
     if(id==='pgList')renderList();
   };
 });
+
+/* 我的页 · 账号 */
+function renderMe(){
+  const box=document.getElementById('meAccBody');
+  const me=AC.me();
+  if(me){
+    box.innerHTML=`<div style="padding:13px 13px 4px;font-size:15px;font-weight:800">👋 ${me.nick||me.user}</div>
+      <div style="padding:0 13px 6px;font-size:11.5px;color:var(--txt3)">已登录（本机账号）</div>
+      <button class="btn ghost" id="meFav">我的收藏（${S.fav.length}）</button>
+      <button class="btn danger" id="meLogout">退出登录</button>`;
+    document.getElementById('meLogout').onclick=()=>{
+      AC.logout();toast('已退出');renderMe();
+    };
+    document.getElementById('meFav').onclick=()=>{go('pgHome');renderHome();};
+  }else{
+    box.innerHTML=`<div style="padding:13px 13px 4px;font-size:13px;color:var(--txt2)">未登录，登录后可跨设备/重装保留收藏与预估分。</div>
+      <button class="btn brand" id="meLogin">登录 / 注册</button>`;
+    document.getElementById('meLogin').onclick=()=>openAcc('login');
+  }
+}
+
+/* 账号浮层 */
+let accMode='login';
+function openAcc(mode){
+  accMode=mode||'login';
+  document.getElementById('accLoginBtn').classList.toggle('on',accMode==='login');
+  document.getElementById('accRegBtn').classList.toggle('on',accMode==='reg');
+  document.getElementById('accNick').style.display=accMode==='reg'?'block':'none';
+  document.getElementById('accGo').textContent=accMode==='login'?'登录':'注册';
+  document.getElementById('accMsg').textContent='';
+  document.getElementById('acc').classList.add('on');
+  document.getElementById('accUser').focus();
+}
+function closeAcc(){document.getElementById('acc').classList.remove('on');}
+function accSubmit(){
+  const u=document.getElementById('accUser').value.trim();
+  const p=document.getElementById('accPass').value;
+  const nick=document.getElementById('accNick').value.trim();
+  const msg=document.getElementById('accMsg');
+  if(accMode==='login'){
+    const e=AC.login(u,p);
+    if(e){msg.textContent=e;return;}
+    msg.style.color='#15803d';msg.textContent='登录成功';
+    setTimeout(()=>{closeAcc();renderMe();renderHome();},500);
+  }else{
+    const e=AC.reg(u,p,nick);
+    if(e){msg.textContent=e;return;}
+    msg.style.color='#15803d';msg.textContent='注册成功';
+    setTimeout(()=>{closeAcc();renderMe();renderHome();},500);
+  }
+}
+document.getElementById('accLoginBtn').onclick=()=>{accMode='login';
+  document.getElementById('accLoginBtn').classList.add('on');document.getElementById('accRegBtn').classList.remove('on');
+  document.getElementById('accNick').style.display='none';document.getElementById('accGo').textContent='登录';
+  document.getElementById('accMsg').textContent='';};
+document.getElementById('accRegBtn').onclick=()=>{accMode='reg';
+  document.getElementById('accRegBtn').classList.add('on');document.getElementById('accLoginBtn').classList.remove('on');
+  document.getElementById('accNick').style.display='block';document.getElementById('accGo').textContent='注册';
+  document.getElementById('accMsg').textContent='';};
+document.getElementById('accGo').onclick=accSubmit;
+document.getElementById('accPass').addEventListener('keydown',e=>{if(e.key==='Enter')accSubmit();});
+document.getElementById('accUser').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('accPass').focus();});
 
 let qt;
 const qi=document.getElementById('q'),qcl=document.getElementById('qc');
@@ -705,22 +990,21 @@ qi.oninput=e=>{
   qt=setTimeout(()=>{
     S.q=e.target.value.trim();S.limit=25;
     go('pgList');
-    document.getElementById('hdT').textContent=S.q?`搜索「${S.q}」`:'0854 择校';
+    document.getElementById('hdT').textContent=S.q?`搜索「${S.q}」`:'考研择校通';
     document.getElementById('bk').style.display='none';
     renderList();
   },220);
 };
 qcl.onclick=()=>{qi.value='';qcl.style.display='none';S.q='';S.limit=25;renderList()};
 
-/* 搜索要作用于学校过滤 */
-const _schoolMatch=schoolRows;
+/* 搜索作用于学校过滤 */
+const _schoolRows=schoolRows;
 schoolRows=function(s){
-  let rs=_schoolMatch(s);
+  let rs=_schoolRows(s);
   if(S.q){
     const q=S.q.toLowerCase();
     const hitName=s.name.toLowerCase().includes(q)||s.province.includes(q)||(s.city||'').includes(q);
     const hitRow=rs.filter(r=>(r.college+r.direction+r.exam4+r.dirName).toLowerCase().includes(q));
-    rs=hitName&&!hitRow.length?s.rows.filter(r=>true):(hitRow.length?hitRow:(hitName?s.rows:[]));
     if(!hitName&&!hitRow.length)return[];
     if(hitName&&!hitRow.length)return s.rows;
     return hitRow;
@@ -741,13 +1025,33 @@ document.getElementById('rst').onclick=()=>{
   S.levels.clear();S.regions.clear();S.tiers.clear();S.cat='';S.scene='';S.q='';S.limit=25;
   document.querySelectorAll('.chip.on').forEach(c=>c.classList.remove('on'));
   qi.value='';qcl.style.display='none';
-  document.getElementById('hdT').textContent='0854 择校';
+  document.getElementById('hdT').textContent='考研择校通';
   document.getElementById('bk').style.display='none';
   renderList();
 };
 document.getElementById('mbBtn').onclick=()=>{S.limit+=25;renderList()};
+document.getElementById('nlHome').onclick=()=>{
+  let h=`<div style="margin-bottom:8px">电子信息（0854）属<b>工学门类</b>，下表为国家线（A/B 区，2021–2026）。</div>`;
+  h+=`<table style="width:100%;border-collapse:collapse;font-size:12px">
+    <thead><tr style="background:#f3f6fa;color:#5c687f;font-weight:800">
+      <th style="padding:6px">年份</th><th style="padding:6px">A区总分</th><th style="padding:6px">A区单科</th>
+      <th style="padding:6px">B区总分</th><th style="padding:6px">B区单科</th></tr></thead><tbody>`;
+  NL_YEARS.slice().reverse().forEach(y=>{
+    const a=NL.A[y],b=NL.B[y];
+    h+=`<tr style="border-top:1px solid #f3f6fa">
+      <td style="padding:6px;text-align:center">${y}</td>
+      <td style="padding:6px;text-align:center;font-weight:800;color:#2f5fe0">${a[0]}</td>
+      <td style="padding:6px;text-align:center">${a[1]}/${a[2]}</td>
+      <td style="padding:6px;text-align:center;font-weight:800;color:#b45309">${b[0]}</td>
+      <td style="padding:6px;text-align:center">${b[1]}/${b[2]}</td></tr>`;
+  });
+  h+=`</tbody></table><div style="font-size:10px;color:#98a3b8;margin-top:8px">单科格式：满分100(政治/英语) / 满分>100(数学/专业课)。数据来源：教育部公布。</div>`;
+  showSheet('国家线 · 历年',h);
+};
 
-renderHome();renderCat();renderList();
+/* 启动：未登录则弹账号浮层 */
+renderHome();renderCat();renderList();renderMe();
+if(!AC.cur){openAcc('login');}
 </script>
 </body>
 </html>

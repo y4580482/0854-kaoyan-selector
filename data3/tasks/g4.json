@@ -1,0 +1,1190 @@
+[
+ {
+  "school": "苏州大学",
+  "college": "电子信息学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术(含量子技术等)",
+  "score26": 393,
+  "score25": 338,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "电子信息学院",
+  "code": "085402",
+  "direction": "通信工程(含宽带网络、移动通信等)",
+  "score26": 391,
+  "score25": 349,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "信息科学与工程学院",
+  "code": "085402",
+  "direction": "通信工程(含宽带网络、移动通信等)",
+  "score26": 373,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "电气与动力工程学院",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": 370,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "信息科学与技术学院",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 370,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "电子信息学院",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": 369,
+  "score25": 291,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "电子信息工程学院",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 365,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 363,
+  "score25": 299,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "机电工程与自动化学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 362,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "物理科学与技术学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 362,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "物理与电子科学学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术(01方向)",
+  "score26": 360,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "计算机工程与科学学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 358,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 358,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "计算机科学与技术学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 358,
+  "score25": 342,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "计算机与人工智能学院",
+  "code": "085404",
+  "direction": "计算机技术（全日制）",
+  "score26": 355,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 354,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "计算机科学与技术学院",
+  "code": "085411",
+  "direction": "大数据技术与工程",
+  "score26": 352,
+  "score25": 333,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085411",
+  "direction": "大数据技术与工程",
+  "score26": 349,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "计算机学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 348,
+  "score25": 332,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "计算机学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 348,
+  "score25": 328,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "通信与信息工程学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 347,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "计算机科学与技术学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 346,
+  "score25": 359,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "物理科学与工程学院",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": 345,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "计算机学院（国家示范性软件学院）",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 345,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "计算机科学与技术学院（大数据学院）",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 345,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "信息科学与工程学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 342,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "中欧工程技术学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 340,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "人工智能学院",
+  "code": "085410",
+  "direction": "人工智能与大数据",
+  "score26": 340,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "数据科学与工程学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 340,
+  "score25": 293,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "未来科学与工程学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 340,
+  "score25": 343,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "计算机科学与技术学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 340,
+  "score25": 364,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "网络空间安全学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 337,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "计算机工程与科学学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 335,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "计算机学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 335,
+  "score25": 326,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "电子信息工程学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术（含量子技术等）",
+  "score26": 335,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "计算机与人工智能学院",
+  "code": "085405",
+  "direction": "软件工程（全日制）",
+  "score26": 335,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "未来技术学院（人工智能研究院）",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 334,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "电子工程学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术（含量子技术等）",
+  "score26": 333,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 333,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "软件学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 332,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "信息与通信工程学院",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 331,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "人工智能教育学部",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 331,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "上海电影学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 328,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "电子信息工程学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 326,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "人工智能学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 326,
+  "score25": 309,
+  "admitMin": null
+ },
+ {
+  "school": "苏州大学",
+  "college": "计算机科学与技术学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 326,
+  "score25": 351,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "人工智能学院",
+  "code": "085409",
+  "direction": "生物医学工程",
+  "score26": 325,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "集成电路学院",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": 325,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "信息科学与工程学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 325,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "人工智能学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 324,
+  "score25": 263,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "计算机科学与技术学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 322,
+  "score25": null,
+  "admitMin": 322
+ },
+ {
+  "school": "北京交通大学",
+  "college": "电子信息工程学院",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 321,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "计算机科学与技术学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 317,
+  "score25": 303,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "计算机科学与技术学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 317,
+  "score25": 303,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "计算机科学与技术学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 317,
+  "score25": 303,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "计算机科学与技术学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 317,
+  "score25": 303,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "人工智能学院",
+  "code": "085411",
+  "direction": "大数据技术与工程",
+  "score26": 315,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "软件学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 315,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "人工智能学院",
+  "code": "085410",
+  "direction": "人工智能与信息网络",
+  "score26": 312,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "集成电路学院",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": 310,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "计算机科学与技术学院（大数据学院）",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 310,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "计算机与人工智能学院",
+  "code": "085410",
+  "direction": "人工智能（全日制）",
+  "score26": 310,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "信息科学与工程学院",
+  "code": "085404",
+  "direction": "计算机技术(全日制)",
+  "score26": 308,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "信息科学与工程学院",
+  "code": "085404",
+  "direction": "计算机技术(非全日制)",
+  "score26": 308,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "自动化与智能学院",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": 307,
+  "score25": null,
+  "admitMin": 307
+ },
+ {
+  "school": "上海大学",
+  "college": "计算机工程与科学学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 305,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "计算机学院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 305,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "教育大数据应用技术国家工程研究中心",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 303,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "人工智能学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 300,
+  "score25": 280,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "物理与电子科学学院",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": 299,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "计算机学院（国家示范性软件学院）",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 298,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "人工智能学院",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": 296,
+  "score25": 260,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "计算机科学与技术学院",
+  "code": "085400",
+  "direction": "基础计划（全日制）",
+  "score26": 295,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "计算机科学与技术学院",
+  "code": "085400",
+  "direction": "基础计划（非全日制）",
+  "score26": 295,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "人工智能学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 295,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 294,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "电气工程与自动化学院",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": 292,
+  "score25": 271,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "电子信息工程学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术(含量子技术等)",
+  "score26": 291,
+  "score25": 285,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "物理与电子科学学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术(02方向 量子信息技术)",
+  "score26": 291,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "智能科学与工程学院",
+  "code": "085400",
+  "direction": "基础计划（全日制）",
+  "score26": 290,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "智能科学与工程学院",
+  "code": "085400",
+  "direction": "基础计划（非全日制）",
+  "score26": 290,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "互联网学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 289,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "物理与光电工程学院",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": 289,
+  "score25": 260,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "教育大数据应用技术国家工程研究中心",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 286,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "集成电路学院",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": 286,
+  "score25": 260,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "自动化与智能学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 285,
+  "score25": null,
+  "admitMin": 288
+ },
+ {
+  "school": "华中师范大学",
+  "college": "伍伦贡联合研究院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 285,
+  "score25": 260,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "电子信息工程学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术（含量子技术等）",
+  "score26": 280,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "电子科学与工程学院（微电子学院）",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 280,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京邮电大学",
+  "college": "智能工程与自动化学院",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": 277,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "自动化与智能学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术（含量子技术等）",
+  "score26": 276,
+  "score25": null,
+  "admitMin": 276
+ },
+ {
+  "school": "太原理工大学",
+  "college": "物理与光电工程学院",
+  "code": "085407",
+  "direction": "仪器仪表工程",
+  "score26": 275,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "计算机与人工智能学院（联合培养专项）",
+  "code": "085404",
+  "direction": "计算机技术（全日制）",
+  "score26": 275,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "网络空间安全学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": 273,
+  "score25": null,
+  "admitMin": 278
+ },
+ {
+  "school": "北京交通大学",
+  "college": "计算机科学与技术学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 273,
+  "score25": null,
+  "admitMin": 282
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "计算机科学与技术学院",
+  "code": "085400",
+  "direction": "青岛创新发展基地专项",
+  "score26": 265,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "计算机科学与技术学院",
+  "code": "085400",
+  "direction": "龙江工程师学院专项",
+  "score26": 265,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "物理与光电工程学院",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": 265,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "微电子学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "材料科学与工程学院",
+  "code": "085400",
+  "direction": "电子信息",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "上海大学",
+  "college": "计算机工程与科学学院",
+  "code": "085404",
+  "direction": "计算机技术",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "在职专业学位中心",
+  "code": "085400",
+  "direction": "085402/085404/085405/085410/085411/085412（非全日制）",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "北京交通大学",
+  "college": "威海校区",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "伍伦贡联合研究院",
+  "code": "085402",
+  "direction": "通信工程(含宽带网络、移动通信等)",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "伍伦贡联合研究院",
+  "code": "085405",
+  "direction": "软件工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华中师范大学",
+  "college": "伍伦贡联合研究院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "电子科学与工程学院（微电子学院）",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "电子科学与工程学院（微电子学院）",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "电子科学与工程学院（微电子学院）",
+  "code": "085407",
+  "direction": "仪器仪表工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "华南师范大学",
+  "college": "电子科学与工程学院（微电子学院）",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "智能科学与工程学院",
+  "code": "085400",
+  "direction": "青岛创新发展基地专项",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "智能科学与工程学院",
+  "code": "085400",
+  "direction": "海南（三亚）专项",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "智能科学与工程学院",
+  "code": "085400",
+  "direction": "长三角研究院（南通）专项",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "智能科学与工程学院",
+  "code": "085400",
+  "direction": "龙江工程师学院专项",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "物理与光电工程学院",
+  "code": "085400",
+  "direction": "01 基础计划（全日制）",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "物理与光电工程学院",
+  "code": "085400",
+  "direction": "02 青岛专项",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "哈尔滨工程大学",
+  "college": "物理与光电工程学院",
+  "code": "085400",
+  "direction": "03 龙江专项",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "人工智能学院",
+  "code": "085410",
+  "direction": "人工智能",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "人工智能学院",
+  "code": "085411",
+  "direction": "大数据技术与工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术（含量子技术等）",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "信息科学技术学院",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "水路交通控制全国重点实验室",
+  "code": "085402",
+  "direction": "通信工程（含宽带网络、移动通信等）",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "大连海事大学",
+  "college": "港口与航运安全协同创新中心",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "大数据与统计学院",
+  "code": "085411",
+  "direction": "大数据技术与工程",
+  "score26": 264,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "安徽大学",
+  "college": "联合培养(中科院合肥物质科学研究院)",
+  "code": "085400",
+  "direction": "电子信息(联合培养)",
+  "score26": 264,
+  "score25": 335,
+  "admitMin": null
+ },
+ {
+  "school": "太原理工大学",
+  "college": "计算机科学与技术学院（大数据学院）",
+  "code": "085404",
+  "direction": "计算机技术（非全日制/单独考试）",
+  "score26": 260,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "湖南师范大学",
+  "college": "物理与电子科学学院",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": null,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "信息科学与技术学院",
+  "code": "085401",
+  "direction": "新一代电子信息技术（含量子技术等）",
+  "score26": null,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "信息科学与技术学院",
+  "code": "085403",
+  "direction": "集成电路工程",
+  "score26": null,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "信息科学与技术学院",
+  "code": "085406",
+  "direction": "控制工程",
+  "score26": null,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "信息科学与技术学院",
+  "code": "085408",
+  "direction": "光电信息工程",
+  "score26": null,
+  "score25": null,
+  "admitMin": null
+ },
+ {
+  "school": "西南交通大学",
+  "college": "信息科学与技术学院",
+  "code": "085412",
+  "direction": "网络与信息安全",
+  "score26": null,
+  "score25": null,
+  "admitMin": null
+ }
+]
