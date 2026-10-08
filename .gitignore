@@ -16,3 +16,7 @@ android/kaoyan.jks
 .idea/
 .DS_Store
 Thumbs.db
+
+# 含访问令牌的本地脚本，绝不上传
+push_github.bat
+*.idsig
