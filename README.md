@@ -2,8 +2,9 @@
 
 面向 **27 考研** 的「0854 电子信息」专业学位择校工具：把全国 **147 所院校、1053 个招生方向** 的复试分数线做成一张可筛选、可排序、可打「冲 / 稳 / 保」标签的表。
 
-- 网页版在线体验：<https://ee0854-kaoyan.app.workbuddy.host/>
-- 安卓离线 App：见 [Release](#安卓离线-app) 一节，或直接编译 `android/` 工程
+- 网页版在线体验：<https://y4580482.github.io/0854-kaoyan-selector/>（GitHub Pages）
+  备用地址：<https://ee0854-kaoyan.app.workbuddy.host/>
+- 安卓离线 App：[Release v1.0](https://github.com/y4580482/0854-kaoyan-selector/releases/tag/v1.0) 下载 APK，或自行编译 `android/` 工程
 
 ---
 
