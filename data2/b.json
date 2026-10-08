@@ -9,7 +9,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中南大学",
@@ -20,7 +20,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "湖南大学",
@@ -31,18 +31,18 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
    "college": "信息科学与工程学院",
    "code": "085400",
    "direction": "04信号与信息处理",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "admitMin": 393,
+   "admitAvg": 408.2,
+   "admitCount": 26,
+   "srcUrl": "https://radio.seu.edu.cn/2026/0402/c46467a560421/page.htm",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为信号与信息处理）"
   },
   {
    "school": "东南大学",
@@ -52,19 +52,19 @@
    "admitMin": 391,
    "admitAvg": 408.5,
    "admitCount": 64,
-   "srcUrl": "https://automation.seu.edu.cn/2026/0401/c24460a560271/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "srcUrl": "https://automation.seu.edu.cn/_upload/article/files/8b/2b/20ab6d9c4b82a5cea028eb5c44a6/a30f3f3a-aff9-4a7c-873f-28cf67f86daf.pdf",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为人工智能与模式识别、先进制造、复杂系统与控制、智能机器人、智能机器人（无锡）、检测技术与智能化仪器）"
   },
   {
    "school": "东南大学",
    "college": "信息科学与工程学院",
    "code": "085400",
    "direction": "03通信与信息系统",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "admitMin": 390,
+   "admitAvg": 403.2,
+   "admitCount": 62,
+   "srcUrl": "https://radio.seu.edu.cn/2026/0402/c46467a560421/page.htm",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为通信与信息系统）"
   },
   {
    "school": "武汉大学",
@@ -75,7 +75,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -86,40 +86,40 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西北工业大学",
    "college": "航海学院",
    "code": "085401",
    "direction": "智能信息感知与通信工程",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 390,
+   "admitAvg": 409.7,
+   "admitCount": 20,
+   "srcUrl": "https://hanghai.nwpu.edu.cn/info/1946/25972.htm",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）；已剔除专项计划1人（最低400分）"
   },
   {
    "school": "西北工业大学",
    "college": "航海学院",
    "code": "085406",
    "direction": "控制工程（不区分研究方向）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 396,
+   "admitAvg": 413.7,
+   "admitCount": 11,
+   "srcUrl": "https://hanghai.nwpu.edu.cn/info/1946/25972.htm",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）；已剔除专项计划1人（最低399分）"
   },
   {
    "school": "西北工业大学",
    "college": "航海学院",
    "code": "085406",
    "direction": "控制工程（宁波基地）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 399,
+   "admitAvg": 406.8,
+   "admitCount": 5,
+   "srcUrl": "https://hanghai.nwpu.edu.cn/info/1946/25972.htm",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西安交通大学",
@@ -130,18 +130,18 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
    "college": "信息科学与工程学院",
    "code": "085400",
    "direction": "01电路与系统",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "admitMin": 390,
+   "admitAvg": 402.2,
+   "admitCount": 5,
+   "srcUrl": "https://radio.seu.edu.cn/2026/0402/c46467a560421/page.htm",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为电路与系统）"
   },
   {
    "school": "中南大学",
@@ -152,7 +152,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中南大学",
@@ -163,18 +163,18 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西北工业大学",
    "college": "电子信息学院",
    "code": "085401",
    "direction": "新一代电子信息技术（含量子技术等）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 387,
+   "admitAvg": 404.8,
+   "admitCount": 53,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西安交通大学",
@@ -185,7 +185,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中山大学",
@@ -196,7 +196,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中南大学",
@@ -207,7 +207,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中山大学",
@@ -218,7 +218,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中山大学",
@@ -229,7 +229,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -239,8 +239,8 @@
    "admitMin": null,
    "admitAvg": null,
    "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "srcUrl": "https://yzb.seu.edu.cn/2026/0525/c6676a568643/page.htm",
+   "note": "学院公示页对爬虫返回410/JS加密，未取到含初试成绩的名单"
   },
   {
    "school": "东南大学",
@@ -250,52 +250,52 @@
    "admitMin": 375,
    "admitAvg": 395.2,
    "admitCount": 41,
-   "srcUrl": "https://cs.seu.edu.cn/2026/0402/c49475a560433/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划；另有专项计划录取2人（最低291分）未计入"
+   "srcUrl": "https://cs.seu.edu.cn/_upload/article/files/03/8b/393848a34e86be6b53a1484f3993/49048aaf-c892-4d3a-a56b-ea809e28ed17.pdf",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分方向）；已剔除专项计划2人（最低291分）"
   },
   {
    "school": "西北工业大学",
    "college": "自动化学院",
    "code": "085406",
    "direction": "控制工程",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 379,
+   "admitAvg": 402.9,
+   "admitCount": 36,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "航海学院",
    "code": "085401",
    "direction": "智能信息与电子工程",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 385,
+   "admitAvg": 403.7,
+   "admitCount": 18,
+   "srcUrl": "https://hanghai.nwpu.edu.cn/info/1946/25972.htm",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "计算机学院",
    "code": "085404",
    "direction": "计算机技术",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 375,
+   "admitAvg": 393.9,
+   "admitCount": 71,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）；已剔除专项计划3人（最低363分）"
   },
   {
    "school": "西北工业大学",
    "college": "软件学院",
    "code": "085405",
    "direction": "软件工程（全日制）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 336,
+   "admitAvg": 402.5,
+   "admitCount": 112,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "武汉大学",
@@ -306,7 +306,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -317,7 +317,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -328,7 +328,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -339,7 +339,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西安交通大学",
@@ -350,7 +350,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "湖南大学",
@@ -361,18 +361,18 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
    "college": "信息科学与工程学院",
    "code": "085400",
    "direction": "05通信芯片与微系统（无锡）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "admitMin": 368,
+   "admitAvg": 393.0,
+   "admitCount": 19,
+   "srcUrl": "https://radio.seu.edu.cn/2026/0402/c46467a560421/page.htm",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为通信芯片与微系统（无锡））"
   },
   {
    "school": "华中科技大学",
@@ -383,7 +383,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -394,7 +394,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -405,7 +405,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -416,7 +416,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -427,7 +427,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -438,7 +438,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -449,7 +449,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -460,7 +460,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -471,29 +471,29 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西北工业大学",
    "college": "计算机学院",
    "code": "085404",
    "direction": "计算机技术（退役大学生士兵计划）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 363,
+   "admitAvg": 368.3,
+   "admitCount": 3,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "东南大学",
    "college": "信息科学与工程学院",
    "code": "085400",
    "direction": "06海洋信息工程",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "admitMin": 357,
+   "admitAvg": 367.5,
+   "admitCount": 4,
+   "srcUrl": "https://radio.seu.edu.cn/2026/0402/c46467a560421/page.htm",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为海洋信息工程）"
   },
   {
    "school": "东南大学",
@@ -503,8 +503,8 @@
    "admitMin": null,
    "admitAvg": null,
    "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "srcUrl": "https://yzb.seu.edu.cn/2026/0525/c6676a568643/page.htm",
+   "note": "学院公示页对爬虫返回410/JS加密，未取到含初试成绩的名单"
   },
   {
    "school": "华中科技大学",
@@ -515,7 +515,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -526,7 +526,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -537,7 +537,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -548,7 +548,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -559,18 +559,18 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西北工业大学",
    "college": "自动化学院",
    "code": "085410",
    "direction": "人工智能",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 367,
+   "admitAvg": 382.8,
+   "admitCount": 8,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "东南大学",
@@ -581,7 +581,7 @@
    "admitAvg": 369.5,
    "admitCount": 28,
    "srcUrl": "https://smjgs.seu.edu.cn/2026/0331/c8470a560164/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分研究方向）"
   },
   {
    "school": "东南大学",
@@ -591,8 +591,8 @@
    "admitMin": null,
    "admitAvg": null,
    "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "srcUrl": "https://yzb.seu.edu.cn/2026/0525/c6676a568643/page.htm",
+   "note": "学院公示页对爬虫返回410/JS加密，未取到含初试成绩的名单"
   },
   {
    "school": "中山大学",
@@ -603,7 +603,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -614,7 +614,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -625,7 +625,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -636,7 +636,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -647,7 +647,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -658,7 +658,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西安交通大学",
@@ -669,7 +669,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西安交通大学",
@@ -680,7 +680,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -691,7 +691,7 @@
    "admitAvg": 378.8,
    "admitCount": 43,
    "srcUrl": "https://smjgs.seu.edu.cn/2026/0331/c8470a560164/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为新一代电子信息技术）"
   },
   {
    "school": "东南大学",
@@ -702,18 +702,18 @@
    "admitAvg": 369.8,
    "admitCount": 22,
    "srcUrl": "https://smjgs.seu.edu.cn/2026/0331/c8470a560164/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分研究方向）"
   },
   {
    "school": "东南大学",
    "college": "信息科学与工程学院",
    "code": "085400",
    "direction": "02电磁场与微波技术",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "admitMin": 351,
+   "admitAvg": 387.8,
+   "admitCount": 76,
+   "srcUrl": "https://radio.seu.edu.cn/2026/0402/c46467a560421/page.htm",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为电磁场与微波技术）"
   },
   {
    "school": "湖南大学",
@@ -724,7 +724,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -735,7 +735,7 @@
    "admitAvg": 375.5,
    "admitCount": 19,
    "srcUrl": "https://yzb.seu.edu.cn/_s117/2026/0324/c6689a559181/page.psp",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分方向）"
   },
   {
    "school": "中南大学",
@@ -746,7 +746,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -757,7 +757,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -768,7 +768,7 @@
    "admitAvg": 372.9,
    "admitCount": 20,
    "srcUrl": "https://yzb.seu.edu.cn/_s117/2026/0324/c6689a559181/page.psp",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分方向）"
   },
   {
    "school": "湖南大学",
@@ -779,7 +779,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -789,8 +789,8 @@
    "admitMin": 344,
    "admitAvg": 377.6,
    "admitCount": 117,
-   "srcUrl": "https://ins.seu.edu.cn/2026/0331/c26759a560131/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "srcUrl": "https://ins.seu.edu.cn/_upload/article/files/47/cc/6da2ab394e86af58c861aa619552/3402f685-5248-4141-8e2d-542789c8f1d5.pdf",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为仪器仪表工程）"
   },
   {
    "school": "华中科技大学",
@@ -801,7 +801,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -812,7 +812,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -823,7 +823,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -834,7 +834,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -845,7 +845,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -856,7 +856,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -867,7 +867,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -878,7 +878,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -889,7 +889,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -900,7 +900,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -911,7 +911,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -922,7 +922,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -933,7 +933,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -943,8 +943,8 @@
    "admitMin": null,
    "admitAvg": null,
    "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "srcUrl": "https://yzb.seu.edu.cn/2026/0525/c6676a568643/page.htm",
+   "note": "学院公示页对爬虫返回410/JS加密，未取到含初试成绩的名单"
   },
   {
    "school": "东南大学",
@@ -954,8 +954,8 @@
    "admitMin": 326,
    "admitAvg": 365.0,
    "admitCount": 166,
-   "srcUrl": "https://cyber.seu.edu.cn/2026/0401/c18210a560343/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划；另有专项计划录取2人（最低297分）未计入"
+   "srcUrl": "https://cyber.seu.edu.cn/_upload/article/files/48/70/c60cf6c54cfabcdaed751153ea8e/c2d87f7f-07d9-4e70-9c8a-e7db7f1e75da.pdf",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分方向）；已剔除专项计划2人（最低297分）"
   },
   {
    "school": "华中科技大学",
@@ -966,7 +966,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -977,7 +977,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -988,7 +988,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -999,7 +999,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1010,7 +1010,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -1021,7 +1021,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1032,7 +1032,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1043,7 +1043,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1054,7 +1054,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西安交通大学",
@@ -1065,7 +1065,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西安交通大学",
@@ -1076,7 +1076,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西安交通大学",
@@ -1087,7 +1087,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -1098,7 +1098,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "天津大学",
@@ -1109,7 +1109,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "天津大学",
@@ -1120,7 +1120,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "天津大学",
@@ -1131,7 +1131,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "天津大学",
@@ -1142,7 +1142,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "天津大学",
@@ -1153,7 +1153,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1164,7 +1164,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1175,7 +1175,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1186,7 +1186,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -1197,7 +1197,7 @@
    "admitAvg": 351.2,
    "admitCount": 25,
    "srcUrl": "https://smjgs.seu.edu.cn/2026/0331/c8470a560164/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为健康数据科学）"
   },
   {
    "school": "武汉大学",
@@ -1208,7 +1208,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1219,7 +1219,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1230,84 +1230,84 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "西北工业大学",
    "college": "航海学院",
    "code": "085401",
    "direction": "声学信息感知与识别",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 324,
+   "admitAvg": 384.8,
+   "admitCount": 6,
+   "srcUrl": "https://hanghai.nwpu.edu.cn/info/1946/25972.htm",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "航海学院",
    "code": "085401",
    "direction": "声学工程与检测技术（宁波基地）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 364,
+   "admitAvg": 393.9,
+   "admitCount": 9,
+   "srcUrl": "https://hanghai.nwpu.edu.cn/info/1946/25972.htm",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "计算机学院",
    "code": "085403",
    "direction": "集成电路工程",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 353,
+   "admitAvg": 360.0,
+   "admitCount": 2,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "软件学院",
    "code": "085405",
    "direction": "软件工程（非全日制）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 311,
+   "admitAvg": 336.6,
+   "admitCount": 61,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "集成电路学院（微电子学院）",
    "code": "085401",
    "direction": "新一代电子信息技术（含量子技术等）",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 318,
+   "admitAvg": 357.0,
+   "admitCount": 6,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "集成电路学院（微电子学院）",
    "code": "085403",
    "direction": "集成电路工程",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 314,
+   "admitAvg": 367.2,
+   "admitCount": 24,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "西北工业大学",
    "college": "集成电路学院（微电子学院）",
    "code": "085410",
    "direction": "人工智能",
-   "admitMin": null,
-   "admitAvg": null,
-   "admitCount": "—",
-   "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "admitMin": 364,
+   "admitAvg": 371.0,
+   "admitCount": 2,
+   "srcUrl": "https://m.sme-gov.cn/xian/news/168040.html",
+   "note": "据西北工业大学2026年硕士研究生拟录取名单（不含推免）"
   },
   {
    "school": "中山大学",
@@ -1318,7 +1318,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中南大学",
@@ -1329,7 +1329,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1340,7 +1340,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1351,7 +1351,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1362,7 +1362,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1373,7 +1373,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1384,7 +1384,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1395,7 +1395,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华南理工大学",
@@ -1406,7 +1406,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "华中科技大学",
@@ -1417,7 +1417,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -1428,7 +1428,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -1439,7 +1439,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -1450,7 +1450,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -1461,7 +1461,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1472,7 +1472,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1483,7 +1483,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1494,7 +1494,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1505,7 +1505,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1516,7 +1516,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1527,7 +1527,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1538,7 +1538,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1549,7 +1549,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1560,7 +1560,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1571,7 +1571,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1582,7 +1582,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1593,7 +1593,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1604,7 +1604,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1615,7 +1615,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1626,7 +1626,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1637,7 +1637,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1648,7 +1648,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1659,7 +1659,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1670,7 +1670,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1681,7 +1681,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1692,7 +1692,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1703,7 +1703,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1714,7 +1714,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1725,7 +1725,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1736,7 +1736,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1747,7 +1747,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1758,7 +1758,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1769,7 +1769,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1780,7 +1780,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1791,7 +1791,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1802,7 +1802,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "电子科技大学",
@@ -1813,7 +1813,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "东南大学",
@@ -1823,8 +1823,8 @@
    "admitMin": 340,
    "admitAvg": 341.0,
    "admitCount": 2,
-   "srcUrl": "https://gjzygcs.seu.edu.cn/2026/0401/c54016a560285/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "srcUrl": "https://gjzygcs.seu.edu.cn/_upload/article/files/f0/7c/9fbf3d8a4e6685af2dd5cdaa2b4e/5e2ed9a5-d5a9-44c8-9859-e9c7d101af6e.pdf",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分方向）"
   },
   {
    "school": "东南大学",
@@ -1834,8 +1834,8 @@
    "admitMin": null,
    "admitAvg": null,
    "admitCount": "—",
-   "srcUrl": null,
-   "note": "未获取到该学院公示名单（学院官网对爬虫返回410/JS加密，无法读取含初试成绩的名单）"
+   "srcUrl": "https://yzb.seu.edu.cn/2026/0525/c6676a568643/page.htm",
+   "note": "学院公示页对爬虫返回410/JS加密，未取到含初试成绩的名单"
   },
   {
    "school": "东南大学",
@@ -1845,8 +1845,8 @@
    "admitMin": 340,
    "admitAvg": 340.0,
    "admitCount": 1,
-   "srcUrl": "https://gjzygcs.seu.edu.cn/2026/0401/c54016a560285/page.htm",
-   "note": "东南大学官方《2026年硕士研究生全国统考拟录取名单公示》(xls) 与各学院复试结果公示按考生编号比对得出，剔除专项计划"
+   "srcUrl": "https://gjzygcs.seu.edu.cn/_upload/article/files/f0/7c/9fbf3d8a4e6685af2dd5cdaa2b4e/5e2ed9a5-d5a9-44c8-9859-e9c7d101af6e.pdf",
+   "note": "据东南大学官方《2026年硕士研究生全国统考拟录取名单公示》与各学院复试结果公示按考生编号比对（该方向为不区分方向）"
   },
   {
    "school": "同济大学",
@@ -1857,7 +1857,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -1868,7 +1868,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "同济大学",
@@ -1879,7 +1879,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中山大学",
@@ -1890,7 +1890,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中山大学",
@@ -1901,7 +1901,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "中山大学",
@@ -1912,7 +1912,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -1923,7 +1923,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "大连理工大学",
@@ -1934,7 +1934,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -1945,7 +1945,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   },
   {
    "school": "武汉大学",
@@ -1956,7 +1956,7 @@
    "admitAvg": null,
    "admitCount": "—",
    "srcUrl": null,
-   "note": "未查到公开的2026届拟录取名单（含初试成绩）"
+   "note": "未查到可核验的2026届拟录取名单（含初试成绩）"
   }
  ]
 }
