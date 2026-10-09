@@ -202,6 +202,10 @@ body{
 .tbl th{background:var(--line2);color:var(--txt2);font-weight:800;font-size:10.5px}
 .tbl td.tot{font-weight:800;color:var(--brand);font-family:ui-monospace,Menlo,Consolas,monospace}
 .tbl td.rk{color:var(--txt3)}
+.ytg{display:flex;gap:8px;margin:12px 15px 0}
+.ytg .yb{flex:1;padding:8px 0;border-radius:9px;border:1px solid var(--line2);background:#fff;font-weight:800;font-size:12.5px;color:var(--txt2)}
+.ytg .yb.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.ytg .yb:disabled{opacity:.35}
 
 /* 学校详情：完整可排序表格（横向可拖动） */
 .dtable{margin:11px;background:#fff;border-radius:11px;box-shadow:var(--sh);overflow:hidden}
@@ -797,20 +801,66 @@ function openD(name,rowsFn){
 /* 专业（方向）独立详情页 */
 function openM(uid){
   const r=DATA[uid];if(!r)return;
-  const s=NL[r.zone][NL_CUR];
+  if(!S.mYear)S.mYear='26';
+  if(S.mYear==='25'&&r.score25==null)S.mYear='26';
+  const Y=S.mYear;
+  const yKey=Y==='25'?2025:2026;
+  const line=Y==='25'?r.score25:r.score26;
+  const aminY=Y==='25'?r.admitMin25:r.admitMin;
+  const s=NL[r.zone][yKey];
   const s1=s[1],s2=s[2];
   const subjNL={'政治':s1,'英语':s1,'数学':s2,'专业课':s2};
-  const subjScore=r.subjects||{};
+  let subjScore;
+  if(Y==='25'){
+    subjScore={};
+    if(r.subjects&&r.score25!=null&&r.score26){
+      const k25=r.score25/r.score26;
+      SUBJS.forEach(k=>{subjScore[k]=r.subjects[k]!=null?Math.round(r.subjects[k]*k25):null});
+    }
+  }else subjScore=r.subjects||{};
 
-  // 各科：方向参考分 + 国家线单科线（真实）
-  let srow=`<div class="srow"><div class="h kl">科目</div><div class="h">方向参考分</div><div class="h">国家线</div></div>`;
+  // 各科：真表格（方向参考分 + 当年国家线单科线）
+  let srow=`<div class="tbl"><div class="gh">各科分数线 · 国家线（${Y}届）</div>
+    <table><thead><tr><th>科目</th><th>方向参考分</th><th>国家线单科</th></tr></thead><tbody>`;
   SUBJS.forEach(k=>{
-    const sv=subjScore[k],nl=subjNL[k];
-    const pass=(sv!=null&&nl!=null&&sv>=nl)?'pass':'';
-    srow+=`<div class="c kl">${k}</div>
-      <div class="c ${pass}"><span class="v">${sv!=null?sv:'—'}</span><span class="m">参考</span></div>
-      <div class="c"><span class="vn">${nl!=null?nl:'—'}</span><span class="m">${r.zone}区</span></div>`;
+    const sv=subjScore[k],nv=subjNL[k];
+    srow+=`<tr><td style="font-weight:700">${k}</td>
+      <td class="tot">${sv!=null?sv:'—'}</td>
+      <td>${nv!=null?nv+' 分（'+r.zone+'区）':'—'}</td></tr>`;
   });
+  srow+=`</tbody></table>
+    <div style="font-size:10px;color:var(--txt3);padding:6px 12px 10px">方向参考分为按总分估算的参考值；国家线为真实单科线（满分100:政/英，满分&gt;100:数/专）。</div></div>`;
+
+  // 拟录取名单（逐人各科，按分数线模拟的参考结构，非真实名单）
+  function seeded(seed){let t=seed;return()=>{t=(t*9301+49297)%233280;return t/233280}}
+  function admitRows(){
+    const baseLine=line!=null?line:(Y==='25'?r.score26:r.score25);
+    if(baseLine==null)return[];
+    const base=aminY!=null?aminY:baseLine+3;
+    const sub=r.subjects||{};
+    const w={'政治':sub['政治']||58,'英语':sub['英语']||55,'数学':sub['数学']||95,'专业课':sub['专业课']||105};
+    const wsum=w['政治']+w['英语']+w['数学']+w['专业课']||1;
+    const rnd=seeded((r.uid||0)*7+(Y==='25'?13:3));
+    const rows=[];
+    for(let i=0;i<12;i++){
+      const T=base+Math.floor(rnd()*22);
+      const parts=SUBJS.map(k=>Math.round(T*w[k]/wsum));
+      parts[2]+=T-parts.reduce((a,b)=>a+b,0);
+      rows.push({p:parts[0],e:parts[1],m:parts[2],s:parts[3],t:parts[0]+parts[1]+parts[2]+parts[3]});
+    }
+    rows.sort((a,b)=>b.t-a.t);
+    rows.forEach((x,i)=>x.rk=i+1);
+    return rows;
+  }
+  const alist=admitRows();
+  const admitTbl=alist.length
+    ?`<div class="tbl"><div class="gh">拟录取名单 · 逐人各科（${Y}届）</div>
+      <div style="overflow-x:auto"><table style="min-width:440px">
+      <thead><tr><th>排名</th><th>政治</th><th>英语</th><th>数学</th><th>专业课</th><th>总分</th></tr></thead><tbody>
+      ${alist.map(x=>`<tr><td class="rk">${x.rk}</td><td>${x.p}</td><td>${x.e}</td><td>${x.m}</td><td>${x.s}</td><td class="tot">${x.t}</td></tr>`).join('')}
+      </tbody></table></div>
+      <div style="font-size:10px;color:var(--txt3);padding:6px 12px 10px">⚠️ 逐人分数为按该方向 ${Y}届分数线模拟的<b>参考结构</b>（非真实名单）：真实拟录取名单公示期（10–15 天）后普遍下架，无法回溯采集；录取最低分 ${aminY!=null?aminY+' 为真实采集':'暂未采集'}。</div></div>`
+    :`<div class="card"><div class="ct">拟录取名单（${Y}届）</div><div class="note">该方向暂无 ${Y} 届复试线，无法生成参考名单。</div></div>`;
 
   // 历年复试线（多年份：2025/2026 届）
   let yrows=[];
@@ -840,11 +890,6 @@ function openM(uid){
     <div class="note">英语按专硕常规列「英语二(204)」，个别院校考英语一，以招生专业目录为准；数学科目取自官方目录。</div>
   </div>`;
 
-  // 录取数据说明（真实，不提供示例名单）
-  let admitNote=`<div class="card"><div class="ct">录取数据</div>
-    <div class="note">${r.admitMin!=null?`<b>录取最低分</b>：${r.admitMin}（拟录取名单中实际录取考生的最低初试分）。`:'暂未采集录取最低分。'}
-    拟录取名单多在公示期（约 10–15 天）后下架，逐人名单暂未公开采集，故不提供示例数据；如能提供某校真实名单，本工具将补录。</div></div>`;
-
   document.getElementById('pgM').classList.add('on');
   document.getElementById('pgD').classList.remove('on');
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
@@ -854,26 +899,29 @@ function openM(uid){
   document.getElementById('bk').style.display='block';
   document.getElementById('hdT').textContent=r.direction;
 
+  const ytg=`<div class="ytg">
+    <button class="yb ${Y==='26'?'on':''}" data-y="26">26 届</button>
+    <button class="yb ${Y==='25'?'on':''}" data-y="25" ${r.score25==null?'disabled':''}>25 届</button>
+  </div>`;
   document.getElementById('mBody').innerHTML=`<div class="mh">
     <div class="nm">${r.direction}${lvlTag(r.level)}</div>
     <div class="mt">${r.school} · ${r.college}<br>${r.code} ${r.dirName} · ${r.zone}区</div>
+    ${ytg}
     <div class="st2">
-      <div><div class="t">26复试线</div><b>${r.score26!=null?r.score26:'—'}</b></div>
-      <div><div class="t">录取最低</div><b>${r.admitMin!=null?r.admitMin:'—'}</b></div>
-      <div><div class="t">国家线</div><b>${s[0]}</b></div>
+      <div><div class="t">${Y}复试线</div><b>${line!=null?line:'—'}</b></div>
+      <div><div class="t">录取最低</div><b>${aminY!=null?aminY:'—'}</b></div>
+      <div><div class="t">${Y}国家线</div><b>${s[0]}</b></div>
       <div><div class="t">学费/年</div><b>${r.tuition?Math.round(r.tuition/1000)+'k':'—'}</b></div>
     </div></div>
 
     ${yt}
     ${exHtml}
 
-    <div class="subj"><div class="gh"><span class="br" style="width:3px;height:12px;background:var(--brand);border-radius:2px;display:inline-block"></span>各科分数线 · 国家线</div>
-      ${srow}
-      <div style="font-size:10px;color:var(--txt3);padding:6px 2px 0">方向参考分为按总分估算值；国家线为真实单科线（满分100:政/英，满分&gt;100:数/专）。</div>
-    </div>
+    ${srow}
+
+    ${admitTbl}
 
     ${nlTbl}
-    ${admitNote}
 
     <div class="card"><div class="ct">该方向明细</div>
       <div class="row"><span class="tx">统考名额</span><span class="vv">${r.plan26?r.plan26+' 人（不含推免）':'—'}</span></div>
@@ -888,6 +936,9 @@ function openM(uid){
       ${r.admitUrl?`<div class="note"><b>录取名单链接</b><br><a href="${r.admitUrl}" target="_blank" rel="noopener">${r.admitUrl}</a></div>`:''}
       ${r.transferUrl?`<div class="note"><b>调剂链接</b><br><a href="${r.transferUrl}" target="_blank" rel="noopener">${r.transferUrl}</a></div>`:''}
     </div>`;
+  document.getElementById('mBody').querySelectorAll('.ytg .yb').forEach(b=>{
+    b.onclick=()=>{if(b.disabled)return;S.mYear=b.dataset.y;openM(uid);};
+  });
   document.getElementById('pgM').scrollTop=0;
 }
 
