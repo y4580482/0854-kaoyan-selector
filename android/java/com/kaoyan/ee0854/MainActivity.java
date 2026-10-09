@@ -35,18 +35,28 @@ public class MainActivity extends Activity {
 
         web.setWebViewClient(new MyWebViewClient());
         web.setWebChromeClient(new WebChromeClient());
+        web.addJavascriptInterface(new BackBridge(this), "AndroidBack");   // 网页回调：请求退出/提示
 
         web.loadUrl("file:///android_asset/index.html");
         setContentView(web);
     }
 
+    static long lastBackMs = 0;
+
+    /**
+     * 返回统一入口：先交给网页处理。
+     * 网页有上一级（学校页/专业页）就退一级；没有上一级时走「再按一次退出」，
+     * 避免从屏幕边缘侧滑时被系统当成 Activity 返回、直接退出 App。
+     */
     @Override
     public void onBackPressed() {
-        if (web != null && web.canGoBack()) {
-            web.goBack();
-        } else {
-            super.onBackPressed();
+        if (web == null) {
+            finish();
+            return;
         }
+        web.evaluateJavascript(
+            "(function(){var h=false;try{h=!!window.__androidBack()}catch(e){}" +
+            "try{AndroidBack.onBackResult(h?'true':'false')}catch(e){}return h})()", null);
     }
 
     @Override

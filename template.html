@@ -955,22 +955,33 @@ function closeD(){
   document.getElementById('hdR').style.display='none';
   document.getElementById('hdT').textContent='考研择校通';
   document.getElementById('bk').style.display='none';
-  go('pgList');
+  go(OPEN_FROM||'pgList');   // 回到进详情页之前的那个 Tab，而不是硬跳列表
 }
-/* 统一返回入口：左上角返回键 + 左边缘侧滑共用 */
+/* 统一返回入口：左上角返回键 + 左边缘侧滑 + 手机系统返回 三者共用 */
+var LASTBACK=0;
 function goBack(){
+  var now=Date.now();
+  if(now-LASTBACK<350)return true;   // 防抖：避免系统手势与网页手势叠加，一次滑动退两级
+  LASTBACK=now;
   if(document.getElementById('pgM').classList.contains('on')){
     document.getElementById('pgM').classList.remove('on');
-    openD(SCHCUR,null);return;
+    openD(SCHCUR,null);return true;
   }
   if(document.getElementById('pgD').classList.contains('on')){
-    S.cat='';S.scene='';closeD();return;
+    S.cat='';S.scene='';closeD();return true;
   }
   S.cat='';S.scene='';
-  document.getElementById('hdT').textContent='考研择校通';
-  document.getElementById('bk').style.display='none';
-  go('pgCat');renderCat();
+  if(document.getElementById('bk').style.display==='block'){
+    document.getElementById('hdT').textContent='考研择校通';
+    document.getElementById('bk').style.display='none';
+    go('pgCat');renderCat();return true;
+  }
+  return false;                       // 已在 Tab 页、没有上一级了
 }
+/* 桥接：手机系统返回键 / 系统侧滑返回 走同一套返回栈 */
+window.__androidBack=function(){
+  try{return goBack()===true}catch(e){return false}
+};
 document.getElementById('bk').onclick=goBack;
 
 /* 手机习惯：屏幕左边缘侧滑返回（跟手位移 + 边缘气泡提示） */
@@ -1037,8 +1048,12 @@ document.getElementById('bk').onclick=goBack;
   document.addEventListener('touchcancel',finish,{passive:true});
 })();
 let SCHCUR='';
-const _openD=openD;
-openD=function(name,rowsFn){SCHCUR=name;_openD(name,rowsFn);};
+let OPEN_FROM='pgList';
+function curPg(){const p=document.querySelector('.pg.on');return p?p.id:OPEN_FROM;}
+openD=function(name,rowsFn){
+  OPEN_FROM=curPg();        // 记住是从哪个 Tab 进来的
+  SCHCUR=name;_openD(name,rowsFn);
+};
 
 /* 弹层 */
 function showSheet(t,h){
