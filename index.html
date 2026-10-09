@@ -1050,8 +1050,9 @@ document.getElementById('bk').onclick=goBack;
 let SCHCUR='';
 let OPEN_FROM='pgList';
 function curPg(){const p=document.querySelector('.pg.on');return p?p.id:OPEN_FROM;}
+const _openD=openD;                 // 必须先保存原函数，否则包装后 _openD 未定义会抛错
 openD=function(name,rowsFn){
-  OPEN_FROM=curPg();        // 记住是从哪个 Tab 进来的
+  OPEN_FROM=curPg();                // 记住是从哪个 Tab 进来的
   SCHCUR=name;_openD(name,rowsFn);
 };
 
