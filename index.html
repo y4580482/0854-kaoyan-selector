@@ -206,6 +206,11 @@ body{
 .ytg .yb{flex:1;padding:8px 0;border-radius:9px;border:1px solid var(--line2);background:#fff;font-weight:800;font-size:12.5px;color:var(--txt2)}
 .ytg .yb.on{background:var(--brand);color:#fff;border-color:var(--brand)}
 .ytg .yb:disabled{opacity:.35}
+#eg{position:fixed;left:8px;top:50%;margin-top:-24px;width:48px;height:48px;z-index:60;
+  display:none;align-items:center;justify-content:center;pointer-events:none;opacity:0}
+#eg .pill{width:36px;height:36px;border-radius:50%;background:var(--card);
+  box-shadow:0 3px 12px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;
+  color:var(--brand);font-size:22px;font-weight:800;line-height:1}
 
 /* 学校详情：完整可排序表格（横向可拖动） */
 .dtable{margin:11px;background:#fff;border-radius:11px;box-shadow:var(--sh);overflow:hidden}
@@ -952,7 +957,8 @@ function closeD(){
   document.getElementById('bk').style.display='none';
   go('pgList');
 }
-document.getElementById('bk').onclick=()=>{
+/* 统一返回入口：左上角返回键 + 左边缘侧滑共用 */
+function goBack(){
   if(document.getElementById('pgM').classList.contains('on')){
     document.getElementById('pgM').classList.remove('on');
     openD(SCHCUR,null);return;
@@ -964,7 +970,72 @@ document.getElementById('bk').onclick=()=>{
   document.getElementById('hdT').textContent='考研择校通';
   document.getElementById('bk').style.display='none';
   go('pgCat');renderCat();
-};
+}
+document.getElementById('bk').onclick=goBack;
+
+/* 手机习惯：屏幕左边缘侧滑返回（跟手位移 + 边缘气泡提示） */
+(function(){
+  var EDGE=36, THRESH=72, LOCK=10;          // 触发区宽 / 触发距离 / 方向判定阈值
+  var st=null;
+  function activePage(){
+    var m=document.getElementById('pgM'),d=document.getElementById('pgD');
+    if(m&&m.classList.contains('on'))return m;
+    if(d&&d.classList.contains('on'))return d;
+    return null;                             // 只有详情页有返回栈
+  }
+  function inHScroll(el){                    // 表格横向滚动中：让给表格，不抢手势
+    while(el&&el!==document.body){
+      if(el.classList&&el.classList.contains('scrl')&&el.scrollLeft>0)return true;
+      el=el.parentElement;
+    }
+    return false;
+  }
+  var eg=document.createElement('div');
+  eg.id='eg';eg.innerHTML='<div class="pill">‹</div>';
+  document.body.appendChild(eg);
+  function settle(host){                     // 归位
+    host.style.transition='transform .18s ease-out';
+    host.style.transform='translateX(0)';
+    setTimeout(function(){host.style.transition='';host.style.transform='';},200);
+  }
+  document.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1)return;
+    var host=activePage();if(!host)return;
+    var t=e.touches[0];
+    if(t.clientX>EDGE)return;                // 只认左边缘起手
+    if(inHScroll(e.target))return;
+    st={x:t.clientX,y:t.clientY,dx:0,host:host,locked:false,cancel:false};
+  },{passive:true});
+  document.addEventListener('touchmove',function(e){
+    if(!st||st.cancel)return;
+    var t=e.touches[0];
+    var dx=t.clientX-st.x, dy=t.clientY-st.y;
+    if(!st.locked){
+      if(Math.abs(dx)<LOCK&&Math.abs(dy)<LOCK)return;
+      if(Math.abs(dy)>Math.abs(dx)||dx<=0){st.cancel=true;return;}  // 纵向/反向 → 放弃
+      st.locked=true;
+    }
+    st.dx=Math.max(0,dx);
+    if(e.cancelable)e.preventDefault();
+    st.host.style.transition='none';
+    st.host.style.transform='translateX('+Math.min(st.dx*0.42,120)+'px)';
+    eg.style.display='flex';eg.style.transition='none';
+    eg.style.transform='translateX('+Math.min(st.dx*0.5,58)+'px)';
+    eg.style.opacity=Math.min(1,st.dx/THRESH);
+  },{passive:false});
+  function finish(){
+    if(!st)return;
+    var host=st.host, ok=(!st.cancel&&st.locked&&st.dx>=THRESH);
+    st=null;
+    eg.style.transition='opacity .18s,transform .18s';
+    eg.style.opacity=0;eg.style.transform='translateX(0)';
+    setTimeout(function(){eg.style.display='none';},180);
+    settle(host);
+    if(ok)goBack();
+  }
+  document.addEventListener('touchend',finish,{passive:true});
+  document.addEventListener('touchcancel',finish,{passive:true});
+})();
 let SCHCUR='';
 const _openD=openD;
 openD=function(name,rowsFn){SCHCUR=name;_openD(name,rowsFn);};
