@@ -734,7 +734,8 @@ function renderFav(){
 /* 学校详情（概述，按学院分组，点方向进专业独立页） */
 function openD(name,rowsFn){
   const s=SCH[name];if(!s)return;
-  const rows=rowsFn?rowsFn(s):(S.cat||S.scene?schoolRows(s):s.rows);
+  // 学校页始终展示该校【全部】招生方向，不受当前分类/场景筛选影响
+  const rows=(typeof rowsFn==='function')?rowsFn(s):s.rows;
   document.getElementById('pgD').classList.add('on');
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
   document.getElementById('sbar').style.display='none';
