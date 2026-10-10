@@ -408,6 +408,7 @@ body{
           <li><b>初试线</b>= 进入复试的初试成绩基本要求（复试线）。</li>
           <li><b>录取最低分</b>= 拟录取名单中实际录取考生的最低初试分，通常比初试线高 5~30 分。</li>
           <li><b>学费</b>为各层次参考值（学硕约 8000、专硕 8000–30000 元/年），以各校招生简章为准。</li>
+          <li><b>报录比</b>= 报考人数 ÷ 录取人数（<b>真实</b>公开数据，非估算），反映竞争热度。目前收录 <span id="nM">-</span> 所院校的全校分专业报录数据（2025 届），学校页可查看该校全部招生专业；<b>未收录的院校不做任何估算</b>。注意「录取人数」通常含推免，故该比值偏乐观；非全日制常因调剂出现「录取 &gt; 报考」。</li>
         </ul>
       </div>
     </div>
@@ -706,6 +707,8 @@ function renderHome(){
   document.getElementById('k4').textContent=na[0];
   document.getElementById('nS').textContent=SCHLIST.length;
   document.getElementById('nR').textContent=DATA.length;
+  const _nM=document.getElementById('nM');
+  if(_nM)_nM.textContent=Object.keys(MAJORS||{}).length;
   const la=NL['A'][NL_CUR],lb=NL['B'][NL_CUR];
   document.getElementById('nlA').textContent=la[0];
   document.getElementById('nlA1').textContent=la[1];
