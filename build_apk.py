@@ -118,8 +118,8 @@ def main():
          "--java", gen,
          "--min-sdk-version", "24",
          "--target-sdk-version", "34",
-         "--version-code", "12",
-         "--version-name", "3.9",
+         "--version-code", "13",
+         "--version-name", "4.0",
          "-o", apk_u,
          res_zip])
     print("✅ 资源链接完成 ->", os.path.getsize(apk_u) // 1024, "KB")
