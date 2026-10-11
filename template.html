@@ -426,7 +426,7 @@ body{
           <li><b>初试线</b>= 进入复试的初试成绩基本要求（复试线）。</li>
           <li><b>录取最低分</b>= 拟录取名单中实际录取考生的最低初试分，通常比初试线高 5~30 分。</li>
           <li><b>学费</b>为各层次参考值（学硕约 8000、专硕 8000–30000 元/年），以各校招生简章为准。</li>
-          <li><b>专业目录</b>（底部「专业库」页）＝ <b>研招网硕士专业目录</b>（2026 届）与<b>掌上考研</b>公开数据的<b>并集</b>，覆盖全国 <b><span id="nCatS">-</span> 所</b>院校、<span id="nCatC">-</span> 个专业代码、<span id="nCatR">-</span> 条「学校×专业」记录，含院系、学位类型、学习方式、拟招生人数与<b>考试科目</b>，并补齐<b>复试线、逐年招生人数、参考书</b>。可按专业 / 学院 / 省份 / 学位筛选，按招生人数、复试线或报录比排序，点行看详情。<b>不限 0854，全部专业都能查</b>——顶部搜索框或「专业库」输入 学校 / 专业名 / 专业代码 / 学院 均会命中；学校页可搜索该校全部招生专业。</li>
+          <li><b>专业目录</b>（底部「专业库」页）＝ <b>研招网硕士专业目录</b>（2026 届）与<b>掌上考研</b>公开数据的<b>并集</b>，覆盖全国 <b><span id="nCatS">-</span> 所</b>院校、<span id="nCatC">-</span> 个专业代码、<span id="nCatR">-</span> 条「学校×专业」记录，含院系、学位类型、学习方式、拟招生人数与<b>考试科目</b>，并补齐<b>复试线、逐年招生人数、参考书</b>。可按专业 / 学院 / 省份 / 学位筛选，按招生人数、复试线或报录比排序，<b>点任一行进入完整的专业详情页</b>。<b>不限 0854，全部专业都能查</b>——顶部搜索框或「专业库」输入 学校 / 专业名 / 专业代码 / 学院 均会命中；学校页可搜索该校全部招生专业。</li>
           <li><b>报录比</b>= 报考人数 ÷ 录取人数（<b>真实</b>公开数据，非估算），反映竞争热度。目前收录 <span id="nM">-</span> 所院校的全校分专业报录数据（2024–2026 届），在「专业库」与学校页以 <span style="color:#b91c1c">红</span>/<span style="color:#15803d">绿</span> 标注；<b>未收录的院校不做任何估算</b>。注意「录取人数」通常含推免，故该比值偏乐观；非全日制常因调剂出现「录取 &gt; 报考」。</li>
         </ul>
       </div>
@@ -594,6 +594,7 @@ const S={
   mjKeyOnly:false,   // 专业库：仅看 985/211/双一流
   mjSort:{k:'plan',dir:-1},  // 专业库：排序
   mjLimit:80,        // 专业库：分页
+  mjPYear:'',        // 专业详情页：选中的招生年份（''=最新）
   dQ:'',dName:''     // 学校页：校内专业搜索词 / 当前学校
 };
 
@@ -781,17 +782,30 @@ function tuitionOf2(school,code){
   return null;
 }
 /* 全量目录行（首次构建后缓存，约 3.7 万条） */
-let _CROWS=null,CATN=0;
+let _CROWS=null,CATN=0,_CROWM=null,_CODEIDX=null;
 function catRows(){
   if(_CROWS)return _CROWS;
-  const out=[],S0=(CAT&&CAT.schools)||{},NC=(CAT&&CAT.codes)||{};
+  const out=[],S0=(CAT&&CAT.schools)||{},NC=(CAT&&CAT.codes)||{},m={};
   for(const sch in S0){
     const arr=S0[sch];
     for(let i=0;i<arr.length;i++){const r=arr[i];
-      out.push({school:sch,code:r[0],provi:r[1],degr:r[2],mode:r[3],
-        college:r[4],plan:r[5],exi:r[6],name:NC[r[0]]||''});}
+      const o={school:sch,code:r[0],provi:r[1],degr:r[2],mode:r[3],
+        college:r[4],plan:r[5],exi:r[6],name:NC[r[0]]||''};
+      out.push(o);m[sch+'|'+o.code]=o;}
   }
-  _CROWS=out;CATN=out.length;return out;
+  _CROWS=out;_CROWM=m;CATN=out.length;return out;
+}
+/* (校|专业代码) -> 目录行（容忍校名写法差异） */
+function catRow(school,code){
+  catRows();
+  return _CROWM[school+'|'+code]||_CROWM[schoolCtx(school).cat+'|'+code]||null;
+}
+/* 专业代码 -> 全部目录行（首开详情页时才建） */
+function codeIdx(){
+  if(_CODEIDX)return _CODEIDX;
+  const m={},rows=catRows();
+  for(let i=0;i<rows.length;i++){const x=rows[i];(m[x.code]||(m[x.code]=[])).push(x);}
+  _CODEIDX=m;return m;
 }
 function mjPass(x){
   if(S.mjDeg.size&&!S.mjDeg.has(x.degr))return false;
@@ -894,7 +908,7 @@ function renderMj(){
     <div style="font-size:10px;color:var(--txt3);padding:9px 12px 10px;line-height:1.7">
       数据来源：<b>研招网硕士专业目录</b>（${(CAT&&CAT.year)||'2026'}届）＋<b>掌上考研</b>公开数据（复试线 / 逐年招生人数 / 考试科目 / 参考书）<b>并集</b>，共 <b>${CSC.length}</b> 所院校 × <b>${Object.keys(CAT.codes||{}).length}</b> 个专业代码 × <b>${CATN}</b> 条「学校×专业」。
       「招生」为拟招生人数（以官方为准）；「复试线」为近年复试分数线；「报录比」<span style="color:#b91c1c">红</span>=更卷、<span style="color:#15803d">绿</span>=相对好考，仅 ${MJ_SCHOOLS.length} 所有官方报录数据；
-      「学费」取自本数据集收录值，未匹配显示 "—"。加粗高亮行为 0854 电子信息类。点任一行看详情（复试线 / 逐年招生 / 考试科目 / 参考书）。
+      「学费」取自本数据集收录值，未匹配显示 "—"。加粗高亮行为 0854 电子信息类。点任一行进入<b>专业详情页</b>（与 0854 方向页同构：复试线 / 逐年招生 / 考试科目 / 参考书 / 国家线 / 同专业院校对比）。
     </div></div>`;
   if(!list.length)h='<div class="empty"><span class="em">🔍</span>没有匹配的专业<br>试试换个关键词或放宽筛选</div>';
   document.getElementById('mjBody').innerHTML=h;
@@ -906,57 +920,196 @@ function renderMj(){
       renderMj();};
   });
   document.getElementById('mjBody').querySelectorAll('tbody tr').forEach(tr=>{
-    tr.onclick=()=>mjSheet(tr.dataset.s,tr.dataset.c);
+    tr.onclick=()=>openMaj(tr.dataset.s,tr.dataset.c);
   });
 }
-/* 单条专业详情浮层 */
-function subHTML(sub){
-  if(!sub)return '';
-  const NM=['①','②','③','④'];
-  const parts=String(sub).split(/[①②③④]/).map(s=>s.trim()).filter(Boolean);
-  if(parts.length>=2)return parts.map((v,i)=>escH(NM[i]+' '+v)).join('<br>');
-  return escH(sub);
-}
-function mjSheet(school,code){
-  const x=catRows().find(r=>r.school===school&&r.code===code);
-  if(!x)return;
-  const mj=MJBYS[school+'|'+code];
-  const tu=tuitionOf2(school,code);
-  const ex=x.exi>=0?(CAT.exams[x.exi]||''):'';
-  const modes=x.mode.split('').map(c=>CAT.modes[+c]).join(' / ');
-  const NM=['①','②','③','④'];
-  const lv=lvlOf(school);
-  const ks=kaoOf(school,code);
-  let h=`<div><b>学校</b>${escH(school)}${lv?lvlTag(lv):''}</div>
-    <div><b>省份</b>${CAT.provs[x.provi]||'—'}</div>
-    <div><b>专业</b>${x.code} ${escH(x.name)}</div>
-    <div><b>学院</b>${escH(x.college)||'—'}</div>
-    <div><b>学位</b>${CAT.degs[x.degr]||'—'}</div>
-    <div><b>学习方式</b>${modes||'—'}</div>`;
-  if(ks&&ks.length){
-    ks.forEach((r,i)=>{
-      const sub=kaoSub(r),bk=kaoBook(r),ys=kaoYears(r);
-      const deg=(r[1]===0?'学硕':(r[1]===1?'专硕':'—'));
-      const md=(r[2]===0?'全日制':(r[2]===1?'非全日制':'—'));
-      const cap=ks.length>1?`${escH(r[3])||'—'} · ${deg} · ${md}`:'招生与复试';
-      h+=`<div style="margin-top:9px;padding:9px 10px;background:#f7f9fc;border-radius:9px;border:1px solid #e9eef6">
-        <div style="font-weight:800;color:#2f5fe0;font-size:11.5px;margin-bottom:5px">${cap}</div>`;
-      if(r[4]>0)h+=`<div><b>复试线</b><span style="color:${sCol(r[4])};font-weight:800;font-size:15px">${r[4]}</span> 分${r[5]>0?`（${r[5]} 届）`:''}</div>`;
-      if(ys.length)h+=`<div><b>招生人数</b>${kaoPlanStr(r)}<span style="color:var(--txt3)">（人）</span></div>`;
-      if(sub)h+=`<div style="margin-top:5px"><b>考试科目</b><div style="margin-top:3px;line-height:1.8">${subHTML(sub)}</div></div>`;
-      if(bk)h+=`<div style="margin-top:5px"><b>参考书</b><div style="margin-top:3px;color:var(--txt2);font-size:11.5px;line-height:1.6">${escH(bk)}</div></div>`;
-      h+=`</div>`;
-    });
-  }else if(ex){
-    h+=`<div style="margin-top:6px"><b>考试科目</b><div style="margin-top:2px">${ex.split(' | ').map((v,i)=>NM[i]+' '+escH(v)).join('<br>')}</div></div>`;
+/* ============ 任意专业（学校 × 专业代码）独立详情页 ============
+   与 0854 方向页 openM() **同构**：渐变头部 + 冲/稳/保 + 四张统计卡 + 年份切换
+   + 考试科目(①~④) + 招生人数·复试线(按届) + 考试科目多口径 + 参考书 + 国家线
+   + 该专业明细(报录比/学费/院系) + 开设该专业的其他院校 —— 每个专业点进去都是这一页。 */
+function examItems(best,x){
+  let items=[];
+  const sub=best?kaoSub(best):'';
+  if(sub){
+    const ps=String(sub).split(/[①②③④]/).map(s=>s.trim()).filter(Boolean);
+    items=ps.length>=2?ps.slice(0,4):[String(sub).trim()];
   }
-  if(mj)h+=`<div style="margin-top:6px"><b>报录比</b><span style="color:${rCol(mj.ratio)};font-weight:800">${mj.ratio} : 1</span>　报考 ${mj.apply} / 录取 ${mj.admit}（${mj.year}届）</div>`;
-  if(tu)h+=`<div><b>学费</b>${tu} 元/年</div>`;
-  h+=`<div style="margin-top:8px;color:var(--txt3);font-size:11px">数据来源：掌上考研公开数据（复试线 / 招生人数）+ 研招网硕士专业目录（${(CAT&&CAT.year)||'2026'}届）</div>`;
-  h+=`<button class="btn brand" id="mjGoD" style="margin-top:10px">查看该校全部专业 ›</button>`;
-  showSheet(school+' · '+code, h);
-  const b=document.getElementById('mjGoD');
-  if(b)b.onclick=()=>{hideSheet();openD(school,null);};
+  if(!items.length&&x&&x.exi>=0&&CAT.exams&&CAT.exams[x.exi]){
+    items=String(CAT.exams[x.exi]).split(' | ').map(s=>s.trim()).filter(Boolean);
+  }
+  return items;
+}
+function openMaj(school,code){
+  const x=catRow(school,code);
+  if(!x)return;
+  const nm=x.school;                                   // 目录里的规范校名
+  const ks=kaoOf(nm,code)||kaoOf(school,code);
+  const best=kaoBest(ks);
+  const lv=lvlOf(nm);
+  const mj=MJBYS[nm+'|'+code]||MJBYS[school+'|'+code];
+  const tu=tuitionOf2(nm,code)||tuitionOf2(school,code);
+  const score=(best&&best[4]>0)?best[4]:-1;
+  const scoreYr=best?(best[5]||-1):-1;
+  const years=best?kaoYears(best):[];
+  const deg=(x.degr===0?'学硕':(x.degr===1?'专硕':'—'));
+  const md=String(x.mode).split('').map(c=>(CAT.modes||[])[+c]).filter(Boolean).join(' / ')||'—';
+  const prov=(CAT.provs||[])[x.provi]||'—';
+  const cat2=String(x.code).slice(0,2);
+  const isGong=cat2==='08';                            // 本数据集只收录工学门类国家线
+  const p=score>0?posOf(score,S.my):null;
+
+  // 招生年份（默认最新一届，可切换）
+  let py='';
+  if(years.length)py=(S.mjPYear&&years.some(y=>String(y[0])===S.mjPYear))?S.mjPYear:String(years[0][0]);
+  const pn=years.length?((years.find(y=>String(y[0])===py)||years[0])[1]):(x.plan>0?x.plan:-1);
+
+  const NM=['①','②','③','④'];
+  // 考试科目
+  const items=examItems(best,x);
+  const exHtml=`<div class="card"><div class="ct">考试科目（初试）</div>`+
+    (items.length
+      ? items.map((v,i)=>`<div class="row"><span class="tx">${NM[i]}</span><span class="vv">${escH(v)}</span></div>`).join('')+
+        `<div class="note">科目取自<b>掌上考研</b>收录的该校该专业最新招生目录；以目标院校当年官方简章为准。</div>`
+      : `<div class="note">暂未收录该专业考试科目。</div>`)+
+    `</div>`;
+
+  // 招生人数 · 复试线（按届）
+  let planTbl='';
+  if(years.length){
+    planTbl=`<div class="tbl"><div class="gh">招生人数 · 复试线（按届）</div>
+      <table><thead><tr><th>届</th><th>招生人数</th><th>复试线</th></tr></thead><tbody>
+      ${years.map(y=>`<tr${String(y[0])===py?' style="background:var(--brand-soft)"':''}>
+        <td>${y[0]}</td><td class="tot">${y[1]}</td>
+        <td>${(score>0&&String(y[0])===String(scoreYr))?score:'—'}</td></tr>`).join('')}
+      </tbody></table>
+      <div style="font-size:10px;color:var(--txt3);padding:6px 12px 10px">招生人数为该校该专业该届<b>拟招生人数</b>（以官方简章为准）；本数据集仅收录最近一届复试线${scoreYr>0?`（<b>${scoreYr} 届</b>）`:''}。</div></div>`;
+  }else if(x.plan>0){
+    planTbl=`<div class="tbl"><div class="gh">招生人数</div><table><thead><tr><th>届</th><th>招生人数</th></tr></thead><tbody>
+      <tr><td>${(CAT&&CAT.year)||'2026'}届</td><td class="tot">${x.plan}</td></tr></tbody></table></div>`;
+  }
+
+  // 同一专业在该校的多个招生口径（不同院系 / 学位 / 学习方式）
+  let ksHtml='';
+  if(ks&&ks.length>1){
+    ksHtml=`<div class="tbl"><div class="gh">该校该专业的招生口径（${ks.length} 条）</div>
+      <div style="overflow-x:auto"><table style="min-width:540px">
+      <thead><tr><th>院系</th><th>学位</th><th>学习</th><th>复试线</th><th>招生</th></tr></thead><tbody>
+      ${ks.map(r=>`<tr><td style="text-align:left">${escH(r[3])||'—'}</td>
+        <td>${r[1]===0?'学硕':(r[1]===1?'专硕':'—')}</td>
+        <td>${r[2]===0?'全日制':(r[2]===1?'非全':'—')}</td>
+        <td class="tot">${r[4]>0?r[4]:'—'}</td>
+        <td>${(r[8]&&r[8].length)?r[8][0][1]:'—'}</td></tr>`).join('')}
+      </tbody></table></div></div>`;
+  }
+
+  // 参考书
+  const bk=best?kaoBook(best):'';
+  const bkList=bk?String(bk).split(/[；;]/).map(s=>s.trim()).filter(Boolean):[];
+  const bkHtml=bkList.length
+    ? `<div class="card"><div class="ct">参考书（${bkList.length} 本）</div>
+        <div class="note" style="line-height:1.75">${bkList.map((s,i)=>`<div>${i+1}. ${escH(s)}</div>`).join('')}</div>
+        <div class="note" style="border-top:1px solid var(--line2)">参考书为该校该专业公布的参考书目整理，版本以官方简章为准。</div></div>`
+    : '';
+
+  // 国家线
+  const nlHtml=isGong
+    ? `<div class="tbl"><div class="gh">国家线 · 工学门类（08）</div>
+        <table><thead><tr><th>年份</th><th>A区总分</th><th>A区单科</th><th>B区总分</th><th>B区单科</th></tr></thead><tbody>
+        ${NL_YEARS.slice().reverse().map(y=>`<tr><td>${y}</td><td class="tot">${NL.A[y][0]}</td><td>${NL.A[y][1]}/${NL.A[y][2]}</td><td>${NL.B[y][0]}</td><td>${NL.B[y][1]}/${NL.B[y][2]}</td></tr>`).join('')}
+        </tbody></table>
+        <div style="font-size:10px;color:var(--txt3);padding:6px 12px 10px">教育部公布的<b>真实</b>国家线，单科格式：满分100(政/英) / 满分&gt;100(数/专)。</div></div>`
+    : `<div class="card"><div class="ct">国家线</div><div class="note">该专业属 <b>${cat2}</b> 门类，本数据集目前仅收录<b>工学（08）</b>门类国家线，其余门类未收录，故不展示，以免误导。</div></div>`;
+
+  // 明细
+  const detail=`<div class="card"><div class="ct">该专业明细</div>
+    <div class="row"><span class="tx">报录比</span><span class="vv">${mj?`<b style="color:${rCol(mj.ratio)}">${mj.ratio} : 1</b>（报考 ${mj.apply} / 录取 ${mj.admit}，${mj.year}届）`:'—'}</span></div>
+    <div class="row"><span class="tx">拟招生人数</span><span class="vv">${x.plan>0?x.plan+' 人':'—'}</span></div>
+    <div class="row"><span class="tx">学费</span><span class="vv">${tu?tu+' 元/年':'—'}</span></div>
+    <div class="row"><span class="tx">学位类型</span><span class="vv">${deg}</span></div>
+    <div class="row"><span class="tx">学习方式</span><span class="vv">${md}</span></div>
+    <div class="row"><span class="tx">院系</span><span class="vv">${escH(x.college)||'—'}</span></div>
+    <div class="row"><span class="tx">所在省份</span><span class="vv">${prov}</span></div>
+    <div class="row"><span class="tx">数据来源</span><span class="vv">研招网硕士专业目录 ＋ 掌上考研公开数据</span></div>
+    <button class="btn brand" id="mjGoD">查看该校全部专业 ›</button>
+  </div>`;
+
+  // 开设该专业的其他院校
+  let othersHtml='';
+  {
+    const all=codeIdx()[code]||[];
+    const others=all.filter(r=>r.school!==nm&&r.school!==school);
+    if(others.length){
+      const scored=others.map(r=>({r,sc:kaoScore(r.school,r.code)}))
+        .sort((a,b)=>((b.sc>0?1:0)-(a.sc>0?1:0))||(b.sc-a.sc)||((b.r.plan||0)-(a.r.plan||0)));
+      const show=scored.slice(0,25);
+      othersHtml=`<div class="dtable" style="margin:11px">
+        <div class="gh" style="padding:11px 13px 7px;font-size:12.5px;font-weight:800;color:var(--txt2)">
+          开设「${escH(x.name||x.code)}」的其他院校 <span style="color:var(--txt3);font-weight:500">共 ${others.length} 所</span>
+          <div style="font-weight:500;font-size:10.5px;color:var(--txt3);margin-top:3px">按「有复试线 → 分数线高低 → 招生规模」排序 · 点任一行看该专业完整详情</div>
+        </div>
+        <div class="scrl"><table style="min-width:640px"><thead><tr>
+          <th>学校</th><th>学院</th><th>招生</th><th>复试线</th>
+        </tr></thead><tbody>
+        ${show.map(o=>`<tr data-s="${escH(o.r.school)}" data-c="${o.r.code}">
+          <td class="nm">${escH(o.r.school)}${(function(l){return l?lvlTag(l):''})(lvlOf(o.r.school))}</td>
+          <td class="co">${escH(o.r.college)}</td>
+          <td class="num">${o.r.plan>0?o.r.plan:'—'}</td>
+          <td class="num" style="color:${o.sc>0?sCol(o.sc):'#c3ccdb'}">${o.sc>0?o.sc:'—'}</td>
+        </tr>`).join('')}
+        </tbody></table></div>
+        ${others.length>show.length?`<div style="font-size:10px;color:var(--txt3);padding:8px 13px 10px">仅显示前 ${show.length} 所</div>`:''}
+      </div>`;
+    }
+  }
+
+  const ytg=(years.length>1)?`<div class="ytg">`+years.map(y=>
+    `<button class="yb ${String(y[0])===py?'on':''}" data-y="${y[0]}">${y[0]} 届</button>`).join('')+`</div>`:'';
+
+  document.getElementById('pgM').classList.add('on');
+  document.getElementById('pgD').classList.remove('on');
+  document.querySelectorAll('.pg').forEach(pg=>pg.classList.remove('on'));
+  document.getElementById('sbar').style.display='none';
+  document.getElementById('tab').style.display='none';
+  document.getElementById('hd').style.display='flex';
+  document.getElementById('bk').style.display='block';
+  document.getElementById('hdR').style.display='none';
+  document.getElementById('hdT').textContent=(x.name||code)+' '+code;
+
+  document.getElementById('mBody').innerHTML=`<div class="mh">
+    <div class="nm">${escH(x.name||('专业 '+code))}${lv?lvlTag(lv):''}${p?`<span class="pos ${p[1]}">${p[0]}</span>`:''}</div>
+    <div class="mt">${escH(nm)} · ${escH(x.college)||'—'}<br>${x.code} ${deg} · ${md} · ${prov}</div>
+    ${ytg}
+    <div class="st2">
+      <div><div class="t">复试线${scoreYr>0?`（${scoreYr}届）`:''}</div><b>${score>0?score:'—'}</b></div>
+      <div><div class="t">招生人数</div><b>${pn>0?pn:'—'}</b></div>
+      <div><div class="t">报录比</div><b>${mj?mj.ratio+' : 1':'—'}</b></div>
+      <div><div class="t">学费/年</div><b>${tu?Math.round(tu/1000)+'k':'—'}</b></div>
+    </div></div>
+
+    ${exHtml}
+
+    ${planTbl}
+
+    ${ksHtml}
+
+    ${bkHtml}
+
+    ${nlHtml}
+
+    ${detail}
+
+    ${othersHtml}`;
+
+  const body=document.getElementById('mBody');
+  body.querySelectorAll('.ytg .yb').forEach(b=>{
+    b.onclick=()=>{S.mjPYear=b.dataset.y;openMaj(nm,code);};
+  });
+  body.querySelectorAll('.dtable tbody tr[data-s]').forEach(tr=>{
+    tr.onclick=()=>openMaj(tr.dataset.s,tr.dataset.c);
+  });
+  const g=document.getElementById('mjGoD');
+  if(g)g.onclick=()=>openD(nm,null);
+  document.getElementById('pgM').scrollTop=0;
 }
 /* 专业库交互绑定 */
 function openMjTab(){
@@ -1077,7 +1230,7 @@ function catHitsHTML(hits,q){
   let h=`<div class="dtable" style="margin:0 0 10px">
     <div class="gh" style="padding:11px 13px 7px;font-size:12.5px;font-weight:800;color:var(--txt2)">
       专业库命中 <span style="color:var(--txt3);font-weight:500">「${escH(q)}」共 ${CATQN} 条${CATQN>hits.length?`，显示前 ${hits.length} 条`:''}</span>
-      <div style="font-weight:500;font-size:10.5px;color:var(--txt3);margin-top:3px">不限 0854 · 含复试线 / 逐年招生 / 考试科目 / 参考书 · 点任一行看详情</div>
+      <div style="font-weight:500;font-size:10.5px;color:var(--txt3);margin-top:3px">不限 0854 · 含复试线 / 逐年招生 / 考试科目 / 参考书 · 点任一行进入该专业详情页</div>
     </div>
     <div class="scrl"><table style="min-width:720px"><thead><tr>
       <th>学校</th><th>专业</th><th>学院</th><th class="num">招生</th><th class="num">复试线</th>
@@ -1108,7 +1261,7 @@ function renderList(){
   document.getElementById('mb').style.display=list.length>S.limit?'block':'none';
   document.getElementById('eb').style.display=(list.length||hits.length)?'none':'block';
   box.querySelectorAll('.dtable tbody tr[data-s]').forEach(tr=>{
-    tr.onclick=()=>mjSheet(tr.dataset.s,tr.dataset.c);
+    tr.onclick=()=>openMaj(tr.dataset.s,tr.dataset.c);
   });
   bindCards(box,null);
 }
@@ -1317,7 +1470,7 @@ function openD(name,rowsFn){
     h+=`<div class="dtable" id="dAll" style="margin-top:10px">
       <div class="gh" style="padding:12px 13px 7px;font-size:12.5px;font-weight:800;color:var(--txt2)">
         该校全部招生专业 <span id="dAllCnt" style="color:var(--txt3);font-weight:500"></span>
-        <div style="font-weight:500;font-size:10.5px;color:var(--txt3);margin-top:3px">含复试线 / 逐年招生人数 / 考试科目 / 参考书 · 点任一行看详情</div>
+        <div style="font-weight:500;font-size:10.5px;color:var(--txt3);margin-top:3px">含复试线 / 逐年招生人数 / 考试科目 / 参考书 · 点任一行进入该专业详情页</div>
       </div>
       ${ytg}
       <div style="padding:0 12px 10px">
@@ -1388,12 +1541,13 @@ function renderSchMajors(name){
   });
   t+='</tbody></table></div>';
   box.innerHTML=t;
-  box.querySelectorAll('tbody tr').forEach(tr=>{tr.onclick=()=>mjSheet(name,tr.dataset.c);});
+  box.querySelectorAll('tbody tr').forEach(tr=>{tr.onclick=()=>openMaj(name,tr.dataset.c);});
 }
 
 /* 专业（方向）独立详情页 */
 function openM(uid){
   const r=DATA[uid];if(!r)return;
+  MFROM='pgD';                       // 0854 方向页永远是从「学校详情页」点进来的
   if(!S.mYear)S.mYear='26';
   if(S.mYear==='25'&&r.score25==null)S.mYear='26';
   const Y=S.mYear;
@@ -1554,7 +1708,9 @@ function goBack(){
   LASTBACK=now;
   if(document.getElementById('pgM').classList.contains('on')){
     document.getElementById('pgM').classList.remove('on');
-    openD(SCHCUR,null);return true;
+    if(MFROM==='pgD'&&SCHCUR){openD(SCHCUR,null);}
+    else{closeD();}                  // 从专业库/择校直接进来的，回原 Tab
+    return true;
   }
   if(document.getElementById('pgD').classList.contains('on')){
     S.cat='';S.scene='';closeD();return true;
@@ -1643,6 +1799,13 @@ const _openD=openD;                 // 必须先保存原函数，否则包装�
 openD=function(name,rowsFn){
   OPEN_FROM=curPg();                // 记住是从哪个 Tab 进来的
   SCHCUR=name;_openD(name,rowsFn);
+};
+const _openMaj=openMaj;             // 任意专业详情页同样记住来路，返回键回原 Tab
+let MFROM='';                       // 专业详情页是从「学校详情页」还是某个 Tab 进来的
+openMaj=function(school,code){
+  const fromSchool=document.getElementById('pgD').classList.contains('on');
+  if(fromSchool){MFROM='pgD';}else{OPEN_FROM=curPg();MFROM=OPEN_FROM;}
+  _openMaj(school,code);
 };
 
 /* 弹层 */
@@ -1966,7 +2129,7 @@ function b64ToU8(b64){
 function applyBig(d){
   if(d&&d.cat)Object.assign(CAT,d.cat);
   if(d&&d.kao)Object.assign(KAO,d.kao);
-  _CROWS=null;_KAOI=null;
+  _CROWS=null;_CROWM=null;_CODEIDX=null;_KAOI=null;
   for(const k in _ALI)delete _ALI[k];
   for(const k in _SCTX)delete _SCTX[k];
   BIG_OK=true;
