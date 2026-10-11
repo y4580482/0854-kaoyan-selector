@@ -355,10 +355,10 @@ body{
       </div>
     </div>
     <div class="nlcard" id="mjHome" style="background:linear-gradient(120deg,#eef3ff,#f6f9ff);border:1px solid #dbe6ff">
-      <div class="h"><span class="em">📚</span>全校专业库 · 报录比
+      <div class="h"><span class="em">📚</span>全国专业库 · 招生目录
         <span class="mr" style="margin-left:auto;font-size:11px;color:var(--txt3);font-weight:500" id="mjHomeN">-</span></div>
       <div style="font-size:11.5px;color:var(--txt2);margin-top:7px;line-height:1.6">
-        不只 0854：跨校按专业查「报考 / 录取 / 报录比」，覆盖 <b id="mjHomeS">-</b> 所院校的<b>全部招生专业</b>（建筑、机械、临床医学…）
+        不只 0854：覆盖全国 <b id="mjHomeS">-</b> 所院校的<b>全部硕士招生专业</b>（研招网目录），可按专业 / 省份 / 学位筛选，含招生人数、考试科目与报录比
       </div>
     </div>
     <div class="card">
@@ -426,7 +426,8 @@ body{
           <li><b>初试线</b>= 进入复试的初试成绩基本要求（复试线）。</li>
           <li><b>录取最低分</b>= 拟录取名单中实际录取考生的最低初试分，通常比初试线高 5~30 分。</li>
           <li><b>学费</b>为各层次参考值（学硕约 8000、专硕 8000–30000 元/年），以各校招生简章为准。</li>
-          <li><b>报录比</b>= 报考人数 ÷ 录取人数（<b>真实</b>公开数据，非估算），反映竞争热度。目前收录 <span id="nM">-</span> 所院校的全校分专业报录数据（2024–2026 届），<b>不限 0854</b>：底部「专业库」页可跨校按专业/学院/学位类型搜索筛选，学校页也可查看该校全部招生专业；<b>未收录的院校不做任何估算</b>。注意「录取人数」通常含推免，故该比值偏乐观；非全日制常因调剂出现「录取 &gt; 报考」。</li>
+          <li><b>专业目录</b>（底部「专业库」页）来自<b>研招网硕士专业目录</b>（2026 届），覆盖全国 <b>919 所</b>院校、1,336 个专业代码、37,722 条「学校×专业」记录，含院系、学位类型、学习方式、拟招生人数与<b>考试科目</b>；可按专业 / 学院 / 省份 / 学位筛选，按招生人数或报录比排序，点行看详情。<b>不限 0854，学校页亦可查看该校全部招生专业</b>。</li>
+          <li><b>报录比</b>= 报考人数 ÷ 录取人数（<b>真实</b>公开数据，非估算），反映竞争热度。目前收录 <span id="nM">-</span> 所院校的全校分专业报录数据（2024–2026 届），在「专业库」与学校页以 <span style="color:#b91c1c">红</span>/<span style="color:#15803d">绿</span> 标注；<b>未收录的院校不做任何估算</b>。注意「录取人数」通常含推免，故该比值偏乐观；非全日制常因调剂出现「录取 &gt; 报考」。</li>
         </ul>
       </div>
     </div>
@@ -440,17 +441,17 @@ body{
     </div>
   </div>
 
-  <!-- 专业库：跨校全校专业报录比 -->
+  <!-- 专业库：跨校全量硕士专业目录 -->
   <div class="pg nosb" id="pgMj">
     <div class="mjbar">
       <div class="mjs"><span class="mg">🔍</span>
-        <input id="mjq" placeholder="搜专业 / 学院 / 学校（如 计算机、建筑、0854）" autocomplete="off">
+        <input id="mjq" placeholder="搜学校 / 专业 / 学院（如 清华、计算机、0854）" autocomplete="off">
         <span class="cl" id="mjqc" style="display:none">✕</span></div>
     </div>
-    <div class="mjlb">学校（可多选）</div>
-    <div class="fl" id="mjSchool"></div>
-    <div class="mjlb">学位类型 · 届别</div>
+    <div class="mjlb">学位 · 学习方式 · 快速筛选</div>
     <div class="fl" id="mjFilter"></div>
+    <div class="mjlb">省份（可多选）</div>
+    <div class="fl" id="mjSchool"></div>
     <div style="padding:1px 13px 7px;display:flex;align-items:center;gap:8px">
       <span style="font-size:11.5px;color:var(--txt3)" id="mjCnt"></span>
       <button class="chip" id="mjRst" style="margin-left:auto">重置</button>
@@ -500,7 +501,8 @@ body{
 
 <script>
 const DATA = __DATA__;
-const MAJORS = __MAJORS__;   // { 学校: {year, source, rows:[{college,code,name,degree,apply,admit,ratio}]} } 全校分专业报录比
+const MAJORS = __MAJORS__;   // { 学校: {years:{年份:{source,rows:[...]}}} } 全校分专业报录比
+const CAT = __CATALOG__;     // 研招网硕士专业目录：{src,year,provs,degs,modes,codes,exams,schools}
 
 // 真实国家线（工学门类，电子信息 0854 属此）[总分, 单科满分100线(政/英), 单科满分>100线(数/专)]
 const NL = {
@@ -580,10 +582,12 @@ const S={
   mYear:'26',        // 专业页 25/26 届
   mjYear:'',         // 学校页报录比表选中的年份（''=自动取该校最新年份）
   mjQ:'',            // 专业库：搜索词
-  mjSchool:new Set(),// 专业库：学校筛选（空=全部）
-  mjDeg:new Set(),   // 专业库：学位类型筛选（空=全部）
-  mjYr:'',           // 专业库：届别筛选（''=各校最新届）
-  mjSort:{k:'ratio',dir:-1},  // 专业库：排序
+  mjDeg:new Set(),   // 专业库：学位筛选（0=学硕 1=专硕）
+  mjMode:new Set(),  // 专业库：学习方式筛选（'0'全日制 '1'非全）
+  mjProv:new Set(),  // 专业库：省份筛选
+  mjOnlyRatio:false, // 专业库：仅看有报录比的
+  mjKeyOnly:false,   // 专业库：仅看 985/211/双一流
+  mjSort:{k:'plan',dir:-1},  // 专业库：排序
   mjLimit:80         // 专业库：分页
 };
 
@@ -658,82 +662,110 @@ function ratioOf(r){
 }
 function rCol(v){return v>=8?'#b91c1c':(v>=5?'#b45309':'#15803d');}
 
-/* ============ 专业库：跨校全校专业报录比 ============ */
-const MJ_SCHOOLS=Object.keys(MAJORS||{});
-/* 把各校（按当前届别选择）的全部招生专业拍平成一条条记录 */
-function mjFlat(){
-  const out=[];
-  MJ_SCHOOLS.forEach(sch=>{
-    const ys=(MAJORS[sch]&&MAJORS[sch].years)||null; if(!ys)return;
-    let yr;
-    if(S.mjYr){ if(!ys[S.mjYr])return; yr=S.mjYr; }               // 指定届别：该校没有则跳过
-    else yr=Object.keys(ys).sort().reverse()[0];                  // 默认各校最新届
-    const yobj=ys[yr]; if(!yobj||!yobj.rows)return;
-    yobj.rows.forEach(r=>{
-      out.push({school:sch,year:yr,source:yobj.source,college:r.college,
-        code:r.code,name:r.name,degree:r.degree,apply:r.apply,admit:r.admit,ratio:r.ratio});
-    });
-  });
-  return out;
+/* ============ 专业库：跨校 · 全量硕士专业目录（研招网 919 校） ============ */
+const MJ_SCHOOLS=Object.keys(MAJORS||{});                    // 有「报录比」的学校（5 所）
+const CAT_SCHOOLS=Object.keys((CAT&&CAT.schools)||{});       // 全量目录学校（919 所）
+/* 查找表：学费 / 报录比 / 院校层次（避免逐行线性扫描） */
+const TUIBY={},MJBYS={},LVLS={};
+DATA.forEach(r=>{
+  if(r.tuition){(TUIBY[r.school]=TUIBY[r.school]||{})[r.code]=r.tuition;}
+  LVLS[r.school]=r.level;
+});
+MJ_SCHOOLS.forEach(sch=>{
+  const ys=MAJORS[sch].years;if(!ys)return;
+  const yr=Object.keys(ys).sort().reverse()[0];
+  (ys[yr].rows||[]).forEach(r=>{if(r.ratio!=null)MJBYS[sch+'|'+r.code]={ratio:r.ratio,apply:r.apply,admit:r.admit,year:yr};});
+});
+function tuitionOf2(school,code){
+  const t=TUIBY[school];if(!t)return null;
+  if(t[code])return t[code];
+  for(const k in t){if(k.indexOf(code)===0||code.indexOf(k)===0)return t[k];}
+  return null;
+}
+/* 全量目录行（首次构建后缓存，约 3.7 万条） */
+let _CROWS=null,CATN=0;
+function catRows(){
+  if(_CROWS)return _CROWS;
+  const out=[],S0=(CAT&&CAT.schools)||{},NC=(CAT&&CAT.codes)||{};
+  for(const sch in S0){
+    const arr=S0[sch];
+    for(let i=0;i<arr.length;i++){const r=arr[i];
+      out.push({school:sch,code:r[0],provi:r[1],degr:r[2],mode:r[3],
+        college:r[4],plan:r[5],exi:r[6],name:NC[r[0]]||''});}
+  }
+  _CROWS=out;CATN=out.length;return out;
 }
 function mjPass(x){
-  if(S.mjSchool.size&&!S.mjSchool.has(x.school))return false;
-  if(S.mjDeg.size&&!S.mjDeg.has(x.degree))return false;
+  if(S.mjDeg.size&&!S.mjDeg.has(x.degr))return false;
+  if(S.mjProv.size&&!S.mjProv.has(x.provi))return false;
+  if(S.mjMode.size){let ok=false;S.mjMode.forEach(m=>{if(x.mode.indexOf(m)>=0)ok=true;});if(!ok)return false;}
+  if(S.mjOnlyRatio&&!MJBYS[x.school+'|'+x.code])return false;
+  if(S.mjKeyOnly){const lv=LVLS[x.school];if(!(lv==='985'||lv==='211'||lv==='双一流'))return false;}
   if(S.mjQ){
     const q=S.mjQ.toLowerCase();
-    const hay=(x.school+' '+x.college+' '+x.code+' '+x.name+' '+x.degree).toLowerCase();
-    if(hay.indexOf(q)<0)return false;
+    if((x.school+' '+x.college+' '+x.code+' '+x.name).toLowerCase().indexOf(q)<0)return false;
   }
   return true;
 }
 function mjFiltered(){
-  const list=mjFlat().filter(mjPass);
+  const list=catRows().filter(mjPass);
   const k=S.mjSort.k,dir=S.mjSort.dir;
   list.sort((a,b)=>{
-    let va,vb;
-    if(k==='apply'){va=+(a.apply||0);vb=+(b.apply||0);}
-    else if(k==='admit'){va=+(a.admit||0);vb=+(b.admit||0);}
-    else{va=a.ratio;vb=b.ratio;}
-    if(va==null)va=-1; if(vb==null)vb=-1;
-    return (va-vb)*dir;
+    if(k==='ratio'){
+      const ra=(MJBYS[a.school+'|'+a.code]||{}).ratio,rb=(MJBYS[b.school+'|'+b.code]||{}).ratio;
+      return ((ra==null?-1:ra)-(rb==null?-1:rb))*dir;
+    }
+    if(k==='school')return (a.school<b.school?-1:a.school>b.school?1:0)*dir;
+    if(k==='code')return (a.code<b.code?-1:a.code>b.code?1:0)*dir;
+    return ((a.plan||0)-(b.plan||0))*dir;              // 默认按拟招生人数
   });
   return list;
 }
 function mjChips(){
+  // 省份（多选，横向滚动）
   const sb=document.getElementById('mjSchool');
-  sb.innerHTML=MJ_SCHOOLS.map(s=>`<button class="chip ${S.mjSchool.has(s)?'on':''}" data-v="${s}">${s}</button>`).join('');
-  sb.querySelectorAll('.chip').forEach(b=>{b.onclick=()=>{
-    const v=b.dataset.v;
-    if(S.mjSchool.has(v))S.mjSchool.delete(v);else S.mjSchool.add(v);
+  sb.innerHTML=(CAT.provs||[]).map((p,i)=>`<button class="chip ${S.mjProv.has(i)?'on':''}" data-prov="${i}">${p}</button>`).join('');
+  sb.querySelectorAll('[data-prov]').forEach(b=>{b.onclick=()=>{
+    const v=+b.dataset.prov;
+    if(S.mjProv.has(v))S.mjProv.delete(v);else S.mjProv.add(v);
     b.classList.toggle('on');S.mjLimit=80;renderMj();};});
+  // 学位 / 学习方式 / 快速
   const fb=document.getElementById('mjFilter');
-  let h=['专硕','学硕'].map(d=>`<button class="chip ${S.mjDeg.has(d)?'on':''}" data-deg="${d}">${d}</button>`).join('');
+  let h=[['0','学硕'],['1','专硕']].map(d=>`<button class="chip ${S.mjDeg.has(+d[0])?'on':''}" data-deg="${d[0]}">${d[1]}</button>`).join('');
   h+='<span style="flex:none;width:7px"></span>';
-  h+=[['','各校最新'],['2026','2026届'],['2025','2025届'],['2024','2024届']].map(y=>
-    `<button class="chip ${S.mjYr===y[0]?'on':''}" data-yr="${y[0]}">${y[1]}</button>`).join('');
+  h+=[['0','全日制'],['1','非全日制']].map(m=>`<button class="chip ${S.mjMode.has(m[0])?'on':''}" data-mode="${m[0]}">${m[1]}</button>`).join('');
+  h+='<span style="flex:none;width:7px"></span>';
+  h+=`<button class="chip g ${S.mjOnlyRatio?'on':''}" data-quick="ratio">有报录比</button>`;
+  h+=`<button class="chip g ${S.mjKeyOnly?'on':''}" data-quick="key">985·211</button>`;
   fb.innerHTML=h;
   fb.querySelectorAll('[data-deg]').forEach(b=>{b.onclick=()=>{
-    const v=b.dataset.deg;
+    const v=+b.dataset.deg;
     if(S.mjDeg.has(v))S.mjDeg.delete(v);else S.mjDeg.add(v);
     b.classList.toggle('on');S.mjLimit=80;renderMj();};});
-  fb.querySelectorAll('[data-yr]').forEach(b=>{b.onclick=()=>{
-    S.mjYr=b.dataset.yr;S.mjLimit=80;renderMj();};});
+  fb.querySelectorAll('[data-mode]').forEach(b=>{b.onclick=()=>{
+    const v=b.dataset.mode;
+    if(S.mjMode.has(v))S.mjMode.delete(v);else S.mjMode.add(v);
+    b.classList.toggle('on');S.mjLimit=80;renderMj();};});
+  fb.querySelectorAll('[data-quick]').forEach(b=>{b.onclick=()=>{
+    const k=b.dataset.quick;
+    if(k==='ratio')S.mjOnlyRatio=!S.mjOnlyRatio;else S.mjKeyOnly=!S.mjKeyOnly;
+    b.classList.toggle('on');S.mjLimit=80;renderMj();};});
 }
 function renderMj(){
-  if(!MJ_SCHOOLS.length){
+  if(!CAT_SCHOOLS.length){
     document.getElementById('mjCnt').textContent='';
     document.getElementById('mjMore').style.display='none';
-    document.getElementById('mjBody').innerHTML='<div class="empty"><span class="em">📭</span>暂无全校分专业报录数据</div>';
+    document.getElementById('mjBody').innerHTML='<div class="empty"><span class="em">📭</span>暂无专业目录数据</div>';
     return;
   }
   mjChips();
   const list=mjFiltered();
-  document.getElementById('mjCnt').textContent=`共 ${list.length} 个专业方向 · ${MJ_SCHOOLS.length} 所院校`;
+  document.getElementById('mjCnt').textContent=`共 ${list.length} 个专业（校×专业）· ${CAT_SCHOOLS.length} 所院校`;
   const cols=[
-    {k:'school',t:'学校'},{k:'college',t:'学院'},{k:'name',t:'专业'},{k:'degree',t:'类型'},{k:'year',t:'届'},
-    {k:'apply',t:'报考',num:true},{k:'admit',t:'录取',num:true},{k:'ratio',t:'报录比',num:true},{k:'tuition',t:'学费',num:true}
+    {k:'school',t:'学校'},{k:'prov',t:'省份'},{k:'college',t:'学院'},{k:'name',t:'专业'},
+    {k:'deg',t:'类型'},{k:'plan',t:'招生',num:true},{k:'ratio',t:'报录比',num:true},{k:'tuition',t:'学费',num:true}
   ];
-  let h='<div class="dtable" style="margin-top:4px"><div class="scrl"><table style="min-width:780px"><thead><tr>';
+  let h='<div class="dtable" style="margin-top:4px"><div class="scrl"><table style="min-width:800px"><thead><tr>';
   cols.forEach(c=>{
     const on=S.mjSort.k===c.k;
     h+=`<th data-k="${c.k}" class="${c.num?'num':''}">${c.t}${on?(S.mjSort.dir<0?' <span class="ar">▼</span>':' <span class="ar">▲</span>'):''}</th>`;
@@ -741,36 +773,64 @@ function renderMj(){
   h+='</tr></thead><tbody>';
   list.slice(0,S.mjLimit).forEach(x=>{
     const is8=x.code.indexOf('0854')===0;
-    const tu=tuitionOf(x.school,x.code);
-    h+=`<tr data-s="${x.school}"${is8?' style="background:rgba(47,95,224,.06)"':''}>
-      <td class="nm">${x.school}</td>
+    const mj=MJBYS[x.school+'|'+x.code];
+    const tu=tuitionOf2(x.school,x.code);
+    const lv=LVLS[x.school];
+    h+=`<tr data-s="${x.school}" data-c="${x.code}"${is8?' style="background:rgba(47,95,224,.06)"':''}>
+      <td class="nm">${x.school}${lv?lvlTag(lv):''}</td>
+      <td class="co">${CAT.provs[x.provi]||''}</td>
       <td class="co">${x.college}</td>
       <td>${is8?'<b>':''}${x.code} ${x.name}${is8?'</b>':''}</td>
-      <td>${x.degree}</td>
-      <td class="num">${x.year}</td>
-      <td class="num">${x.apply!=null?x.apply:'—'}</td>
-      <td class="num">${x.admit!=null?x.admit:'—'}</td>
-      <td class="num" style="color:${x.ratio!=null?rCol(x.ratio):'#c3ccdb'}">${x.ratio!=null?x.ratio+' : 1':'—'}</td>
+      <td>${CAT.degs[x.degr]||'—'}</td>
+      <td class="num">${x.plan>0?x.plan:'—'}</td>
+      <td class="num" style="color:${mj?rCol(mj.ratio):'#c3ccdb'}">${mj?mj.ratio+' : 1':'—'}</td>
       <td class="num" style="color:#0f9d58">${tu?Math.round(tu/1000)+'k':'—'}</td>
     </tr>`;
   });
   h+=`</tbody></table></div>
     <div style="font-size:10px;color:var(--txt3);padding:9px 12px 10px;line-height:1.7">
-      报录比 = 报考人数 ÷ 录取人数（<span style="color:#b91c1c">红</span>=更卷、<span style="color:#15803d">绿</span>=相对好考）。加粗高亮行为 0854 电子信息类。学费取自本数据集该校同专业收录值，未匹配到显示 "—"。点任一行进入该校详情页。数据为各校官网公开报录数据，不同学校届别可能不同（见「届」列）；「录取」通常含推免，故比值偏乐观。
+      数据来源：<b>研招网硕士专业目录</b>（${(CAT&&CAT.year)||'2026'}届，${CAT_SCHOOLS.length} 所院校 × ${Object.keys(CAT.codes||{}).length} 个专业代码）。
+      「招生」为拟招生人数（不含推免，以官方为准）；「报录比」<span style="color:#b91c1c">红</span>=更卷、<span style="color:#15803d">绿</span>=相对好考，仅 ${MJ_SCHOOLS.length} 所有官方报录数据；
+      「学费」取自本数据集收录值，未匹配显示 "—"。加粗高亮行为 0854 电子信息类。点任一行看详情（含考试科目 / 报录比 / 学费）。
     </div></div>`;
   if(!list.length)h='<div class="empty"><span class="em">🔍</span>没有匹配的专业<br>试试换个关键词或放宽筛选</div>';
   document.getElementById('mjBody').innerHTML=h;
   document.getElementById('mjMore').style.display=list.length>S.mjLimit?'block':'none';
-  const SKIP=['ratio','apply','admit'];
   document.getElementById('mjBody').querySelectorAll('thead th').forEach(th=>{
     th.onclick=()=>{const k=th.dataset.k;
-      if(SKIP.indexOf(k)<0)return;                               // 仅「报考/录取/报录比」可点表头排序
+      if(['plan','ratio','school','code'].indexOf(k)<0)return;
       if(S.mjSort.k===k)S.mjSort.dir*=-1;else S.mjSort={k,dir:-1};
       renderMj();};
   });
   document.getElementById('mjBody').querySelectorAll('tbody tr').forEach(tr=>{
-    tr.onclick=()=>openD(tr.dataset.s,null);
+    tr.onclick=()=>mjSheet(tr.dataset.s,tr.dataset.c);
   });
+}
+/* 单条专业详情浮层 */
+function mjSheet(school,code){
+  const x=catRows().find(r=>r.school===school&&r.code===code);
+  if(!x)return;
+  const mj=MJBYS[school+'|'+code];
+  const tu=tuitionOf2(school,code);
+  const ex=x.exi>=0?(CAT.exams[x.exi]||''):'';
+  const modes=x.mode.split('').map(c=>CAT.modes[+c]).join(' / ');
+  const NUM=['①','②','③','④'];
+  let h=`<div><b>学校</b>${school}</div>
+    <div><b>省份</b>${CAT.provs[x.provi]||'—'}</div>
+    <div><b>专业</b>${x.code} ${x.name}</div>
+    <div><b>学院</b>${x.college||'—'}</div>
+    <div><b>学位</b>${CAT.degs[x.degr]||'—'}</div>
+    <div><b>学习方式</b>${modes||'—'}</div>
+    <div><b>拟招生</b>${x.plan>0?x.plan+' 人':'—'}</div>`;
+  if(ex)h+=`<div style="margin-top:6px"><b>考试科目</b><div style="margin-top:2px">${ex.split(' | ').map((v,i)=>NUM[i]+' '+v).join('<br>')}</div></div>`;
+  if(mj)h+=`<div style="margin-top:6px"><b>报录比</b><span style="color:${rCol(mj.ratio)};font-weight:800">${mj.ratio} : 1</span>　报考 ${mj.apply} / 录取 ${mj.admit}（${mj.year}届）</div>`;
+  if(tu)h+=`<div><b>学费</b>${tu} 元/年</div>`;
+  if(LVLS[school])h+=`<div><b>层次</b>${LVLS[school]}</div>`;
+  h+=`<div style="margin-top:8px;color:var(--txt3);font-size:11px">来源：研招网硕士专业目录（${(CAT&&CAT.year)||'2026'}届）</div>`;
+  if(SCH[school])h+=`<button class="btn brand" id="mjGoD" style="margin-top:10px">查看该校 0854 电子信息详情 ›</button>`;
+  showSheet(school+' · '+code, h);
+  const b=document.getElementById('mjGoD');
+  if(b)b.onclick=()=>{hideSheet();openD(school,null);};
 }
 /* 专业库交互绑定 */
 function openMjTab(){
@@ -784,7 +844,8 @@ function openMjTab(){
   q.addEventListener('input',()=>{S.mjQ=q.value.trim();cl.style.display=S.mjQ?'block':'none';S.mjLimit=80;renderMj();});
   cl.onclick=()=>{q.value='';S.mjQ='';cl.style.display='none';S.mjLimit=80;renderMj();};
   document.getElementById('mjRst').onclick=()=>{
-    S.mjQ='';S.mjSchool.clear();S.mjDeg.clear();S.mjYr='';S.mjSort={k:'ratio',dir:-1};S.mjLimit=80;
+    S.mjQ='';S.mjDeg.clear();S.mjMode.clear();S.mjProv.clear();
+    S.mjOnlyRatio=false;S.mjKeyOnly=false;S.mjSort={k:'plan',dir:-1};S.mjLimit=80;
     q.value='';cl.style.display='none';renderMj();
   };
   document.getElementById('mjMoreBtn').onclick=()=>{S.mjLimit+=80;renderMj();};
@@ -919,13 +980,12 @@ function renderHome(){
   document.getElementById('nlB1').textContent=lb[1];
   document.getElementById('nlB2').textContent=lb[2];
 
-  // 全校专业库入口卡：统计各校最新届的专业总数
+  // 全国专业库入口卡：全量目录统计
   const mjN=document.getElementById('mjHomeN');
   if(mjN){
-    let tot=0;MJ_SCHOOLS.forEach(s=>{const ys=MAJORS[s]&&MAJORS[s].years;if(!ys)return;
-      const yr=Object.keys(ys).sort().reverse()[0];tot+=((ys[yr]||{}).rows||[]).length;});
-    mjN.textContent=tot+' 个专业方向';
-    document.getElementById('mjHomeS').textContent=MJ_SCHOOLS.length;
+    let tot=0;for(const s in CAT.schools)tot+=CAT.schools[s].length;
+    mjN.textContent=tot+' 个专业';
+    document.getElementById('mjHomeS').textContent=CAT_SCHOOLS.length;
     document.getElementById('mjHome').onclick=openMjTab;
   }
 

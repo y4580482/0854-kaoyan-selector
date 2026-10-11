@@ -16,7 +16,14 @@ mp = os.path.join(BASE, "majors.json")
 majors = json.load(open(mp, encoding="utf-8")) if os.path.exists(mp) else {}
 mjs = json.dumps(majors, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
-out = tpl.replace("__DATA__", js).replace("__MAJORS__", mjs)
+# 全量硕士专业目录（可选，研招网 919 校）
+cp = os.path.join(BASE, "catalog.json")
+catalog = json.load(open(cp, encoding="utf-8")) if os.path.exists(cp) else {}
+cjs = json.dumps(catalog, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+out = tpl.replace("__DATA__", js).replace("__MAJORS__", mjs).replace("__CATALOG__", cjs)
 p = os.path.join(BASE, "index.html")
 open(p, "w", encoding="utf-8").write(out)
-print("生成:", p, os.path.getsize(p) // 1024, "KB /", len(rows), "行 /", len(majors), "所校报录比")
+tot = sum(len(v) for v in (catalog.get("schools") or {}).values())
+print("生成:", p, os.path.getsize(p) // 1024, "KB /", len(rows), "行 /", len(majors), "所校报录比 /",
+      len(catalog.get("schools") or {}), "校目录", tot, "条")

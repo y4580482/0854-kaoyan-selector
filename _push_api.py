@@ -8,7 +8,7 @@ if not TOKEN:
 REPO = "y4580482/0854-kaoyan-selector"
 API = "https://api.github.com"
 BASE = os.path.dirname(os.path.abspath(__file__))
-MSG = "v4.0: 新增「专业库」Tab——跨校全校专业报录比大表(不限0854)"
+MSG = "v5.0: 全国专业库——收录全部学校全部专业(研招网919校×1336专业代码×37722条)"
 
 
 def run(cmd):
@@ -24,7 +24,8 @@ PROXY = os.environ.get("https_proxy") or os.environ.get("HTTPS_PROXY") \
 
 def api(method, path, body_file=None):
     url = API + path
-    cmd = ["curl", "-sS", "--http1.1", "--max-time", "60", "-H", "Expect:"]
+    cmd = ["curl", "-sS", "--http1.1", "--ssl-no-revoke",
+           "--connect-timeout", "20", "--max-time", "900", "-H", "Expect:"]
     if PROXY:
         cmd += ["-x", PROXY]
     cmd += ["-H", f"Authorization: Bearer {TOKEN}",

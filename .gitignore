@@ -23,3 +23,7 @@ push_github.bat
 
 # 采集过程中抓下来的临时网页/PDF
 data2/*/
+
+# 专业目录原始下载（33MB CSV，构建时用，可从 build_catalog.py 注释的地址重新获取）
+_data/
+_smoke.js
