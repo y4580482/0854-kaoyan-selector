@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
-"""把 all.json 注入 template.html，生成单文件 index.html"""
-import json, os, html
+"""把 all.json 注入 template.html，生成单文件 index.html。
+
+大数据（研招网专业目录 catalog.json + 掌上考研明细 kao.json）合并后
+gzip + base64 内联为 __BLOB__，由页面启动时用 DecompressionStream 解压，
+从而在单文件体积可控的前提下装下全部明细。
+"""
+import json, os, gzip, base64
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,11 +24,27 @@ mjs = json.dumps(majors, ensure_ascii=False, separators=(",", ":")).replace("</"
 # 全量硕士专业目录（可选，研招网 919 校）
 cp = os.path.join(BASE, "catalog.json")
 catalog = json.load(open(cp, encoding="utf-8")) if os.path.exists(cp) else {}
-cjs = json.dumps(catalog, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
-out = tpl.replace("__DATA__", js).replace("__MAJORS__", mjs).replace("__CATALOG__", cjs)
+# 掌上考研明细：复试线 / 逐年招生 / 考试科目 / 参考书（可选）
+kp = os.path.join(BASE, "kao.json")
+kao = json.load(open(kp, encoding="utf-8")) if os.path.exists(kp) else {}
+
+# 合并 -> gzip -> base64
+raw = json.dumps({"cat": catalog, "kao": kao}, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+gz = gzip.compress(raw, 9)
+bjs = json.dumps(base64.b64encode(gz).decode("ascii"))
+
+out = tpl.replace("__DATA__", js).replace("__MAJORS__", mjs).replace("__BLOB__", bjs)
 p = os.path.join(BASE, "index.html")
 open(p, "w", encoding="utf-8").write(out)
+
 tot = sum(len(v) for v in (catalog.get("schools") or {}).values())
-print("生成:", p, os.path.getsize(p) // 1024, "KB /", len(rows), "行 /", len(majors), "所校报录比 /",
-      len(catalog.get("schools") or {}), "校目录", tot, "条")
+krows = sum(len(v) for v in (kao.get("schools") or {}).values())
+print("生成:", p, os.path.getsize(p) // 1024, "KB")
+print("  %d 行方向 / %d 校报录比" % (len(rows), len(majors)))
+print("  研招网目录: %d 校 / %d 条" % (len(catalog.get("schools") or {}), tot))
+print("  掌上考研  : %d 校 / %d 条 (含复试线 %d)" % (
+    len(kao.get("schools") or {}), krows,
+    sum(1 for v in (kao.get("schools") or {}).values() for r in v if r[4] > 0)))
+print("  内联数据  : 原始 %.2f MB -> gzip %.2f MB -> base64 %.2f MB" % (
+    len(raw) / 1048576, len(gz) / 1048576, len(bjs) / 1048576))

@@ -26,4 +26,8 @@ data2/*/
 
 # 专业目录原始下载（33MB CSV，构建时用，可从 build_catalog.py 注释的地址重新获取）
 _data/
+
+# 掌上考研采集中间产物（约 80MB 原始 JSONL，可由 fetch_kaoyan.py 重新抓取）
+kaoyan_api/
+
 _smoke.js
