@@ -538,7 +538,9 @@ const S={
   my:+(localStorage.getItem('ee0854_score')||0)||null,
   fav:JSON.parse(localStorage.getItem('ee0854_fav')||'[]'),
   q:'',levels:new Set(),regions:new Set(),tiers:new Set(),
-  scene:'',cat:'',limit:25,cur:'pgHome'
+  scene:'',cat:'',limit:25,cur:'pgHome',
+  mYear:'26',        // 专业页 25/26 届
+  mjYear:''          // 报录比表选中的年份（''=自动取该校最新年份）
 };
 
 /* 聚合 */
@@ -563,7 +565,7 @@ DATA.forEach(r=>{DIRNAME[r.code]=r.dirName});
 const REGIONS=['华北','东北','华东','华中','华南','西南','西北'];
 const SUBJS=['政治','英语','数学','专业课'];
 
-/* 全校分专业报录比：按学校取数据、按 学院+专业代码 匹配到 0854 方向 */
+/* 全校分专业报录比：按学校取数据、按 学院+专业代码 匹配到 0854 方向（多年份） */
 function stripCC(x){return String(x||'').replace(/^\d{2,3}/,'').replace(/\s/g,'');}
 function majorsOf(school){
   if(!MAJORS)return null;
@@ -572,8 +574,32 @@ function majorsOf(school){
   for(let i=0;i<ks.length;i++){ if(ks[i].indexOf(school)>=0||school.indexOf(ks[i])>=0) return MAJORS[ks[i]]; }
   return null;
 }
+/* 返回该校的 {年份: {source, rows}} 字典，没有则返回 null */
+function mjYears(school){
+  const m=majorsOf(school);
+  if(!m||!m.years)return null;
+  return m.years;
+}
+/* 取当前展示用的年份对象：优先 S.mjYear，否则最新（最大年份）一届 */
+function mjCur(school){
+  const ys=mjYears(school); if(!ys)return null;
+  let yr=(S.mjYear&&ys[S.mjYear])?S.mjYear:null;
+  if(!yr)yr=Object.keys(ys).sort().reverse()[0];
+  return {year:yr, source:ys[yr].source, rows:ys[yr].rows};
+}
+/* 从 DATA 按 学校+专业代码 取学费（0854 精确匹配，其他专业前缀匹配） */
+function tuitionOf(school,code){
+  if(!school||!code)return null;
+  let fb=null;
+  for(let i=0;i<DATA.length;i++){ const r=DATA[i];
+    if(r.school!==school)continue;
+    if(r.code===code)return r.tuition||null;
+    if(!fb&&(code.indexOf(r.code)===0||r.code.indexOf(code)===0))fb=r.tuition||null;
+  }
+  return fb;
+}
 function ratioOf(r){
-  const m=majorsOf(r.school);
+  const m=mjCur(r.school);
   if(!m||!m.rows||!m.rows.length)return null;
   const col=stripCC(r.college);
   let fallback=null;
@@ -839,27 +865,35 @@ function openD(name,rowsFn){
   });
   h+=`</tbody></table></div></div>`;
 
-  // 该校全部招生专业（全校专业 + 报录比）
-  const mm=majorsOf(s.name);
-  if(mm&&mm.rows.length){
-    const n854=mm.rows.filter(x=>x.code.indexOf('0854')===0).length;
+  // 该校全部招生专业（全校专业 + 报录比，多年份可切换）
+  const yrs=mjYears(s.name);
+  if(yrs){
+    const cur=mjCur(s.name);
+    const yk=Object.keys(yrs);                 // 已按年份倒序
+    const yr=cur.year, rows=cur.rows;
+    const n854=rows.filter(x=>x.code.indexOf('0854')===0).length;
+    const ytg=yk.length>1?`<div class="ytg">`+yk.map(y=>`<button class="yb ${y===yr?'on':''}" data-y="${y}">${y} 届</button>`).join('')+`</div>`:'';
     h+=`<div class="dtable" style="margin-top:0">
       <div class="gh" style="padding:12px 13px 7px;font-size:12.5px;font-weight:800;color:var(--txt2)">
-        该校全部招生专业 · ${mm.year}届报录比 <span style="color:var(--txt3);font-weight:500">（${mm.rows.length} 个专业，其中 0854 电子信息 ${n854} 个）</span></div>
+        该校全部招生专业 · ${yr}届报录比 <span style="color:var(--txt3);font-weight:500">（${rows.length} 个专业，其中 0854 电子信息 ${n854} 个）</span></div>
+      ${ytg}
       <div class="scrl"><table><thead><tr>
-        <th>学院</th><th>专业</th><th>类型</th><th class="num">报考</th><th class="num">录取</th><th class="num">报录比</th>
+        <th>学院</th><th>专业</th><th>类型</th><th class="num">报考</th><th class="num">录取</th><th class="num">报录比</th><th class="num">学费</th>
       </tr></thead><tbody>`+
-      mm.rows.map(x=>{const is8=x.code.indexOf('0854')===0;return `<tr${is8?' style="background:rgba(47,95,224,.06)"':''}>
+      rows.map(x=>{const is8=x.code.indexOf('0854')===0;
+        const tu=tuitionOf(s.name,x.code);
+        return `<tr${is8?' style="background:rgba(47,95,224,.06)"':''}>
         <td class="co">${x.college}</td>
         <td class="nm">${is8?'<b>':''}${x.code} ${x.name}${is8?'</b>':''}</td>
         <td>${x.degree}</td>
         <td class="num">${x.apply}</td>
         <td class="num">${x.admit}</td>
         <td class="num" style="color:${x.ratio!=null?rCol(x.ratio):'#c3ccdb'}">${x.ratio!=null?x.ratio+' : 1':'—'}</td>
+        <td class="num" style="color:#0f9d58">${tu?Math.round(tu/1000)+'k':'—'}</td>
       </tr>`}).join('')+
       `</tbody></table></div>
       <div style="font-size:10px;color:var(--txt3);padding:8px 12px 10px">
-        报录比 = 报考人数 ÷ 录取人数，反映竞争热度（<span style="color:#b91c1c">红</span>=更卷、<span style="color:#15803d">绿</span>=相对好考），仅供参考。加粗高亮行为 0854 电子信息类。数据为 ${mm.year} 届公开报录数据${mm.source?'，<a href="'+mm.source+'" target="_blank" rel="noopener">来源</a>':''}。
+        报录比 = 报考人数 ÷ 录取人数，反映竞争热度（<span style="color:#b91c1c">红</span>=更卷、<span style="color:#15803d">绿</span>=相对好考），仅供参考。加粗高亮行为 0854 电子信息类。学费按本数据集该校同专业方向收录值展示，未匹配到显示 "—"。数据为 ${yr} 届公开报录数据${cur.source?'，<a href="'+cur.source+'" target="_blank" rel="noopener">来源</a>':''}。${yk.length>1?'可点上方年份切换查看不同届报录比。':''}
       </div></div>`;
   }else{
     h+=`<div class="dtable" style="margin-top:0">
@@ -879,6 +913,9 @@ function openD(name,rowsFn){
   });
   document.getElementById('dBody').querySelectorAll('tbody tr').forEach(tr=>{
     tr.onclick=()=>openM(+tr.dataset.u);
+  });
+  document.getElementById('dBody').querySelectorAll('.ytg .yb').forEach(b=>{
+    b.onclick=()=>{S.mjYear=b.dataset.y;openD(name,rowsFn);};
   });
   document.getElementById('pgD').scrollTop=0;
 }
