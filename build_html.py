@@ -21,8 +21,11 @@ mp = os.path.join(BASE, "majors.json")
 majors = json.load(open(mp, encoding="utf-8")) if os.path.exists(mp) else {}
 mjs = json.dumps(majors, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
-# 全量硕士专业目录（可选，研招网 919 校）
-cp = os.path.join(BASE, "catalog.json")
+# 全量硕士专业目录（研招网 919 校 ∪ 掌上考研 930 校 -> 1047 校）
+# 优先用 merge_catalog.py 产出的并集 catalog_merged.json，没有才回落到 catalog.json
+cp = os.path.join(BASE, "catalog_merged.json")
+if not os.path.exists(cp):
+    cp = os.path.join(BASE, "catalog.json")
 catalog = json.load(open(cp, encoding="utf-8")) if os.path.exists(cp) else {}
 
 # 掌上考研明细：复试线 / 逐年招生 / 考试科目 / 参考书（可选）
@@ -42,7 +45,7 @@ tot = sum(len(v) for v in (catalog.get("schools") or {}).values())
 krows = sum(len(v) for v in (kao.get("schools") or {}).values())
 print("生成:", p, os.path.getsize(p) // 1024, "KB")
 print("  %d 行方向 / %d 校报录比" % (len(rows), len(majors)))
-print("  研招网目录: %d 校 / %d 条" % (len(catalog.get("schools") or {}), tot))
+print("  专业目录(%s): %d 校 / %d 条" % (os.path.basename(cp), len(catalog.get("schools") or {}), tot))
 print("  掌上考研  : %d 校 / %d 条 (含复试线 %d)" % (
     len(kao.get("schools") or {}), krows,
     sum(1 for v in (kao.get("schools") or {}).values() for r in v if r[4] > 0)))

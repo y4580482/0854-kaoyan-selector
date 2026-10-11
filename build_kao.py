@@ -60,6 +60,7 @@ def main():
         return
     subs, books = [], []
     spool, bpool = {}, {}
+    codes = {}          # 专业代码 -> 专业名（供并集时补 KAO 独有专业）
     byschool = collections.defaultdict(list)
     n = 0
     with open(SRC, encoding="utf-8") as f:
@@ -76,6 +77,9 @@ def main():
             if not school or not code:
                 continue
             n += 1
+            nm = norm(d.get("name"))
+            if nm:
+                codes.setdefault(code, nm)
             years = d.get("years") or {}
             # 最新年份（用于取最新考试科目）
             ykeys = sorted([y for y in years if str(y).isdigit()], key=lambda x: -int(x))
@@ -128,14 +132,17 @@ def main():
         uniq.sort(key=lambda r: (r[0], r[1], r[3]))
         schools[s] = uniq
 
-    # 院校层次（985 / 211 / 双一流），来自掌上考研 schoolList
+    # 院校层次（985 / 211 / 双一流）+ 省份，来自掌上考研 schoolList
     lvl = {}
+    prov = {}
     sp = os.path.join(BASE, "kaoyan_api", "schools.json")
     if os.path.exists(sp):
         for sc in json.load(open(sp, encoding="utf-8")):
             nm = sc.get("school_name")
             if not nm:
                 continue
+            if sc.get("province_name"):
+                prov[nm] = sc["province_name"]
             if str(sc.get("is_985")) == "1":
                 lvl[nm] = "985"
             elif str(sc.get("is_211")) == "1":
@@ -145,7 +152,8 @@ def main():
 
     out = {
         "src": "掌上考研(kaoyan.cn) 公开接口 · 2027届招生",
-        "subs": subs, "books": books, "lvl": lvl, "schools": schools,
+        "subs": subs, "books": books, "lvl": lvl, "prov": prov,
+        "codes": codes, "schools": schools,
     }
     js = json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     open(OUT, "w", encoding="utf-8").write(js)
@@ -157,7 +165,7 @@ def main():
     withplan = sum(1 for v in schools.values() for r in v if r[8])
     print(f"明细 {n} 条 -> {len(schools)} 校 / {total_rows} 行(校×专业×院系×学习方式)")
     print(f"  有复试线 {withscore} | 有考试科目 {withsub} | 有参考书 {withbook} | 有招生人数 {withplan}")
-    print(f"  字符串池：科目 {len(subs)} 条 / 参考书 {len(books)} 条")
+    print(f"  字符串池：科目 {len(subs)} 条 / 参考书 {len(books)} 条 | 省份 {len(prov)} 校 | 专业名 {len(codes)} 个")
     print(f"kao.json: {size//1024} KB ({size/1024/1024:.2f} MB)")
 
 

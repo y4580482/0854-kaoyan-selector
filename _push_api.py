@@ -8,7 +8,7 @@ if not TOKEN:
 REPO = "y4580482/0854-kaoyan-selector"
 API = "https://api.github.com"
 BASE = os.path.dirname(os.path.abspath(__file__))
-MSG = "v5.1: 全部专业与0854同详细——接入掌上考研930校/51376条(复试线·逐年招生·考试科目·参考书)，学校页支持校内专业搜索"
+MSG = "v5.2: 两源并集做到「所有专业都能查」——研招网919校∪掌上考研930校=1047校/1483专业代码/42823条(+5101)，顶部搜索框直接命中全量专业库，兼容全角括号/校区后缀校名差异"
 
 
 def run(cmd):

@@ -327,7 +327,7 @@ body{
     <span class="rt" id="hdR" style="display:none">☆</span>
   </div>
   <div class="sbar" id="sbar">
-    <div class="in"><span class="mg">🔍</span><input id="q" placeholder="搜学校 / 学院 / 方向 / 专业课"><span class="cl" id="qc" style="display:none">✕</span></div>
+    <div class="in"><span class="mg">🔍</span><input id="q" placeholder="搜学校 / 专业 / 学院（任意专业，如 计算机、0854）"><span class="cl" id="qc" style="display:none">✕</span></div>
   </div>
   <div id="sh"></div>
 
@@ -426,7 +426,7 @@ body{
           <li><b>初试线</b>= 进入复试的初试成绩基本要求（复试线）。</li>
           <li><b>录取最低分</b>= 拟录取名单中实际录取考生的最低初试分，通常比初试线高 5~30 分。</li>
           <li><b>学费</b>为各层次参考值（学硕约 8000、专硕 8000–30000 元/年），以各校招生简章为准。</li>
-          <li><b>专业目录</b>（底部「专业库」页）来自<b>研招网硕士专业目录</b>（2026 届），覆盖全国 <b>919 所</b>院校、1,336 个专业代码、37,722 条「学校×专业」记录，含院系、学位类型、学习方式、拟招生人数与<b>考试科目</b>；并按<b>掌上考研</b>公开数据补齐<b>复试线、逐年招生人数、考试科目、参考书</b>（覆盖 900+ 所院校）。可按专业 / 学院 / 省份 / 学位筛选，按招生人数、复试线或报录比排序，点行看详情。<b>不限 0854；学校页可搜索该校全部招生专业</b>。</li>
+          <li><b>专业目录</b>（底部「专业库」页）＝ <b>研招网硕士专业目录</b>（2026 届）与<b>掌上考研</b>公开数据的<b>并集</b>，覆盖全国 <b><span id="nCatS">-</span> 所</b>院校、<span id="nCatC">-</span> 个专业代码、<span id="nCatR">-</span> 条「学校×专业」记录，含院系、学位类型、学习方式、拟招生人数与<b>考试科目</b>，并补齐<b>复试线、逐年招生人数、参考书</b>。可按专业 / 学院 / 省份 / 学位筛选，按招生人数、复试线或报录比排序，点行看详情。<b>不限 0854，全部专业都能查</b>——顶部搜索框或「专业库」输入 学校 / 专业名 / 专业代码 / 学院 均会命中；学校页可搜索该校全部招生专业。</li>
           <li><b>报录比</b>= 报考人数 ÷ 录取人数（<b>真实</b>公开数据，非估算），反映竞争热度。目前收录 <span id="nM">-</span> 所院校的全校分专业报录数据（2024–2026 届），在「专业库」与学校页以 <span style="color:#b91c1c">红</span>/<span style="color:#15803d">绿</span> 标注；<b>未收录的院校不做任何估算</b>。注意「录取人数」通常含推免，故该比值偏乐观；非全日制常因调剂出现「录取 &gt; 报考」。</li>
         </ul>
       </div>
@@ -675,9 +675,60 @@ function ratioFor(school,code){
   return null;
 }
 
-/* ============ 专业库：跨校 · 全量硕士专业目录（研招网 919 校） ============ */
+/* ============ 专业库：跨校 · 全量硕士专业目录（研招网 ∪ 掌上考研 -> 1047 校） ============ */
 const MJ_SCHOOLS=Object.keys(MAJORS||{});                    // 有「报录比」的学校（5 所）
-function catSchools(){return Object.keys((CAT&&CAT.schools)||{});}   // 全量目录学校（919 所）
+function catSchools(){return Object.keys((CAT&&CAT.schools)||{});}   // 并集后全部院校（1047 所）
+
+/* --- 校名归一化配对 ---------------------------------------------------------
+   两个数据源对同一所学校的写法常不一致：
+     「华北电力大学(北京)」 vs 目录里的「华北电力大学」
+     「中国地质大学（武汉）」 vs「中国地质大学(武汉)」
+   直接按名字取会判为"查不到"。这里做三级配对（精确 → 归一化 → 去校区后缀 → 互相包含），
+   把「展示名」解析成目录名(cat)与掌上考研名(kao)，保证任何写法都能查到。 */
+function _nmKey(s){return String(s||'').replace(/（/g,'(').replace(/）/g,')').replace(/[\s\u3000]+/g,'').replace(/·/g,'').replace(/\u00b7/g,'');}
+const _ALI={};
+function _aliasBuild(mapObj){
+  const EX={},NM={};
+  for(const k in mapObj){
+    const n=_nmKey(k);
+    if(!NM[n])NM[n]=k;
+    if(/[（(][^（()）]*[)）]\s*$/.test(k)){
+      const b=_nmKey(k.replace(/[（(][^（()）]*[)）]\s*$/,''));
+      if(b&&!EX[b])EX[b]=k;                       // 「X(校区)」→ 兜底指向 X
+    }else if(!EX[n])EX[n]=k;                       // 不带括号的名字优先
+  }
+  return {EX,NM};
+}
+function aliasResolve(which,name){
+  if(!name)return null;
+  const map=which==='kao'?((KAO&&KAO.schools)||{}):((CAT&&CAT.schools)||{});
+  if(map[name])return name;
+  if(!Object.keys(map).length)return null;
+  let A=_ALI[which];if(!A||A._n!==Object.keys(map).length){A=_ALI[which]=_aliasBuild(map);A._n=Object.keys(map).length;}
+  const n=_nmKey(name);
+  if(A.NM[n])return A.NM[n];
+  const b=_nmKey(String(name).replace(/[（(][^（()）]*[)）]\s*$/,''));
+  if(b&&A.EX[b])return A.EX[b];
+  if(n.length>=4)for(const k in A.NM){const kn=_nmKey(k);
+    if(kn.length>=4&&(kn.indexOf(n)>=0||n.indexOf(kn)>=0))return A.NM[k];}
+  return null;
+}
+const _SCTX={};
+/* 展示名 -> {cat: 全量目录里的校名, kao: 掌上考研里的校名} */
+function schoolCtx(name){
+  let r=_SCTX[name];
+  if(r)return r;
+  const ca=aliasResolve('cat',name),ka=aliasResolve('kao',name);
+  r={cat:ca||name,kao:ka||name};
+  if(ca||ka)_SCTX[name]=r;          // 数据尚未解压时不写缓存
+  return r;
+}
+/* 取该校在全量目录里的行（不限 0854，含只在掌上考研出现的专业） */
+function catRowsOf(name){
+  const S0=(CAT&&CAT.schools)||{};
+  return S0[name]||S0[schoolCtx(name).cat]||null;
+}
+
 /* --- 掌上考研明细索引：(校|专业代码) -> [ [code,degI,modeI,col,score,scoreYr,subI,bookI,plans], ... ] --- */
 let _KAOI=null;
 function kaoIdx(){
@@ -688,7 +739,10 @@ function kaoIdx(){
       (m[k]||(m[k]=[])).push(r);}}
   _KAOI=m;return m;
 }
-function kaoOf(school,code){return kaoIdx()[school+'|'+code]||null;}
+function kaoOf(school,code){
+  const m=kaoIdx(),k=school+'|'+code;
+  return m[k]||m[schoolCtx(school).kao+'|'+code]||null;
+}
 /* 该(校,专业)里最"有料"的一条：优先有复试线、招生年份最新、有参考书 */
 function kaoBest(list){
   if(!list||!list.length)return null;
@@ -700,8 +754,8 @@ function kaoBest(list){
 }
 function kaoSub(r){return (r&&r[6]>=0&&KAO.subs)?(KAO.subs[r[6]]||''):'';}
 function kaoBook(r){return (r&&r[7]>=0&&KAO.books)?(KAO.books[r[7]]||''):'';}
-const KLVL=(KAO&&KAO.lvl)||{};                                // 校名 -> 层次（985/211/双一流）
-function lvlOf(name){return (SCH[name]&&SCH[name].level)||KLVL[name]||null;}
+function kaoLvl(name){const L=(KAO&&KAO.lvl)||{};return L[name]||L[schoolCtx(name).kao]||null;}  // 校名 -> 层次（985/211/双一流）
+function lvlOf(name){return (SCH[name]&&SCH[name].level)||kaoLvl(name);}
 function kaoYears(r){return (r&&r[8])||[];}
 function kaoScore(school,code){const b=kaoBest(kaoOf(school,code));return (b&&b[4]>0)?b[4]:-1;}
 /* 招生人数逐年串：2027:21 · 2026:44 ... */
@@ -838,7 +892,7 @@ function renderMj(){
   });
   h+=`</tbody></table></div>
     <div style="font-size:10px;color:var(--txt3);padding:9px 12px 10px;line-height:1.7">
-      数据来源：<b>研招网硕士专业目录</b>（${(CAT&&CAT.year)||'2026'}届，${CSC.length} 所院校 × ${Object.keys(CAT.codes||{}).length} 个专业代码）＋<b>掌上考研</b>公开数据（复试线 / 多年招生人数 / 考试科目 / 参考书，覆盖 <b>${Object.keys((KAO&&KAO.schools)||{}).length}</b> 所院校）。
+      数据来源：<b>研招网硕士专业目录</b>（${(CAT&&CAT.year)||'2026'}届）＋<b>掌上考研</b>公开数据（复试线 / 逐年招生人数 / 考试科目 / 参考书）<b>并集</b>，共 <b>${CSC.length}</b> 所院校 × <b>${Object.keys(CAT.codes||{}).length}</b> 个专业代码 × <b>${CATN}</b> 条「学校×专业」。
       「招生」为拟招生人数（以官方为准）；「复试线」为近年复试分数线；「报录比」<span style="color:#b91c1c">红</span>=更卷、<span style="color:#15803d">绿</span>=相对好考，仅 ${MJ_SCHOOLS.length} 所有官方报录数据；
       「学费」取自本数据集收录值，未匹配显示 "—"。加粗高亮行为 0854 电子信息类。点任一行看详情（复试线 / 逐年招生 / 考试科目 / 参考书）。
     </div></div>`;
@@ -995,13 +1049,67 @@ function bindCards(box,rowsFn){
     };
   });
 }
+/* 全局搜索：同时命中「全量专业库」（不限 0854，覆盖全部院校的全部专业）
+   这样在任何页面顶部搜索框里输入 学校 / 专业名 / 专业代码 / 学院，都能查到对应专业 */
+let CATQN=0;
+function catSearchHits(q,cap){
+  q=(q||'').trim().toLowerCase();
+  CATQN=0;
+  if(!q)return [];
+  const rows=catRows(),out=[];
+  for(let i=0;i<rows.length;i++){const x=rows[i];
+    const hay=(x.school+' '+x.college+' '+x.code+' '+x.name).toLowerCase();
+    if(hay.indexOf(q)<0)continue;
+    let w=0;
+    if(x.code.indexOf('0854')===0)w+=1000;                    // 0854 优先
+    if(x.name.toLowerCase().indexOf(q)>=0)w+=300;             // 专业名直接命中
+    if(x.school.toLowerCase().indexOf(q)>=0)w+=200;           // 校名直接命中
+    if(kaoScore(x.school,x.code)>0)w+=60;                     // 有复试线
+    w+=(x.plan>0?Math.min(x.plan,60):0);                      // 招生多
+    out.push({x,w});
+    if(out.length>=5000)break;
+  }
+  CATQN=out.length;
+  out.sort((a,b)=>b.w-a.w);
+  return out.slice(0,cap||40).map(o=>o.x);
+}
+function catHitsHTML(hits,q){
+  let h=`<div class="dtable" style="margin:0 0 10px">
+    <div class="gh" style="padding:11px 13px 7px;font-size:12.5px;font-weight:800;color:var(--txt2)">
+      专业库命中 <span style="color:var(--txt3);font-weight:500">「${escH(q)}」共 ${CATQN} 条${CATQN>hits.length?`，显示前 ${hits.length} 条`:''}</span>
+      <div style="font-weight:500;font-size:10.5px;color:var(--txt3);margin-top:3px">不限 0854 · 含复试线 / 逐年招生 / 考试科目 / 参考书 · 点任一行看详情</div>
+    </div>
+    <div class="scrl"><table style="min-width:720px"><thead><tr>
+      <th>学校</th><th>专业</th><th>学院</th><th class="num">招生</th><th class="num">复试线</th>
+    </tr></thead><tbody>`;
+  hits.forEach(x=>{
+    const sc=kaoScore(x.school,x.code),is8=x.code.indexOf('0854')===0;
+    h+=`<tr data-s="${escH(x.school)}" data-c="${x.code}"${is8?' style="background:rgba(47,95,224,.06)"':''}>
+      <td class="nm">${escH(x.school)}${(function(l){return l?lvlTag(l):''})(lvlOf(x.school))}</td>
+      <td class="${is8?'':'nm'}">${x.code} ${escH(x.name)}</td>
+      <td class="co">${escH(x.college)}</td>
+      <td class="num">${x.plan>0?x.plan:'—'}</td>
+      <td class="num" style="color:${sc>0?sCol(sc):'#c3ccdb'}">${sc>0?sc:'—'}</td>
+    </tr>`;
+  });
+  h+='</tbody></table></div></div>';
+  return h;
+}
 function renderList(){
   const list=filtered();
   const box=document.getElementById('schList');
-  box.innerHTML=list.slice(0,S.limit).map(o=>cardHTML(o.s,o.rs,true)).join('');
-  document.getElementById('lcnt').textContent=`共 ${list.length} 所院校`;
+  const hits=S.q?catSearchHits(S.q,40):[];
+  let h=hits.length?catHitsHTML(hits,S.q):'';
+  h+=list.slice(0,S.limit).map(o=>cardHTML(o.s,o.rs,true)).join('');
+  box.innerHTML=h;
+  document.getElementById('lcnt').textContent=hits.length
+    ? `专业库命中 ${CATQN} 条 · ${list.length} 所 0854 院校`
+    : `共 ${list.length} 所院校`;
   document.getElementById('mb').style.display=list.length>S.limit?'block':'none';
-  document.getElementById('eb').style.display=list.length?'none':'block';
+  document.getElementById('eb').style.display=(list.length||hits.length)?'none':'block';
+  box.querySelectorAll('.dtable tbody tr[data-s]').forEach(tr=>{
+    tr.onclick=()=>mjSheet(tr.dataset.s,tr.dataset.c);
+  });
   bindCards(box,null);
 }
 
@@ -1107,7 +1215,7 @@ function renderFav(){
 /* 学校详情：概述 +（有 0854 数据时）0854 方向表 + 该校全部专业（可搜索，含复试线/招生/报录比/学费） */
 function openD(name,rowsFn){
   const s=SCH[name];
-  const crows=(CAT&&CAT.schools&&CAT.schools[name])||null;
+  const crows=catRowsOf(name);
   if(!s&&!crows)return;
   if(S.dName!==name){S.dQ='';S.dName=name;}
   // 学校页始终展示该校【全部】招生方向，不受当前分类/场景筛选影响
@@ -1255,7 +1363,7 @@ function openD(name,rowsFn){
 function renderSchMajors(name){
   const box=document.getElementById('dAllBox');
   if(!box)return;
-  const all=(CAT&&CAT.schools&&CAT.schools[name])||[];
+  const all=catRowsOf(name)||[];
   const q=(S.dQ||'').toLowerCase();
   const list=q?all.filter(r=>{const nm=(CAT.codes&&CAT.codes[r[0]])||'';
       return (r[0]+' '+nm+' '+(r[4]||'')).toLowerCase().indexOf(q)>=0;}):all;
@@ -1858,7 +1966,10 @@ function b64ToU8(b64){
 function applyBig(d){
   if(d&&d.cat)Object.assign(CAT,d.cat);
   if(d&&d.kao)Object.assign(KAO,d.kao);
-  _CROWS=null;_KAOI=null;BIG_OK=true;
+  _CROWS=null;_KAOI=null;
+  for(const k in _ALI)delete _ALI[k];
+  for(const k in _SCTX)delete _SCTX[k];
+  BIG_OK=true;
 }
 function loadBig(){
   if(!BIG_B64)return Promise.resolve(false);
@@ -1871,7 +1982,16 @@ function loadBig(){
   try{applyBig(JSON.parse(new TextDecoder().decode(gunzipJS(u8))));}catch(e){return Promise.reject(e);}
   return Promise.resolve(true);
 }
+/* 首页/我的页里的「专业目录」统计（并集后动态填充，避免写死数字） */
+function fillCatStats(){
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  let tot=0;const S0=(CAT&&CAT.schools)||{};for(const k in S0)tot+=S0[k].length;
+  set('nCatS',catSchools().length);
+  set('nCatC',Object.keys((CAT&&CAT.codes)||{}).length);
+  set('nCatR',tot);
+}
 function bootApp(){
+  fillCatStats();
   renderHome();renderCat();renderList();renderMe();
   if(!AC.cur){openAcc('login');}
 }
